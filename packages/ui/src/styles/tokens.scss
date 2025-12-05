@@ -1,0 +1,173 @@
+@use './variables' as *;
+
+// CSS Custom Properties with --eui- prefix
+:root,
+.theme-light {
+  // Colors - Primary
+  --eui-color-primary-50: #{$colors-primary-50};
+  --eui-color-primary-100: #{$colors-primary-100};
+  --eui-color-primary-200: #{$colors-primary-200};
+  --eui-color-primary-300: #{$colors-primary-300};
+  --eui-color-primary-400: #{$colors-primary-400};
+  --eui-color-primary-500: #{$colors-primary-500};
+  --eui-color-primary-600: #{$colors-primary-600};
+  --eui-color-primary-700: #{$colors-primary-700};
+  --eui-color-primary-800: #{$colors-primary-800};
+  --eui-color-primary-900: #{$colors-primary-900};
+  --eui-color-primary: var(--eui-color-primary-500);
+
+  // Colors - Success
+  --eui-color-success-50: #{$colors-success-50};
+  --eui-color-success-100: #{$colors-success-100};
+  --eui-color-success-200: #{$colors-success-200};
+  --eui-color-success-300: #{$colors-success-300};
+  --eui-color-success-400: #{$colors-success-400};
+  --eui-color-success-500: #{$colors-success-500};
+  --eui-color-success-600: #{$colors-success-600};
+  --eui-color-success-700: #{$colors-success-700};
+  --eui-color-success-800: #{$colors-success-800};
+  --eui-color-success-900: #{$colors-success-900};
+  --eui-color-success: var(--eui-color-success-500);
+
+  // Colors - Warning
+  --eui-color-warning-50: #{$colors-warning-50};
+  --eui-color-warning-100: #{$colors-warning-100};
+  --eui-color-warning-200: #{$colors-warning-200};
+  --eui-color-warning-300: #{$colors-warning-300};
+  --eui-color-warning-400: #{$colors-warning-400};
+  --eui-color-warning-500: #{$colors-warning-500};
+  --eui-color-warning-600: #{$colors-warning-600};
+  --eui-color-warning-700: #{$colors-warning-700};
+  --eui-color-warning-800: #{$colors-warning-800};
+  --eui-color-warning-900: #{$colors-warning-900};
+  --eui-color-warning: var(--eui-color-warning-500);
+
+  // Colors - Error
+  --eui-color-error-50: #{$colors-error-50};
+  --eui-color-error-100: #{$colors-error-100};
+  --eui-color-error-200: #{$colors-error-200};
+  --eui-color-error-300: #{$colors-error-300};
+  --eui-color-error-400: #{$colors-error-400};
+  --eui-color-error-500: #{$colors-error-500};
+  --eui-color-error-600: #{$colors-error-600};
+  --eui-color-error-700: #{$colors-error-700};
+  --eui-color-error-800: #{$colors-error-800};
+  --eui-color-error-900: #{$colors-error-900};
+  --eui-color-error: var(--eui-color-error-500);
+
+  // Colors - Info
+  --eui-color-info-50: #{$colors-info-50};
+  --eui-color-info-100: #{$colors-info-100};
+  --eui-color-info-200: #{$colors-info-200};
+  --eui-color-info-300: #{$colors-info-300};
+  --eui-color-info-400: #{$colors-info-400};
+  --eui-color-info-500: #{$colors-info-500};
+  --eui-color-info-600: #{$colors-info-600};
+  --eui-color-info-700: #{$colors-info-700};
+  --eui-color-info-800: #{$colors-info-800};
+  --eui-color-info-900: #{$colors-info-900};
+  --eui-color-info: var(--eui-color-info-500);
+
+  // Colors - Neutral
+  --eui-color-neutral-50: #{$colors-neutral-50};
+  --eui-color-neutral-100: #{$colors-neutral-100};
+  --eui-color-neutral-200: #{$colors-neutral-200};
+  --eui-color-neutral-300: #{$colors-neutral-300};
+  --eui-color-neutral-400: #{$colors-neutral-400};
+  --eui-color-neutral-500: #{$colors-neutral-500};
+  --eui-color-neutral-600: #{$colors-neutral-600};
+  --eui-color-neutral-700: #{$colors-neutral-700};
+  --eui-color-neutral-800: #{$colors-neutral-800};
+  --eui-color-neutral-900: #{$colors-neutral-900};
+
+  // Background colors
+  --eui-bg-primary: #ffffff;
+  --eui-bg-secondary: var(--eui-color-neutral-50);
+  --eui-bg-tertiary: var(--eui-color-neutral-100);
+  --eui-bg-disabled: var(--eui-color-neutral-200);
+
+  // Text colors
+  --eui-text-primary: var(--eui-color-neutral-900);
+  --eui-text-secondary: var(--eui-color-neutral-600);
+  --eui-text-tertiary: var(--eui-color-neutral-500);
+  --eui-text-disabled: var(--eui-color-neutral-400);
+  --eui-text-inverse: #ffffff;
+
+  // Border colors
+  --eui-border-color: var(--eui-color-neutral-300);
+  --eui-border-color-hover: var(--eui-color-neutral-400);
+  --eui-border-color-focus: var(--eui-color-primary-500);
+  --eui-border-color-error: var(--eui-color-error-500);
+
+  // Typography
+  --eui-font-family-sans: #{$typography-fontFamily-sans};
+  --eui-font-family-mono: #{$typography-fontFamily-mono};
+  --eui-font-size-xs: #{$typography-fontSize-xs};
+  --eui-font-size-sm: #{$typography-fontSize-sm};
+  --eui-font-size-base: #{$typography-fontSize-base};
+  --eui-font-size-lg: #{$typography-fontSize-lg};
+  --eui-font-size-xl: #{$typography-fontSize-xl};
+  --eui-font-size-2xl: #{$typography-fontSize-2xl};
+  --eui-font-size-3xl: #{$typography-fontSize-3xl};
+  --eui-font-size-4xl: #{$typography-fontSize-4xl};
+  --eui-font-size-5xl: #{$typography-fontSize-5xl};
+  --eui-font-weight-normal: #{$typography-fontWeight-normal};
+  --eui-font-weight-medium: #{$typography-fontWeight-medium};
+  --eui-font-weight-semibold: #{$typography-fontWeight-semibold};
+  --eui-font-weight-bold: #{$typography-fontWeight-bold};
+  --eui-line-height-tight: #{$typography-lineHeight-tight};
+  --eui-line-height-normal: #{$typography-lineHeight-normal};
+  --eui-line-height-relaxed: #{$typography-lineHeight-relaxed};
+
+  // Spacing
+  --eui-spacing-xs: #{$spacing-xs};
+  --eui-spacing-sm: #{$spacing-sm};
+  --eui-spacing-md: #{$spacing-md};
+  --eui-spacing-lg: #{$spacing-lg};
+  --eui-spacing-xl: #{$spacing-xl};
+  --eui-spacing-2xl: #{$spacing-2xl};
+  --eui-spacing-3xl: #{$spacing-3xl};
+
+  // Radius
+  --eui-radius-none: #{$radius-none};
+  --eui-radius-xs: #{$radius-xs};
+  --eui-radius-sm: #{$radius-sm};
+  --eui-radius-md: #{$radius-md};
+  --eui-radius-lg: #{$radius-lg};
+  --eui-radius-xl: #{$radius-xl};
+  --eui-radius-2xl: #{$radius-2xl};
+  --eui-radius-full: #{$radius-full};
+
+  // Shadows
+  --eui-shadow-none: #{$shadows-none};
+  --eui-shadow-sm: #{$shadows-sm};
+  --eui-shadow-md: #{$shadows-md};
+  --eui-shadow-lg: #{$shadows-lg};
+  --eui-shadow-xl: #{$shadows-xl};
+  --eui-shadow-2xl: #{$shadows-2xl};
+
+  // Breakpoints (for JS usage)
+  --eui-breakpoint-xs: #{$breakpoints-xs};
+  --eui-breakpoint-sm: #{$breakpoints-sm};
+  --eui-breakpoint-md: #{$breakpoints-md};
+  --eui-breakpoint-lg: #{$breakpoints-lg};
+  --eui-breakpoint-xl: #{$breakpoints-xl};
+  --eui-breakpoint-2xl: #{$breakpoints-2xl};
+}
+
+.theme-dark {
+  // Dark theme overrides
+  --eui-bg-primary: var(--eui-color-neutral-900);
+  --eui-bg-secondary: var(--eui-color-neutral-800);
+  --eui-bg-tertiary: var(--eui-color-neutral-700);
+  --eui-bg-disabled: var(--eui-color-neutral-700);
+
+  --eui-text-primary: var(--eui-color-neutral-50);
+  --eui-text-secondary: var(--eui-color-neutral-300);
+  --eui-text-tertiary: var(--eui-color-neutral-400);
+  --eui-text-disabled: var(--eui-color-neutral-600);
+
+  --eui-border-color: var(--eui-color-neutral-700);
+  --eui-border-color-hover: var(--eui-color-neutral-600);
+}
+

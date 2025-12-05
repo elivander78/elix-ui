@@ -1,0 +1,73 @@
+{
+  "name": "@elix/ui",
+  "version": "0.1.0",
+  "description": "Vue 3 UI Kit with theming and responsive design",
+  "type": "module",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./styles": "./es/styles/index.css",
+    "./button": {
+      "import": "./es/components/Button/index.js",
+      "require": "./lib/components/Button/index.js",
+      "types": "./lib/components/Button/index.d.ts"
+    },
+    "./input": {
+      "import": "./es/components/Input/index.js",
+      "require": "./lib/components/Input/index.js",
+      "types": "./lib/components/Input/index.d.ts"
+    },
+    "./card": {
+      "import": "./es/components/Card/index.js",
+      "require": "./lib/components/Card/index.js",
+      "types": "./lib/components/Card/index.d.ts"
+    },
+    "./select": {
+      "import": "./es/components/Select/index.js",
+      "require": "./lib/components/Select/index.js",
+      "types": "./lib/components/Select/index.d.ts"
+    },
+    "./modal": {
+      "import": "./es/components/Modal/index.js",
+      "require": "./lib/components/Modal/index.js",
+      "types": "./lib/components/Modal/index.d.ts"
+    }
+  },
+  "files": [
+    "es",
+    "lib",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "vite build",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "test": "vitest"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "dependencies": {
+    "@vue/shared": "^3.3.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.2",
+    "@vue/test-utils": "^2.4.3",
+    "jsdom": "^23.0.1",
+    "sass": "^1.69.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.6.4",
+    "vitest": "^1.0.4",
+    "vue": "^3.3.13",
+    "vue-tsc": "^1.8.25"
+  }
+}
+

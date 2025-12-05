@@ -1,0 +1,20 @@
+@use './tokens';
+@use './themes/light';
+@use './themes/dark';
+
+// Base styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--eui-font-family-sans);
+  font-size: var(--eui-font-size-base);
+  line-height: var(--eui-line-height-normal);
+  color: var(--eui-text-primary);
+  background-color: var(--eui-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

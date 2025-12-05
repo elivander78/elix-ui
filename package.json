@@ -1,0 +1,24 @@
+{
+  "name": "ui-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "UI Kit monorepo for Vue 3",
+  "scripts": {
+    "dev": "pnpm --filter @elix/ui dev",
+    "dev:docs": "pnpm --filter @elix/docs dev",
+    "build": "pnpm --filter @elix/ui build",
+    "build:docs": "pnpm --filter @elix/docs build",
+    "test": "pnpm --filter @elix/ui test",
+    "lint": "pnpm -r lint",
+    "type-check": "pnpm -r type-check"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
+
