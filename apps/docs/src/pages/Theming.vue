@@ -1,7 +1,7 @@
 <template>
   <div class="docs-page">
     <h1>Theming</h1>
-    <p>@elix/ui uses CSS custom properties (CSS variables) for theming, allowing you to customize the appearance of components without modifying the library code. All design tokens are exposed as CSS variables with the <code>--eui-</code> prefix, making it easy to create custom themes or override specific values.</p>
+    <p>@elivander/elix-ui uses CSS custom properties (CSS variables) for theming, allowing you to customize the appearance of components without modifying the library code. All design tokens are exposed as CSS variables with the <code>--eui-</code> prefix, making it easy to create custom themes or override specific values.</p>
 
     <h2>Design Tokens and CSS Variables</h2>
     <p>The library provides a comprehensive set of design tokens that control colors, spacing, typography, shadows, and border radius. All tokens are available as CSS variables:</p>
@@ -42,8 +42,8 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import CodeBlock from '../components/CodeBlock.vue'
-import { Button } from '@elix/ui'
-import { useTheme } from '@elix/ui'
+import { Button } from '@elivander/elix-ui'
+import { useTheme } from '@elivander/elix-ui'
 
 const { theme, toggleTheme } = useTheme()
 const currentTheme = ref(theme.value)
@@ -75,7 +75,7 @@ const customThemeCode = `:root {
 }`
 
 const themeCode = `import { createApp } from 'vue'
-import { createUi } from '@elix/ui'
+import { createUi } from '@elivander/elix-ui'
 
 const app = createApp(App)
 
@@ -85,7 +85,7 @@ app.use(createUi({ theme: 'light' }))
 // Dark theme
 app.use(createUi({ theme: 'dark' }))`
 
-const useThemeCode = `import { useTheme } from '@elix/ui'
+const useThemeCode = `import { useTheme } from '@elivander/elix-ui'
 
 const { theme, setTheme, toggleTheme } = useTheme()
 
@@ -96,7 +96,7 @@ toggleTheme()
 setTheme('dark')
 setTheme('light')`
 
-const applyThemeCode = `import { applyTheme } from '@elix/ui'
+const applyThemeCode = `import { applyTheme } from '@elivander/elix-ui'
 
 // Switch to dark theme
 applyTheme('dark')

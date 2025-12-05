@@ -8,6 +8,6 @@
 </template>
 
 <script setup lang="ts">
-import { Steps, Step } from '@elix/ui'
+import { Steps, Step } from '@elivander/elix-ui'
 </script>
 

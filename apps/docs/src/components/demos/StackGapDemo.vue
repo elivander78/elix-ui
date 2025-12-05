@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import { Stack } from '@elix/ui'
+import { Stack } from '@elivander/elix-ui'
 </script>
 

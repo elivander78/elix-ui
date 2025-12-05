@@ -30,8 +30,8 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { Form, FormItem, Input, Textarea, Select, Checkbox, Radio, Switch, Button } from '@elix/ui'
-import type { FormInstance } from '@elix/ui'
+import { Form, FormItem, Input, Textarea, Select, Checkbox, Radio, Switch, Button } from '@elivander/elix-ui'
+import type { FormInstance } from '@elivander/elix-ui'
 
 const formRef = ref<FormInstance | null>(null)
 

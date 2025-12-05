@@ -43,7 +43,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Tabs, TabPane } from '@elix/ui'
+import { Tabs, TabPane } from '@elivander/elix-ui'
 
 const activeTab = ref('tab1')
 <\/script>`
@@ -59,7 +59,7 @@ const multipleCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Tabs, TabPane } from '@elix/ui'
+import { Tabs, TabPane } from '@elivander/elix-ui'
 
 const activeTab = ref('tab1')
 <\/script>`
@@ -82,7 +82,7 @@ const typesCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Tabs, TabPane } from '@elix/ui'
+import { Tabs, TabPane } from '@elivander/elix-ui'
 
 const activeTab1 = ref('tab1')
 const activeTab2 = ref('tab1')
@@ -98,7 +98,7 @@ const disabledCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Tabs, TabPane } from '@elix/ui'
+import { Tabs, TabPane } from '@elivander/elix-ui'
 
 const activeTab = ref('tab1')
 <\/script>`

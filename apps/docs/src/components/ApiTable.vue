@@ -79,7 +79,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Table, type TableColumn } from '@elix/ui'
+import { Table, type TableColumn } from '@elivander/elix-ui'
 
 export interface ApiProp {
   name: string

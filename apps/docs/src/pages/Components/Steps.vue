@@ -39,7 +39,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Steps, Step, Button } from '@elix/ui'
+import { Steps, Step, Button } from '@elivander/elix-ui'
 
 const current = ref(1)
 <\/script>`
@@ -54,7 +54,7 @@ const descriptionCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Steps, Step } from '@elix/ui'
+import { Steps, Step } from '@elivander/elix-ui'
 
 const current = ref(1)
 <\/script>`
@@ -69,7 +69,7 @@ const verticalCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Steps, Step } from '@elix/ui'
+import { Steps, Step } from '@elivander/elix-ui'
 
 const current = ref(1)
 <\/script>`
@@ -84,7 +84,7 @@ const statusCode = `<template>
 </template>
 
 <script setup>
-import { Steps, Step } from '@elix/ui'
+import { Steps, Step } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

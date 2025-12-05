@@ -55,7 +55,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Tag } from '@elix/ui'
+import { Tag } from '@elivander/elix-ui'
 <\/script>`
 
 const setCode = `<template>
@@ -70,7 +70,7 @@ const setCode = `<template>
 </template>
 
 <script setup>
-import { Tag } from '@elix/ui'
+import { Tag } from '@elivander/elix-ui'
 <\/script>`
 
 const iconsCode = `<template>
@@ -95,7 +95,7 @@ const iconsCode = `<template>
 </template>
 
 <script setup>
-import { Tag } from '@elix/ui'
+import { Tag } from '@elivander/elix-ui'
 <\/script>`
 
 const closableCode = `<template>
@@ -107,7 +107,7 @@ const closableCode = `<template>
 </template>
 
 <script setup>
-import { Tag } from '@elix/ui'
+import { Tag } from '@elivander/elix-ui'
 
 const handleClose = () => {
   console.log('Tag closed')
@@ -123,7 +123,7 @@ const roundCode = `<template>
 </template>
 
 <script setup>
-import { Tag } from '@elix/ui'
+import { Tag } from '@elivander/elix-ui'
 <\/script>`
 
 const sizesCode = `<template>
@@ -135,7 +135,7 @@ const sizesCode = `<template>
 </template>
 
 <script setup>
-import { Tag } from '@elix/ui'
+import { Tag } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

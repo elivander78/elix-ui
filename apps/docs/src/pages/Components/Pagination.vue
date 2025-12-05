@@ -33,7 +33,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Pagination } from '@elix/ui'
+import { Pagination } from '@elivander/elix-ui'
 
 const currentPage = ref(1)
 <\/script>`
@@ -48,7 +48,7 @@ const sizesCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Pagination } from '@elix/ui'
+import { Pagination } from '@elivander/elix-ui'
 
 const currentPage1 = ref(1)
 const currentPage2 = ref(1)
@@ -61,7 +61,7 @@ const totalCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Pagination } from '@elix/ui'
+import { Pagination } from '@elivander/elix-ui'
 
 const currentPage = ref(1)
 <\/script>`
@@ -72,7 +72,7 @@ const jumperCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Pagination } from '@elix/ui'
+import { Pagination } from '@elivander/elix-ui'
 
 const currentPage = ref(1)
 <\/script>`
@@ -90,7 +90,7 @@ const combinedCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Pagination } from '@elix/ui'
+import { Pagination } from '@elivander/elix-ui'
 
 const currentPage = ref(1)
 <\/script>`
@@ -104,7 +104,7 @@ const simpleCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Pagination } from '@elix/ui'
+import { Pagination } from '@elivander/elix-ui'
 
 const currentPage1 = ref(1)
 const currentPage2 = ref(1)

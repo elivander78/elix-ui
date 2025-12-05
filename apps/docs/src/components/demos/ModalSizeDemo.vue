@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { Button, Modal } from '@elix/ui'
+import { Button, Modal } from '@elivander/elix-ui'
 
 const showModal = ref(false)
 const modalType = ref<'narrow' | 'default' | 'wide' | 'custom'>('default')

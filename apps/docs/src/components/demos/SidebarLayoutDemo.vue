@@ -71,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import { Header, Sidebar, Button } from '@elix/ui'
+import { Header, Sidebar, Button } from '@elivander/elix-ui'
 </script>
 
 <style lang="scss" scoped>

@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Button, Modal } from '@elix/ui'
+import { Button, Modal } from '@elivander/elix-ui'
 
 defineProps<{
   title?: string

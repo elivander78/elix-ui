@@ -10,6 +10,6 @@
 </template>
 
 <script setup lang="ts">
-import { Dropdown, Button } from '@elix/ui'
+import { Dropdown, Button } from '@elivander/elix-ui'
 </script>
 

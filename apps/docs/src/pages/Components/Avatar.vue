@@ -52,7 +52,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Avatar } from '@elix/ui'
+import { Avatar } from '@elivander/elix-ui'
 <\/script>`
 
 const photoCode = `<template>
@@ -64,7 +64,7 @@ const photoCode = `<template>
 </template>
 
 <script setup>
-import { Avatar } from '@elix/ui'
+import { Avatar } from '@elivander/elix-ui'
 <\/script>`
 
 const lettersCode = `<template>
@@ -76,7 +76,7 @@ const lettersCode = `<template>
 </template>
 
 <script setup>
-import { Avatar } from '@elix/ui'
+import { Avatar } from '@elivander/elix-ui'
 <\/script>`
 
 const iconCode = `<template>
@@ -87,7 +87,7 @@ const iconCode = `<template>
 </template>
 
 <script setup>
-import { Avatar } from '@elix/ui'
+import { Avatar } from '@elivander/elix-ui'
 <\/script>`
 
 const sizesCode = `<template>
@@ -101,7 +101,7 @@ const sizesCode = `<template>
 </template>
 
 <script setup>
-import { Avatar } from '@elix/ui'
+import { Avatar } from '@elivander/elix-ui'
 <\/script>`
 
 const shapesCode = `<template>
@@ -114,7 +114,7 @@ const shapesCode = `<template>
 </template>
 
 <script setup>
-import { Avatar } from '@elix/ui'
+import { Avatar } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

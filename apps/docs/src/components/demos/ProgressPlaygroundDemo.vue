@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Progress, Select } from '@elix/ui'
+import { Progress, Select } from '@elivander/elix-ui'
 
 const percent = ref(50)
 const type = ref('line')

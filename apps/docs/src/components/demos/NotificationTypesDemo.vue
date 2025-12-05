@@ -12,8 +12,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Button, Notification } from '@elix/ui'
-import type { NotificationOptions } from '@elix/ui'
+import { Button, Notification } from '@elivander/elix-ui'
+import type { NotificationOptions } from '@elivander/elix-ui'
 
 const notifications = ref<(NotificationOptions & { id: string })[]>([])
 let idCounter = 0

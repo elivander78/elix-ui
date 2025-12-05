@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { Select } from '@elix/ui'
+import { Select } from '@elivander/elix-ui'
 
 const options = [
   { label: 'Option 1', value: '1' },

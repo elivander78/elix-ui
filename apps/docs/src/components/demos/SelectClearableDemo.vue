@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Select } from '@elix/ui'
+import { Select } from '@elivander/elix-ui'
 
 const selected = ref('1')
 const options = [

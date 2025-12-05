@@ -3,7 +3,7 @@
     <div class="docs-content">
       <nav class="docs-nav">
         <div class="docs-nav__brand">
-          <h1>@elix/ui</h1>
+          <h1>@elivander/elix-ui</h1>
         </div>
         <ul class="docs-nav__menu">
           <template v-for="item in filteredMenuItems" :key="item.section || item.path">
@@ -91,7 +91,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref, computed } from 'vue'
-import { useTheme, getCurrentTheme, Notification, useNotification, Header, Input, Container } from '@elix/ui'
+import { useTheme, getCurrentTheme, Notification, useNotification, Header, Input, Container } from '@elivander/elix-ui'
 import { useRouter } from 'vue-router'
 
 const { theme, setTheme } = useTheme()

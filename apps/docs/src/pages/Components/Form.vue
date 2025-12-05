@@ -40,7 +40,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Form, FormItem, Input, Button } from '@elix/ui'
+import { Form, FormItem, Input, Button } from '@elivander/elix-ui'
 
 const formData = ref({
   username: '',
@@ -91,7 +91,7 @@ const allInputsCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Form, FormItem, Input, Textarea, Select, Checkbox, Radio, Switch } from '@elix/ui'
+import { Form, FormItem, Input, Textarea, Select, Checkbox, Radio, Switch } from '@elivander/elix-ui'
 
 const formData = ref({
   text: '',
@@ -144,7 +144,7 @@ const emailPasswordCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Form, FormItem, Input, Button, Notification, useNotification } from '@elix/ui'
+import { Form, FormItem, Input, Button, Notification, useNotification } from '@elivander/elix-ui'
 
 const formData = ref({
   email: '',
@@ -202,7 +202,7 @@ const validationCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Form, FormItem, Input, Button } from '@elix/ui'
+import { Form, FormItem, Input, Button } from '@elivander/elix-ui'
 
 const formData = ref({
   required: '',

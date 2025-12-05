@@ -54,7 +54,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Select } from '@elix/ui'
+import { Select } from '@elivander/elix-ui'
 
 const selected = ref()
 const options = [
@@ -72,7 +72,7 @@ const sizesCode = `<template>
 </template>
 
 <script setup>
-import { Select } from '@elix/ui'
+import { Select } from '@elivander/elix-ui'
 
 const options = [
   { label: 'Option 1', value: '1' },
@@ -89,7 +89,7 @@ const statesCode = `<template>
 </template>
 
 <script setup>
-import { Select } from '@elix/ui'
+import { Select } from '@elivander/elix-ui'
 
 const options = [
   { label: 'Option 1', value: '1' },
@@ -109,7 +109,7 @@ const clearableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Select } from '@elix/ui'
+import { Select } from '@elivander/elix-ui'
 
 const selected = ref('1')
 const options = [
@@ -130,7 +130,7 @@ const searchableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Select } from '@elix/ui'
+import { Select } from '@elivander/elix-ui'
 
 const selected = ref()
 const options = [
@@ -153,7 +153,7 @@ const multipleCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Select } from '@elix/ui'
+import { Select } from '@elivander/elix-ui'
 
 const selected = ref([])
 const options = [
@@ -172,7 +172,7 @@ const appearanceCode = `<template>
 </template>
 
 <script setup>
-import { Select } from '@elix/ui'
+import { Select } from '@elivander/elix-ui'
 
 const options = [
   { label: 'Option 1', value: '1' },

@@ -39,7 +39,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Alert } from '@elix/ui'
+import { Alert } from '@elivander/elix-ui'
 <\/script>`
 
 const typesCode = `<template>
@@ -52,7 +52,7 @@ const typesCode = `<template>
 </template>
 
 <script setup>
-import { Alert } from '@elix/ui'
+import { Alert } from '@elivander/elix-ui'
 <\/script>`
 
 const variantsCode = `<template>
@@ -64,7 +64,7 @@ const variantsCode = `<template>
 </template>
 
 <script setup>
-import { Alert } from '@elix/ui'
+import { Alert } from '@elivander/elix-ui'
 <\/script>`
 
 const descriptionCode = `<template>
@@ -76,7 +76,7 @@ const descriptionCode = `<template>
 </template>
 
 <script setup>
-import { Alert } from '@elix/ui'
+import { Alert } from '@elivander/elix-ui'
 <\/script>`
 
 const closableCode = `<template>
@@ -91,7 +91,7 @@ const closableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Alert } from '@elix/ui'
+import { Alert } from '@elivander/elix-ui'
 
 const handleClose = () => {
   console.log('Alert closed')
@@ -107,7 +107,7 @@ const appearanceCode = `<template>
 </template>
 
 <script setup>
-import { Alert } from '@elix/ui'
+import { Alert } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

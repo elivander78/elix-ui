@@ -53,7 +53,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody, CardFooter } from '@elix/ui'
+import { Card, CardHeader, CardBody, CardFooter } from '@elivander/elix-ui'
 <\/script>`
 
 const gridCode = `<template>
@@ -74,7 +74,7 @@ const gridCode = `<template>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elix/ui'
+import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
 <\/script>`
 
 const shadowCode = `<template>
@@ -95,7 +95,7 @@ const shadowCode = `<template>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elix/ui'
+import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
 <\/script>`
 
 const noBorderCode = `<template>
@@ -112,7 +112,7 @@ const noBorderCode = `<template>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elix/ui'
+import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
 <\/script>`
 
 const imageCode = `<template>
@@ -131,7 +131,7 @@ const imageCode = `<template>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elix/ui'
+import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
 <\/script>`
 
 const hoverableCode = `<template>
@@ -148,7 +148,7 @@ const hoverableCode = `<template>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elix/ui'
+import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

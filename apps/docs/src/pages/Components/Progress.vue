@@ -37,7 +37,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Progress } from '@elix/ui'
+import { Progress } from '@elivander/elix-ui'
 <\/script>`
 
 const statusCode = `<template>
@@ -49,7 +49,7 @@ const statusCode = `<template>
 </template>
 
 <script setup>
-import { Progress } from '@elix/ui'
+import { Progress } from '@elivander/elix-ui'
 <\/script>`
 
 const textCode = `<template>
@@ -61,7 +61,7 @@ const textCode = `<template>
 </template>
 
 <script setup>
-import { Progress } from '@elix/ui'
+import { Progress } from '@elivander/elix-ui'
 <\/script>`
 
 const sizesCode = `<template>
@@ -73,7 +73,7 @@ const sizesCode = `<template>
 </template>
 
 <script setup>
-import { Progress } from '@elix/ui'
+import { Progress } from '@elivander/elix-ui'
 <\/script>`
 
 const animatedCode = `<template>
@@ -88,7 +88,7 @@ const animatedCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Progress, Button } from '@elix/ui'
+import { Progress, Button } from '@elivander/elix-ui'
 
 const percentage = ref(50)
 <\/script>`
@@ -133,7 +133,7 @@ const playgroundCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Progress, Select } from '@elix/ui'
+import { Progress, Select } from '@elivander/elix-ui'
 
 const percent = ref(50)
 const type = ref('line')

@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Input } from '@elix/ui'
+import { Input } from '@elivander/elix-ui'
 
 const value = ref('')
 </script>

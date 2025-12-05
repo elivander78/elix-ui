@@ -38,7 +38,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload } from '@elix/ui'
+import { Upload } from '@elivander/elix-ui'
 
 const fileList = ref([])
 
@@ -62,7 +62,7 @@ const dragCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload } from '@elix/ui'
+import { Upload } from '@elivander/elix-ui'
 
 const fileList = ref([])
 
@@ -81,7 +81,7 @@ const multipleCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload } from '@elix/ui'
+import { Upload } from '@elivander/elix-ui'
 
 const fileList = ref([])
 
@@ -101,7 +101,7 @@ const validationCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload } from '@elix/ui'
+import { Upload } from '@elivander/elix-ui'
 
 const fileList = ref([])
 
@@ -120,7 +120,7 @@ const withFilesCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload, type UploadFile } from '@elix/ui'
+import { Upload, type UploadFile } from '@elivander/elix-ui'
 
 const fileList = ref([
   {

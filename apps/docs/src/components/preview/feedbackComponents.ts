@@ -1,5 +1,5 @@
 import { h, computed } from 'vue'
-import { Button, Notification, Skeleton, Spinner, Progress, Card, Avatar, Select, Input } from '@elix/ui'
+import { Button, Notification, Skeleton, Spinner, Progress, Card, Avatar, Select, Input } from '@elivander/elix-ui'
 import type { RenderFunction, PreviewState, NotificationItem } from './types'
 
 export function renderFeedbackComponents(

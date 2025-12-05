@@ -84,7 +84,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Sidebar } from '@elix/ui'
+import { Sidebar } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>
@@ -179,7 +179,7 @@ const collapsedCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Sidebar, Button } from '@elix/ui'
+import { Sidebar, Button } from '@elivander/elix-ui'
 
 const collapsed = ref(false)
 <\/script>
@@ -275,7 +275,7 @@ const fixedCode = `<template>
 </template>
 
 <script setup>
-import { Sidebar } from '@elix/ui'
+import { Sidebar } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>
@@ -369,7 +369,7 @@ const iconsCode = `<template>
 </template>
 
 <script setup>
-import { Sidebar } from '@elix/ui'
+import { Sidebar } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>
@@ -478,7 +478,7 @@ const groupsCode = `<template>
 </template>
 
 <script setup>
-import { Sidebar } from '@elix/ui'
+import { Sidebar } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>
@@ -612,7 +612,7 @@ const layoutCode = `<template>
 </template>
 
 <script setup>
-import { Header, Sidebar, Button } from '@elix/ui'
+import { Header, Sidebar, Button } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>

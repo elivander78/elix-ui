@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Alert } from '@elix/ui'
+import { Alert } from '@elivander/elix-ui'
 
 const alertVisible1 = ref(true)
 

@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Collapse, CollapseItem } from '@elix/ui'
+import { Collapse, CollapseItem } from '@elivander/elix-ui'
 
 const activeKeys = ref(['1'])
 </script>

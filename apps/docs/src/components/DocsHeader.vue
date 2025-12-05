@@ -2,7 +2,7 @@
   <header class="docs-header">
     <div class="docs-header__content">
       <div class="docs-header__brand">
-        <h1>@elix/ui</h1>
+        <h1>@elivander/elix-ui</h1>
       </div>
       <div class="docs-header__theme-toggle">
         <button class="theme-toggle-btn" @click="toggleTheme" :title="theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'">
@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { useTheme, getCurrentTheme } from '@elix/ui'
+import { useTheme, getCurrentTheme } from '@elivander/elix-ui'
 
 const { theme, setTheme } = useTheme()
 

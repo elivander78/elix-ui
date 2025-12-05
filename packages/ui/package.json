@@ -1,5 +1,5 @@
 {
-  "name": "@elix/ui",
+  "name": "@elivander/elix-ui",
   "version": "0.1.0-beta",
   "description": "Vue 3 UI Kit with theming and responsive design (beta version)",
   "type": "module",
@@ -19,6 +19,9 @@
   "homepage": "https://github.com/elivander78/elix-ui#readme",
   "author": "elivander",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",

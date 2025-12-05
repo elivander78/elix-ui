@@ -7,7 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-      '@elix/ui': resolve(__dirname, '../../packages/ui/src'),
+      '@elivander/elix-ui': resolve(__dirname, '../../packages/ui/src'),
     },
   },
   css: {

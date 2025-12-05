@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Skeleton, Button } from '@elix/ui'
+import { Skeleton, Button } from '@elivander/elix-ui'
 
 const loading = ref(true)
 </script>

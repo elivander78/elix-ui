@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { DatePicker } from '@elix/ui'
+import { DatePicker } from '@elivander/elix-ui'
 
 const datePicker7 = ref<Date | null>(null)
 const datePicker8 = ref<Date | null>(null)

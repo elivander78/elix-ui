@@ -3,7 +3,9 @@ import type { Ref } from 'vue'
 import { applyTheme, getCurrentTheme, type ThemeMode, type ThemeConfig } from '../utils/theme'
 
 export function useTheme(initialTheme?: ThemeMode | ThemeConfig) {
-  const theme = ref<ThemeMode | ThemeConfig>(initialTheme || getCurrentTheme())
+  // If initialTheme is provided, use it; otherwise load from localStorage
+  const savedTheme = initialTheme || getCurrentTheme()
+  const theme = ref<ThemeMode | ThemeConfig>(savedTheme)
 
   const setTheme = (newTheme: ThemeMode | ThemeConfig) => {
     theme.value = newTheme
@@ -17,9 +19,10 @@ export function useTheme(initialTheme?: ThemeMode | ThemeConfig) {
   }
 
   onMounted(() => {
-    if (initialTheme) {
-      applyTheme(initialTheme)
-    }
+    // Apply the theme on mount (will load from localStorage if no initialTheme)
+    const themeToApply = initialTheme || getCurrentTheme()
+    theme.value = themeToApply
+    applyTheme(themeToApply)
   })
 
   watch(theme, (newTheme) => {

@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { Header, Button } from '@elix/ui'
+import { Header, Button } from '@elivander/elix-ui'
 </script>
 
 <style lang="scss" scoped>

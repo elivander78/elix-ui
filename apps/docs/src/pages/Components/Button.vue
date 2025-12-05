@@ -75,7 +75,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Button } from '@elix/ui'
+import { Button } from '@elivander/elix-ui'
 <\/script>`
 
 const sizesCode = `<template>

@@ -50,7 +50,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Textarea } from '@elix/ui'
+import { Textarea } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
@@ -69,7 +69,7 @@ const rowsCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Textarea } from '@elix/ui'
+import { Textarea } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
@@ -80,7 +80,7 @@ const autosizeCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Textarea } from '@elix/ui'
+import { Textarea } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
@@ -91,7 +91,7 @@ const countCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Textarea } from '@elix/ui'
+import { Textarea } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`

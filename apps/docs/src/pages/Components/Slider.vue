@@ -37,7 +37,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elix/ui'
+import { Slider } from '@elivander/elix-ui'
 
 const value = ref(50)
 <\/script>`
@@ -51,7 +51,7 @@ const rangeCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elix/ui'
+import { Slider } from '@elivander/elix-ui'
 
 const range = ref([20, 80])
 <\/script>`
@@ -67,7 +67,7 @@ const marksCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elix/ui'
+import { Slider } from '@elivander/elix-ui'
 
 const value = ref(50)
 <\/script>`
@@ -91,7 +91,7 @@ const tooltipCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elix/ui'
+import { Slider } from '@elivander/elix-ui'
 
 const value1 = ref(30)
 const value2 = ref(50)
@@ -117,7 +117,7 @@ const sizesCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elix/ui'
+import { Slider } from '@elivander/elix-ui'
 
 const value1 = ref(30)
 const value2 = ref(50)

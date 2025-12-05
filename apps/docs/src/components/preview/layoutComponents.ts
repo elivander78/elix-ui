@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import { Header, Sidebar, Button, Input, Avatar, Badge } from '@elix/ui'
+import { Header, Sidebar, Button, Input, Avatar, Badge } from '@elivander/elix-ui'
 import type { PreviewState, RenderFunction } from './types'
 
 export function renderLayoutComponents(

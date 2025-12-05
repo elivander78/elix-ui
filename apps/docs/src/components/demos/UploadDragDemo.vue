@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Upload, type UploadFile } from '@elix/ui'
+import { Upload, type UploadFile } from '@elivander/elix-ui'
 
 const uploadFileList2 = ref<UploadFile[]>([])
 

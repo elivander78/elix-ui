@@ -1,5 +1,5 @@
 import { h, computed } from 'vue'
-import { Card, CardHeader, CardBody, CardFooter, Table, Badge, Tag, Avatar, Divider, Tabs, TabPane, Breadcrumbs, Button } from '@elix/ui'
+import { Card, CardHeader, CardBody, CardFooter, Table, Badge, Tag, Avatar, Divider, Tabs, TabPane, Breadcrumbs, Button } from '@elivander/elix-ui'
 import type { PreviewState, RenderFunction } from './types'
 
 export function renderDataDisplayComponents(

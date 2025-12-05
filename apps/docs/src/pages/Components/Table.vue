@@ -75,7 +75,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name' },
@@ -95,7 +95,7 @@ const stripedCode = `<template>
 </template>
 
 <script setup>
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name' },
@@ -116,7 +116,7 @@ const borderedCode = `<template>
 </template>
 
 <script setup>
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name' },
@@ -146,7 +146,7 @@ const loadingCode = `<template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Table, Skeleton } from '@elix/ui'
+import { Table, Skeleton } from '@elivander/elix-ui'
 
 const loading = ref(true)
 
@@ -179,7 +179,7 @@ const sortableCode = `<template>
 </template>
 
 <script setup>
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name', sortable: true },
@@ -210,7 +210,7 @@ const fixedColumnsCode = `<template>
 </template>
 
 <script setup>
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'id', title: 'ID', fixed: 'left', width: 80, align: 'center' },
@@ -242,7 +242,7 @@ const sortableFixedCode = `<template>
 </template>
 
 <script setup>
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name', fixed: 'left', width: 150, sortable: true },
@@ -277,7 +277,7 @@ const sizesCode = `<template>
 </template>
 
 <script setup>
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name' },
@@ -310,7 +310,7 @@ const selectableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const selected = ref([])
 
@@ -356,7 +356,7 @@ const selectableSortableFixedCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const selected = ref([])
 const sortInfo = ref(null)

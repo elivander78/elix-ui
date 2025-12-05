@@ -8,6 +8,6 @@
 </template>
 
 <script setup lang="ts">
-import { Button } from '@elix/ui'
+import { Button } from '@elivander/elix-ui'
 </script>
 

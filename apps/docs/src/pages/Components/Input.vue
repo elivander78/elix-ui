@@ -46,7 +46,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Input } from '@elix/ui'
+import { Input } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
@@ -88,7 +88,7 @@ const clearableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Input } from '@elix/ui'
+import { Input } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`

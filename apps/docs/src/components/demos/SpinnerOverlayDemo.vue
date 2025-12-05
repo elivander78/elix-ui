@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Spinner, Card, CardBody, Button } from '@elix/ui'
+import { Spinner, Card, CardBody, Button } from '@elivander/elix-ui'
 
 const loading = ref(true)
 </script>

@@ -11,7 +11,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix"
   },
   "dependencies": {
-    "@elix/ui": "workspace:*",
+    "@elivander/elix-ui": "workspace:*",
     "vue": "^3.3.13",
     "vue-router": "^4.2.5"
   },

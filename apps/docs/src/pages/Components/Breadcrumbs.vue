@@ -34,7 +34,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Breadcrumbs } from '@elix/ui'
+import { Breadcrumbs } from '@elivander/elix-ui'
 
 const items = [
   { label: 'Home', to: '/' },
@@ -51,7 +51,7 @@ const maxItemsCode = `<template>
 </template>
 
 <script setup>
-import { Breadcrumbs } from '@elix/ui'
+import { Breadcrumbs } from '@elivander/elix-ui'
 
 const shortItems = [
   { label: 'Home', to: '/' },
@@ -78,7 +78,7 @@ const separatorCode = `<template>
 </template>
 
 <script setup>
-import { Breadcrumbs } from '@elix/ui'
+import { Breadcrumbs } from '@elivander/elix-ui'
 
 const items = [
   { label: 'Home', to: '/' },

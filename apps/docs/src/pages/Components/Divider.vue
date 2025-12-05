@@ -40,7 +40,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Divider } from '@elix/ui'
+import { Divider } from '@elivander/elix-ui'
 <\/script>`
 
 const horizontalCode = `<template>
@@ -54,7 +54,7 @@ const horizontalCode = `<template>
 </template>
 
 <script setup>
-import { Divider } from '@elix/ui'
+import { Divider } from '@elivander/elix-ui'
 <\/script>`
 
 const verticalCode = `<template>
@@ -68,7 +68,7 @@ const verticalCode = `<template>
 </template>
 
 <script setup>
-import { Divider } from '@elix/ui'
+import { Divider } from '@elivander/elix-ui'
 <\/script>`
 
 const textCode = `<template>
@@ -82,7 +82,7 @@ const textCode = `<template>
 </template>
 
 <script setup>
-import { Divider } from '@elix/ui'
+import { Divider } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

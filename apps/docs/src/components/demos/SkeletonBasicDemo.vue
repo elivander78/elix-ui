@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Skeleton } from '@elix/ui'
+import { Skeleton } from '@elivander/elix-ui'
 
 const loading = ref(true)
 </script>

@@ -33,7 +33,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Container } from '@elix/ui'
+import { Container } from '@elivander/elix-ui'
 <\/script>`
 
 const maxWidthCode = `<template>
@@ -51,7 +51,7 @@ const maxWidthCode = `<template>
 </template>
 
 <script setup>
-import { Container } from '@elix/ui'
+import { Container } from '@elivander/elix-ui'
 <\/script>`
 
 const paddedCode = `<template>
@@ -63,7 +63,7 @@ const paddedCode = `<template>
 </template>
 
 <script setup>
-import { Container } from '@elix/ui'
+import { Container } from '@elivander/elix-ui'
 <\/script>`
 
 const fluidCode = `<template>
@@ -75,7 +75,7 @@ const fluidCode = `<template>
 </template>
 
 <script setup>
-import { Container } from '@elix/ui'
+import { Container } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

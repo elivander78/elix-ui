@@ -42,7 +42,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elix/ui'
+import { Checkbox } from '@elivander/elix-ui'
 
 const checked = ref(false)
 <\/script>`
@@ -53,7 +53,7 @@ const singleCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elix/ui'
+import { Checkbox } from '@elivander/elix-ui'
 
 const checked = ref(false)
 <\/script>`
@@ -66,7 +66,7 @@ const groupCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elix/ui'
+import { Checkbox } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(true)
@@ -81,7 +81,7 @@ const indeterminateCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elix/ui'
+import { Checkbox } from '@elivander/elix-ui'
 
 const checked = ref(false)
 const indeterminate = ref(true)
@@ -99,7 +99,7 @@ const disabledCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elix/ui'
+import { Checkbox } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(false)

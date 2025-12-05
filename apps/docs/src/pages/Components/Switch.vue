@@ -42,7 +42,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elix/ui'
+import { Switch } from '@elivander/elix-ui'
 
 const checked = ref(false)
 <\/script>`
@@ -55,7 +55,7 @@ const sizesCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elix/ui'
+import { Switch } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(true)
@@ -69,7 +69,7 @@ const labelsCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elix/ui'
+import { Switch } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(true)
@@ -81,7 +81,7 @@ const loadingCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elix/ui'
+import { Switch } from '@elivander/elix-ui'
 
 const checked = ref(false)
 <\/script>`
@@ -94,7 +94,7 @@ const disabledCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elix/ui'
+import { Switch } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(false)

@@ -1,5 +1,5 @@
 import { h, computed, type Ref } from 'vue'
-import { Button, Modal, Drawer, Popover, Tooltip } from '@elix/ui'
+import { Button, Modal, Drawer, Popover, Tooltip } from '@elivander/elix-ui'
 import type { PreviewState, RenderFunction } from './types'
 
 export function renderOverlayComponents(

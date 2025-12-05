@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import { Pagination } from '@elix/ui'
+import { Pagination } from '@elivander/elix-ui'
 import type { PreviewState, RenderFunction } from './types'
 
 export function renderNavigationComponents(

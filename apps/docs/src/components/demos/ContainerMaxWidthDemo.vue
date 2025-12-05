@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import { Container } from '@elix/ui'
+import { Container } from '@elivander/elix-ui'
 </script>
 

@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Slider } from '@elix/ui'
+import { Slider } from '@elivander/elix-ui'
 
 const sliderValue3 = ref(30)
 const sliderValue4 = ref(50)

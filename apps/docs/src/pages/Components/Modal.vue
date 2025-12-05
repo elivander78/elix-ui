@@ -46,7 +46,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elix/ui'
+import { Button, Modal } from '@elivander/elix-ui'
 
 const showModal = ref(false)
 <\/script>`
@@ -66,7 +66,7 @@ const closableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elix/ui'
+import { Button, Modal } from '@elivander/elix-ui'
 
 const showModal1 = ref(false)
 const showModal2 = ref(false)
@@ -87,7 +87,7 @@ const maskClosableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elix/ui'
+import { Button, Modal } from '@elivander/elix-ui'
 
 const showModal1 = ref(false)
 const showModal2 = ref(false)
@@ -112,7 +112,7 @@ const sizeCode = `<template>
 
 <script setup>
 import { ref, computed } from 'vue'
-import { Button, Modal } from '@elix/ui'
+import { Button, Modal } from '@elivander/elix-ui'
 
 const showModal = ref(false)
 const modalType = ref('default')
@@ -169,7 +169,7 @@ const slotsCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elix/ui'
+import { Button, Modal } from '@elivander/elix-ui'
 
 const showModal = ref(false)
 <\/script>`
@@ -189,7 +189,7 @@ const centeredCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elix/ui'
+import { Button, Modal } from '@elivander/elix-ui'
 
 const showModal1 = ref(false)
 const showModal2 = ref(false)

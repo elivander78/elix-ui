@@ -46,7 +46,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elix/ui'
+import { Badge, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const numbersCode = `<template>
@@ -64,7 +64,7 @@ const numbersCode = `<template>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elix/ui'
+import { Badge, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const dotCode = `<template>
@@ -82,7 +82,7 @@ const dotCode = `<template>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elix/ui'
+import { Badge, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const statusesCode = `<template>
@@ -103,7 +103,7 @@ const statusesCode = `<template>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elix/ui'
+import { Badge, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const maxCode = `<template>
@@ -118,7 +118,7 @@ const maxCode = `<template>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elix/ui'
+import { Badge, Button } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

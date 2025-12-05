@@ -34,7 +34,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Tooltip, Button } from '@elix/ui'
+import { Tooltip, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const triggerCode = `<template>
@@ -52,7 +52,7 @@ const triggerCode = `<template>
 </template>
 
 <script setup>
-import { Tooltip, Button } from '@elix/ui'
+import { Tooltip, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const placementCode = `<template>
@@ -73,7 +73,7 @@ const placementCode = `<template>
 </template>
 
 <script setup>
-import { Tooltip, Button } from '@elix/ui'
+import { Tooltip, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const examplesCode = `<template>
@@ -94,7 +94,7 @@ const examplesCode = `<template>
 </template>
 
 <script setup>
-import { Tooltip, Button } from '@elix/ui'
+import { Tooltip, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const props = [

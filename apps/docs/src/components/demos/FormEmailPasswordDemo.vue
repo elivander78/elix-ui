@@ -17,8 +17,8 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { Form, FormItem, Input, Button, Notification } from '@elix/ui'
-import type { FormInstance, NotificationOptions } from '@elix/ui'
+import { Form, FormItem, Input, Button, Notification } from '@elivander/elix-ui'
+import type { FormInstance, NotificationOptions } from '@elivander/elix-ui'
 
 const formRef = ref<FormInstance | null>(null)
 

@@ -40,7 +40,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Button } from '@elix/ui'
+import { Skeleton, Button } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`
@@ -56,7 +56,7 @@ const avatarCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Button } from '@elix/ui'
+import { Skeleton, Button } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`
@@ -70,7 +70,7 @@ const rowsCode = `<template>
 </template>
 
 <script setup>
-import { Skeleton } from '@elix/ui'
+import { Skeleton } from '@elivander/elix-ui'
 <\/script>`
 
 const animatedCode = `<template>
@@ -84,7 +84,7 @@ const animatedCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Button } from '@elix/ui'
+import { Skeleton, Button } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`
@@ -109,7 +109,7 @@ const cardCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Card, Avatar, Button } from '@elix/ui'
+import { Skeleton, Card, Avatar, Button } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`
@@ -142,7 +142,7 @@ const tableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Button } from '@elix/ui'
+import { Skeleton, Button } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`

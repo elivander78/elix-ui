@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { Skeleton } from '@elix/ui'
+import { Skeleton } from '@elivander/elix-ui'
 </script>
 
 <style lang="scss" scoped>

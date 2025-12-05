@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { Dropdown, Button, type DropdownItem } from '@elix/ui'
+import { Dropdown, Button, type DropdownItem } from '@elivander/elix-ui'
 
 const dropdownItems1: DropdownItem[] = [
   { label: 'Option 1', key: '1' },

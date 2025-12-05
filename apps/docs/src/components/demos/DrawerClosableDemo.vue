@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer1 = ref(false)
 const showDrawer2 = ref(false)

@@ -26,7 +26,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Spinner } from '@elix/ui'
+import { Spinner } from '@elivander/elix-ui'
 <\/script>`
 
 const overlayCode = `<template>
@@ -44,7 +44,7 @@ const overlayCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Spinner, Card, CardBody, Button } from '@elix/ui'
+import { Spinner, Card, CardBody, Button } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`

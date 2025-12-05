@@ -7,6 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import { Textarea } from '@elix/ui'
+import { Textarea } from '@elivander/elix-ui'
 </script>
 

@@ -17,8 +17,8 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@elix/ui": ["./packages/ui/src"],
-      "@elix/ui/*": ["./packages/ui/src/*"]
+      "@elivander/elix-ui": ["./packages/ui/src"],
+      "@elivander/elix-ui/*": ["./packages/ui/src/*"]
     }
   },
   "include": [],

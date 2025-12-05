@@ -7,6 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import { Alert } from '@elix/ui'
+import { Alert } from '@elivander/elix-ui'
 </script>
 

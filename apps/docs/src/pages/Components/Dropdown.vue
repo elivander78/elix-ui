@@ -36,7 +36,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Dropdown, Button } from '@elix/ui'
+import { Dropdown, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const triggersCode = `<template>
@@ -61,7 +61,7 @@ const triggersCode = `<template>
 </template>
 
 <script setup>
-import { Dropdown, Button } from '@elix/ui'
+import { Dropdown, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const placementsCode = `<template>
@@ -78,7 +78,7 @@ const placementsCode = `<template>
 </template>
 
 <script setup>
-import { Dropdown, Button } from '@elix/ui'
+import { Dropdown, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const itemsCode = `<template>
@@ -90,7 +90,7 @@ const itemsCode = `<template>
 </template>
 
 <script setup>
-import { Dropdown, Button } from '@elix/ui'
+import { Dropdown, Button } from '@elivander/elix-ui'
 
 const items = [
   { label: 'Option 1', key: '1' },

@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Steps, Step } from '@elix/ui'
+import { Steps, Step } from '@elivander/elix-ui'
 
 const stepsCurrent2 = ref(1)
 </script>

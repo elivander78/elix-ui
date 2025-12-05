@@ -35,7 +35,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elix/ui'
+import { DatePicker } from '@elivander/elix-ui'
 
 const date = ref(null)
 <\/script>`
@@ -46,7 +46,7 @@ const formatCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elix/ui'
+import { DatePicker } from '@elivander/elix-ui'
 
 const date = ref(null)
 <\/script>`
@@ -57,7 +57,7 @@ const clearableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elix/ui'
+import { DatePicker } from '@elivander/elix-ui'
 
 const date = ref(new Date())
 <\/script>`
@@ -72,7 +72,7 @@ const statesCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elix/ui'
+import { DatePicker } from '@elivander/elix-ui'
 
 const date1 = ref(null)
 const date2 = ref(null)
@@ -89,7 +89,7 @@ const appearanceCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elix/ui'
+import { DatePicker } from '@elivander/elix-ui'
 
 const date1 = ref(null)
 const date2 = ref(null)

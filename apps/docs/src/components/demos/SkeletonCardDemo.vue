@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Skeleton, Card, Avatar, Button } from '@elix/ui'
+import { Skeleton, Card, Avatar, Button } from '@elivander/elix-ui'
 
 const loading = ref(true)
 </script>

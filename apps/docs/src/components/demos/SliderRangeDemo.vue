@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Slider } from '@elix/ui'
+import { Slider } from '@elivander/elix-ui'
 
 const sliderRange1 = ref([20, 80])
 </script>

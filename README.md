@@ -1,4 +1,4 @@
-# @elix/ui
+# @elivander/elix-ui
 
 Vue 3 UI Kit with theming and responsive design support.
 
@@ -13,7 +13,7 @@ Vue 3 UI Kit with theming and responsive design support.
 ## Installation
 
 ```bash
-pnpm install @elix/ui
+pnpm install @elivander/elix-ui
 ```
 
 ## Quick Start
@@ -21,7 +21,7 @@ pnpm install @elix/ui
 ```typescript
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createUi } from '@elix/ui'
+import { createUi } from '@elivander/elix-ui'
 
 const app = createApp(App)
 app.use(createUi({ theme: 'light' }))
@@ -37,7 +37,7 @@ app.mount('#app')
 </template>
 
 <script setup>
-import { Button, Input } from '@elix/ui'
+import { Button, Input } from '@elivander/elix-ui'
 import { ref } from 'vue'
 
 const value = ref('')

@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'id', title: 'ID', fixed: 'left', width: 80, align: 'center' },

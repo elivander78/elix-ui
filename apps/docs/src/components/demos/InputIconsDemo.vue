@@ -18,6 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import { Input } from '@elix/ui'
+import { Input } from '@elivander/elix-ui'
 </script>
 

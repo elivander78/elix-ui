@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 const placement = ref<'left' | 'right' | 'top' | 'bottom'>('right')

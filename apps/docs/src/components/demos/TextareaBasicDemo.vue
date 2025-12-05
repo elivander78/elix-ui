@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Textarea } from '@elix/ui'
+import { Textarea } from '@elivander/elix-ui'
 
 const value = ref('')
 </script>

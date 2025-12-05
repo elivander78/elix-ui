@@ -33,7 +33,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Stack } from '@elix/ui'
+import { Stack } from '@elivander/elix-ui'
 <\/script>`
 
 const horizontalCode = `<template>
@@ -45,7 +45,7 @@ const horizontalCode = `<template>
 </template>
 
 <script setup>
-import { Stack } from '@elix/ui'
+import { Stack } from '@elivander/elix-ui'
 <\/script>`
 
 const gapCode = `<template>
@@ -62,7 +62,7 @@ const gapCode = `<template>
 </template>
 
 <script setup>
-import { Stack } from '@elix/ui'
+import { Stack } from '@elivander/elix-ui'
 <\/script>`
 
 const alignmentCode = `<template>
@@ -80,7 +80,7 @@ const alignmentCode = `<template>
 </template>
 
 <script setup>
-import { Stack } from '@elix/ui'
+import { Stack } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

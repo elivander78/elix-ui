@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Table } from '@elix/ui'
+import { Table } from '@elivander/elix-ui'
 
 const selected = ref<string[]>([])
 

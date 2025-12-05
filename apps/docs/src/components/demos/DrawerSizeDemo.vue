@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 const drawerType = ref<'narrow' | 'default' | 'wide' | 'custom'>('default')

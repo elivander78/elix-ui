@@ -55,7 +55,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 <\/script>`
@@ -79,7 +79,7 @@ const placementCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 const placement = ref<'left' | 'right' | 'top' | 'bottom'>('right')
@@ -106,7 +106,7 @@ const closableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer1 = ref(false)
 const showDrawer2 = ref(false)
@@ -127,7 +127,7 @@ const maskClosableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer1 = ref(false)
 const showDrawer2 = ref(false)
@@ -158,7 +158,7 @@ const scrollableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 <\/script>`
@@ -183,7 +183,7 @@ const sizeCode = `<template>
 
 <script setup>
 import { ref, computed } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 const drawerType = ref('default')
@@ -240,7 +240,7 @@ const slotsCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elix/ui'
+import { Button, Drawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 <\/script>`

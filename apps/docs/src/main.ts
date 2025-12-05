@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import { createUi } from '@elix/ui'
+import { createUi } from '@elivander/elix-ui'
 
 const router = createRouter({
   history: createWebHistory(),

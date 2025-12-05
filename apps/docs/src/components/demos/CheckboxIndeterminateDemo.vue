@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Checkbox } from '@elix/ui'
+import { Checkbox } from '@elivander/elix-ui'
 
 const checked = ref(false)
 const indeterminate = ref(true)

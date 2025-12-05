@@ -36,7 +36,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Notification, useNotification } from '@elix/ui'
+import { Button, Notification, useNotification } from '@elivander/elix-ui'
 
 const { notifications, success, error, warning, info, remove } = useNotification()
 
@@ -58,7 +58,7 @@ const allTypesCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Notification, useNotification } from '@elix/ui'
+import { Button, Notification, useNotification } from '@elivander/elix-ui'
 
 const { notifications, success, error, warning, info, remove } = useNotification()
 
@@ -80,7 +80,7 @@ const durationCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Notification, useNotification } from '@elix/ui'
+import { Button, Notification, useNotification } from '@elivander/elix-ui'
 
 const { notifications, success, error, warning, info, remove } = useNotification()
 
@@ -112,7 +112,7 @@ const positionAppearanceCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Notification, Select, Input, useNotification } from '@elix/ui'
+import { Button, Notification, Select, Input, useNotification } from '@elivander/elix-ui'
 
 const { notifications, add, remove } = useNotification()
 

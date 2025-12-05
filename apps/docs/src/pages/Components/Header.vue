@@ -39,7 +39,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Header, Button } from '@elix/ui'
+import { Header, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const fixedCode = `<template>
@@ -57,7 +57,7 @@ const fixedCode = `<template>
 </template>
 
 <script setup>
-import { Header, Button } from '@elix/ui'
+import { Header, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const navigationCode = `<template>
@@ -81,7 +81,7 @@ const navigationCode = `<template>
 </template>
 
 <script setup>
-import { Header, Button } from '@elix/ui'
+import { Header, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const searchCode = `<template>
@@ -99,7 +99,7 @@ const searchCode = `<template>
 </template>
 
 <script setup>
-import { Header, Button, Input } from '@elix/ui'
+import { Header, Button, Input } from '@elivander/elix-ui'
 <\/script>`
 
 const userMenuCode = `<template>
@@ -119,7 +119,7 @@ const userMenuCode = `<template>
 </template>
 
 <script setup>
-import { Header, Button, Avatar, Badge } from '@elix/ui'
+import { Header, Button, Avatar, Badge } from '@elivander/elix-ui'
 <\/script>`
 
 const stickyScrollCode = `<template>
@@ -147,7 +147,7 @@ const stickyScrollCode = `<template>
 </template>
 
 <script setup>
-import { Header, Button } from '@elix/ui'
+import { Header, Button } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

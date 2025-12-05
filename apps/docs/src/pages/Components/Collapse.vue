@@ -40,7 +40,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Collapse, CollapseItem } from '@elix/ui'
+import { Collapse, CollapseItem } from '@elivander/elix-ui'
 
 const activeKeys = ref(['1'])
 <\/script>`
@@ -61,7 +61,7 @@ const accordionCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Collapse, CollapseItem } from '@elix/ui'
+import { Collapse, CollapseItem } from '@elivander/elix-ui'
 
 const activeKey = ref('1')
 <\/script>`
@@ -82,7 +82,7 @@ const multipleCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Collapse, CollapseItem } from '@elix/ui'
+import { Collapse, CollapseItem } from '@elivander/elix-ui'
 
 const activeKeys = ref(['1', '2'])
 <\/script>`
@@ -103,7 +103,7 @@ const appearanceCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Collapse, CollapseItem } from '@elix/ui'
+import { Collapse, CollapseItem } from '@elivander/elix-ui'
 
 const keys1 = ref(['1'])
 const keys2 = ref(['1'])

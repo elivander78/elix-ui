@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { Spinner } from '@elix/ui'
+import { Spinner } from '@elivander/elix-ui'
 </script>
 
 <style lang="scss" scoped>

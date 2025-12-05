@@ -1,11 +1,11 @@
 <template>
   <div class="docs-page">
     <h1>Getting Started</h1>
-    <p>@elix/ui is a modern Vue 3 UI component library built with TypeScript. It provides a comprehensive set of customizable components with built-in theming support, responsive design utilities, and a design system based on CSS custom properties.</p>
+    <p>@elivander/elix-ui is a modern Vue 3 UI component library built with TypeScript. It provides a comprehensive set of customizable components with built-in theming support, responsive design utilities, and a design system based on CSS custom properties.</p>
 
     <h2>Installation</h2>
-    <p>Install @elix/ui using npm:</p>
-    <CodeBlock code="npm i @elix/ui" />
+    <p>Install @elivander/elix-ui using npm:</p>
+    <CodeBlock code="npm i @elivander/elix-ui" />
 
     <h2>Basic Usage</h2>
     <p>Import and use the UI plugin in your Vue application. Add the plugin to your <code>main.ts</code>:</p>
@@ -33,7 +33,7 @@ import Playground from '../components/Playground.vue'
 
 const basicUsageCode = `import { createApp } from 'vue'
 import App from './App.vue'
-import { createUi } from '@elix/ui'
+import { createUi } from '@elivander/elix-ui'
 
 const app = createApp(App)
 app.use(createUi())
@@ -44,15 +44,15 @@ const buttonExampleCode = `<template>
 </template>
 
 <script setup>
-import { Button } from '@elix/ui'
+import { Button } from '@elivander/elix-ui'
 <\/script>`
 
 const importCode = `// Import everything
-import { Button, Input, Card } from '@elix/ui'
+import { Button, Input, Card } from '@elivander/elix-ui'
 
 // Or import individually (tree-shakeable)
-import { Button } from '@elix/ui/button'
-import { Input } from '@elix/ui/input'`
+import { Button } from '@elivander/elix-ui/button'
+import { Input } from '@elivander/elix-ui/input'`
 </script>
 
 <style lang="scss" scoped>

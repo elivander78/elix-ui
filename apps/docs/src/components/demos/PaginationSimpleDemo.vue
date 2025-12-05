@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Pagination } from '@elix/ui'
+import { Pagination } from '@elivander/elix-ui'
 
 const currentPage1 = ref(1)
 const currentPage2 = ref(1)

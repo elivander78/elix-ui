@@ -33,7 +33,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Popover, Button } from '@elix/ui'
+import { Popover, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const triggerCode = `<template>
@@ -60,7 +60,7 @@ const triggerCode = `<template>
 </template>
 
 <script setup>
-import { Popover, Button } from '@elix/ui'
+import { Popover, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const placementCode = `<template>
@@ -93,7 +93,7 @@ const placementCode = `<template>
 </template>
 
 <script setup>
-import { Popover, Button } from '@elix/ui'
+import { Popover, Button } from '@elivander/elix-ui'
 <\/script>`
 
 const props = [

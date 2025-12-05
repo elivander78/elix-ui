@@ -1,5 +1,5 @@
 import { h, computed, ref, reactive } from 'vue'
-import { Button, Input, Select, Checkbox, Radio, Textarea, Switch, Form, FormItem, Notification } from '@elix/ui'
+import { Button, Input, Select, Checkbox, Radio, Textarea, Switch, Form, FormItem, Notification } from '@elivander/elix-ui'
 import type { PreviewState, RenderFunction, NotificationItem } from './types'
 
 export function renderFormComponents(

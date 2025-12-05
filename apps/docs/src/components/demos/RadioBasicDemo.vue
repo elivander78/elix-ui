@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Radio } from '@elix/ui'
+import { Radio } from '@elivander/elix-ui'
 
 const value = ref('option1')
 </script>

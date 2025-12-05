@@ -39,7 +39,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Radio } from '@elix/ui'
+import { Radio } from '@elivander/elix-ui'
 
 const value = ref('option1')
 <\/script>`
@@ -54,7 +54,7 @@ const horizontalCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Radio } from '@elix/ui'
+import { Radio } from '@elivander/elix-ui'
 
 const value = ref('option1')
 <\/script>`
@@ -69,7 +69,7 @@ const verticalCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Radio } from '@elix/ui'
+import { Radio } from '@elivander/elix-ui'
 
 const value = ref('option1')
 <\/script>`
@@ -82,7 +82,7 @@ const disabledCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Radio } from '@elix/ui'
+import { Radio } from '@elivander/elix-ui'
 
 const value = ref('option3')
 <\/script>`
