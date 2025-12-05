@@ -33,6 +33,7 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: 'src',
           dir: 'es',
+          exports: 'named',
         },
         {
           format: 'cjs',
@@ -40,6 +41,7 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: 'src',
           dir: 'lib',
+          exports: 'named',
         },
       ],
     },
