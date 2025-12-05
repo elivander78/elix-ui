@@ -73,6 +73,16 @@ ui-kit/
 └── package.json      # Root workspace config
 ```
 
+## Deployment
+
+The documentation site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
+
+To enable GitHub Pages:
+1. Go to your repository settings on GitHub
+2. Navigate to "Pages" in the left sidebar
+3. Under "Source", select "GitHub Actions"
+4. The site will be available at `https://elivander78.github.io/elix-ui/`
+
 ## License
 
 MIT
