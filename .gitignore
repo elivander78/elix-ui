@@ -9,7 +9,11 @@ es
 *.tsbuildinfo
 
 # IDE
-.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
 .idea
 *.swp
 *.swo
