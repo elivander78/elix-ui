@@ -11,6 +11,8 @@ const props = defineProps<{
   shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
   bordered?: boolean
   hoverable?: boolean
+  size?: 'sm' | 'md' | 'lg'
+  variant?: 'default' | 'outlined' | 'elevated'
 }>()
 
 const cardClasses = computed(() => {
@@ -20,19 +22,23 @@ const cardClasses = computed(() => {
       'eui-card--bordered': props.bordered,
       'eui-card--hoverable': props.hoverable,
       [`eui-card--shadow-${props.shadow}`]: props.shadow && props.shadow !== 'none',
+      [`eui-card--${props.size || 'md'}`]: props.size,
+      [`eui-card--${props.variant || 'default'}`]: props.variant,
     },
   ]
 })
 </script>
 
 <style lang="scss" scoped>
+@use '../../styles/mixins' as *;
+
 .eui-card {
   background-color: var(--eui-bg-primary);
   border-radius: var(--eui-radius-lg);
   transition: all 0.2s ease-in-out;
 
   &--bordered {
-    border: 1px solid var(--eui-border-color);
+    @include border-shadow(var(--eui-border-color), 1px);
   }
 
   &--hoverable {
@@ -62,6 +68,30 @@ const cardClasses = computed(() => {
 
   &--shadow-2xl {
     box-shadow: var(--eui-shadow-2xl);
+  }
+
+  // Sizes
+  &--sm {
+    padding: var(--eui-spacing-md);
+  }
+
+  &--md {
+    padding: var(--eui-spacing-lg);
+  }
+
+  &--lg {
+    padding: var(--eui-spacing-xl);
+  }
+
+  // Variants
+  &--outlined {
+    border: 1px solid var(--eui-border-color);
+    box-shadow: none;
+  }
+
+  &--elevated {
+    box-shadow: var(--eui-shadow-lg);
+    border: none;
   }
 }
 </style>

@@ -52,7 +52,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { buttonProps, type ButtonProps } from './Button'
+import { buttonProps } from './Button'
 
 const props = defineProps(buttonProps)
 
@@ -66,6 +66,7 @@ const buttonClasses = computed(() => {
     `eui-button--${props.size}`,
     `eui-button--${props.type}`,
     `eui-button--${props.shape}`,
+    `eui-button--appearance-${props.appearance}`,
     {
       'eui-button--disabled': props.disabled,
       'eui-button--loading': props.loading,
@@ -82,6 +83,8 @@ const handleClick = (event: MouseEvent) => {
 </script>
 
 <style lang="scss" scoped>
+@use '../../styles/mixins' as *;
+
 .eui-button {
   position: relative;
   display: inline-flex;
@@ -96,13 +99,14 @@ const handleClick = (event: MouseEvent) => {
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  border: 1px solid transparent;
+  @include border-shadow(transparent, 1px);
   transition: all 0.2s ease-in-out;
   outline: none;
 
   &:focus-visible {
     outline: 2px solid var(--eui-border-color-focus);
     outline-offset: 2px;
+    box-shadow: 0 0 0 3px var(--eui-color-primary-100);
   }
 
   // Sizes
@@ -147,27 +151,27 @@ const handleClick = (event: MouseEvent) => {
   &--primary {
     color: var(--eui-text-inverse);
     background-color: var(--eui-color-primary);
-    border-color: var(--eui-color-primary);
+    @include border-shadow(var(--eui-color-primary), 1px);
 
     &:hover:not(:disabled) {
       background-color: var(--eui-color-primary-600);
-      border-color: var(--eui-color-primary-600);
+      @include border-shadow(var(--eui-color-primary-600), 1px);
     }
 
     &:active:not(:disabled) {
       background-color: var(--eui-color-primary-700);
-      border-color: var(--eui-color-primary-700);
+      @include border-shadow(var(--eui-color-primary-700), 1px);
     }
   }
 
   &--secondary {
     color: var(--eui-text-primary);
     background-color: var(--eui-bg-secondary);
-    border-color: var(--eui-border-color);
+    @include border-shadow(var(--eui-border-color), 1px);
 
     &:hover:not(:disabled) {
       background-color: var(--eui-bg-tertiary);
-      border-color: var(--eui-border-color-hover);
+      @include border-shadow(var(--eui-border-color-hover), 1px);
     }
 
     &:active:not(:disabled) {
@@ -178,7 +182,7 @@ const handleClick = (event: MouseEvent) => {
   &--tertiary {
     color: var(--eui-color-primary);
     background-color: transparent;
-    border-color: transparent;
+    @include border-shadow-none();
 
     &:hover:not(:disabled) {
       background-color: var(--eui-color-primary-50);
@@ -192,23 +196,23 @@ const handleClick = (event: MouseEvent) => {
   &--outline {
     color: var(--eui-color-primary);
     background-color: transparent;
-    border-color: var(--eui-color-primary);
+    @include border-shadow(var(--eui-color-primary), 1px);
 
     &:hover:not(:disabled) {
       background-color: var(--eui-color-primary-50);
-      border-color: var(--eui-color-primary-600);
+      @include border-shadow(var(--eui-color-primary-600), 1px);
     }
 
     &:active:not(:disabled) {
       background-color: var(--eui-color-primary-100);
-      border-color: var(--eui-color-primary-700);
+      @include border-shadow(var(--eui-color-primary-700), 1px);
     }
   }
 
   &--ghost {
     color: var(--eui-text-primary);
     background-color: transparent;
-    border-color: transparent;
+    @include border-shadow-none();
 
     &:hover:not(:disabled) {
       background-color: var(--eui-bg-secondary);
@@ -222,7 +226,7 @@ const handleClick = (event: MouseEvent) => {
   &--text {
     color: var(--eui-color-primary);
     background-color: transparent;
-    border-color: transparent;
+    @include border-shadow-none();
     padding-left: 0;
     padding-right: 0;
 
@@ -251,6 +255,63 @@ const handleClick = (event: MouseEvent) => {
 
   &--block {
     width: 100%;
+  }
+
+  // Appearance
+  &--appearance-shadow {
+    border-color: transparent !important;
+    
+    &.eui-button--primary {
+      box-shadow: 0 0 0 1px var(--eui-color-primary) !important;
+      &:hover:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-color-primary-600) !important;
+      }
+      &:active:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-color-primary-700) !important;
+      }
+    }
+    &.eui-button--secondary {
+      box-shadow: 0 0 0 1px var(--eui-border-color) !important;
+      &:hover:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-border-color-hover) !important;
+      }
+    }
+    &.eui-button--outline {
+      box-shadow: 0 0 0 1px var(--eui-color-primary) !important;
+      &:hover:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-color-primary-600) !important;
+      }
+      &:active:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-color-primary-700) !important;
+      }
+    }
+  }
+
+  &--appearance-border-shadow {
+    &.eui-button--primary {
+      box-shadow: 0 0 0 1px var(--eui-color-primary) !important;
+      &:hover:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-color-primary-600) !important;
+      }
+      &:active:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-color-primary-700) !important;
+      }
+    }
+    &.eui-button--secondary {
+      box-shadow: 0 0 0 1px var(--eui-border-color) !important;
+      &:hover:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-border-color-hover) !important;
+      }
+    }
+    &.eui-button--outline {
+      box-shadow: 0 0 0 1px var(--eui-color-primary) !important;
+      &:hover:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-color-primary-600) !important;
+      }
+      &:active:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-color-primary-700) !important;
+      }
+    }
   }
 
   // Content

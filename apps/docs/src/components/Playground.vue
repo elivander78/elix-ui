@@ -6,19 +6,21 @@
       </button>
     </div>
     <div class="playground__preview">
-      <PreviewRenderer :code="code" />
+      <component v-if="demoComponent" :is="demoComponent" />
+      <PreviewRenderer v-else :code="code" />
     </div>
     <CodeBlock :code="code" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, type Component } from 'vue'
 import CodeBlock from './CodeBlock.vue'
 import PreviewRenderer from './PreviewRenderer.vue'
 
 const props = defineProps<{
   code: string
+  demoComponent?: Component
 }>()
 
 const copied = ref(false)
@@ -42,6 +44,7 @@ const copyCode = async () => {
   border: 1px solid var(--eui-border-color);
   border-radius: var(--eui-radius-lg);
   overflow: hidden;
+  max-width: 100%;
   position: relative;
 
   &__controls {
@@ -76,6 +79,8 @@ const copyCode = async () => {
     justify-content: center;
     flex-wrap: wrap;
     gap: var(--eui-spacing-sm);
+    max-width: 100%;
+    overflow-x: auto;
   }
 }
 </style>

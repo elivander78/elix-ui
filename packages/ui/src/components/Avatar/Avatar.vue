@@ -1,6 +1,6 @@
 <template>
   <span :class="avatarClasses" :style="avatarStyle">
-    <img v-if="src" :src="src" :alt="alt" @error="handleError" />
+    <img v-if="src && !imageError" :src="src" :alt="alt" @error="handleError" />
     <span v-else-if="$slots.default" class="eui-avatar__text">
       <slot />
     </span>
@@ -10,6 +10,7 @@
         <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
       </svg>
     </span>
+    <span v-if="status" :class="statusClasses"></span>
   </span>
 </template>
 
@@ -19,8 +20,10 @@ import { computed, ref } from 'vue'
 const props = defineProps<{
   src?: string
   alt?: string
-  size?: number | 'sm' | 'md' | 'lg'
+  size?: number | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   shape?: 'circle' | 'square'
+  status?: 'online' | 'offline' | 'away' | 'busy'
+  statusPosition?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'
 }>()
 
 const imageError = ref(false)
@@ -32,6 +35,7 @@ const avatarClasses = computed(() => {
       'eui-avatar--circle': props.shape === 'circle' || !props.shape,
       'eui-avatar--square': props.shape === 'square',
       [`eui-avatar--${props.size}`]: typeof props.size === 'string',
+      'eui-avatar--with-status': !!props.status,
     },
   ]
 })
@@ -45,6 +49,14 @@ const avatarStyle = computed(() => {
     }
   }
   return {}
+})
+
+const statusClasses = computed(() => {
+  return [
+    'eui-avatar__status',
+    `eui-avatar__status--${props.status}`,
+    `eui-avatar__status--${props.statusPosition || 'bottom-right'}`,
+  ]
 })
 
 const handleError = () => {
@@ -71,6 +83,12 @@ const handleError = () => {
     border-radius: var(--eui-radius-md);
   }
 
+  &--xs {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
   &--sm {
     width: 32px;
     height: 32px;
@@ -87,6 +105,12 @@ const handleError = () => {
     width: 56px;
     height: 56px;
     font-size: 20px;
+  }
+
+  &--xl {
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
   }
 
   img {
@@ -108,6 +132,72 @@ const handleError = () => {
     width: 100%;
     height: 100%;
     color: var(--eui-text-secondary);
+  }
+
+  &__status {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--eui-bg-primary);
+    border-radius: 50%;
+
+    &--top-right {
+      top: 0;
+      right: 0;
+      transform: translate(25%, -25%);
+    }
+
+    &--top-left {
+      top: 0;
+      left: 0;
+      transform: translate(-25%, -25%);
+    }
+
+    &--bottom-right {
+      bottom: 0;
+      right: 0;
+      transform: translate(25%, 25%);
+    }
+
+    &--bottom-left {
+      bottom: 0;
+      left: 0;
+      transform: translate(-25%, 25%);
+    }
+
+    &--online {
+      background-color: var(--eui-color-success);
+    }
+
+    &--offline {
+      background-color: var(--eui-color-neutral-400);
+    }
+
+    &--away {
+      background-color: var(--eui-color-warning);
+    }
+
+    &--busy {
+      background-color: var(--eui-color-error);
+    }
+  }
+
+  &--xs &__status {
+    width: 8px;
+    height: 8px;
+    border-width: 1.5px;
+  }
+
+  &--sm &__status {
+    width: 10px;
+    height: 10px;
+  }
+
+  &--lg &__status,
+  &--xl &__status {
+    width: 14px;
+    height: 14px;
+    border-width: 3px;
   }
 }
 </style>

@@ -8,9 +8,10 @@
         r="20"
         fill="none"
         stroke="currentColor"
-        stroke-width="4"
+        :stroke-width="circleStrokeWidth"
       />
     </svg>
+    <div v-if="label" class="eui-spinner__label">{{ label }}</div>
   </div>
 </template>
 
@@ -19,6 +20,9 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   size?: number | 'sm' | 'md' | 'lg'
+  thickness?: number
+  label?: string
+  overlay?: boolean
 }>()
 
 const spinnerClasses = computed(() => {
@@ -26,18 +30,31 @@ const spinnerClasses = computed(() => {
     'eui-spinner',
     {
       [`eui-spinner--${props.size}`]: typeof props.size === 'string',
+      'eui-spinner--overlay': props.overlay,
     },
   ]
 })
 
 const spinnerStyle = computed(() => {
+  const style: Record<string, string> = {}
   if (typeof props.size === 'number') {
-    return {
-      width: `${props.size}px`,
-      height: `${props.size}px`,
-    }
+    style.width = `${props.size}px`
+    style.height = `${props.size}px`
   }
-  return {}
+  return style
+})
+
+const circleStrokeWidth = computed(() => {
+  if (props.thickness !== undefined) {
+    return props.thickness
+  }
+  // Default thickness based on size
+  if (typeof props.size === 'string') {
+    if (props.size === 'sm') return 2
+    if (props.size === 'lg') return 5
+    return 4
+  }
+  return 4
 })
 </script>
 
@@ -72,6 +89,28 @@ const spinnerStyle = computed(() => {
     stroke-dashoffset: 0;
     stroke-linecap: round;
     animation: eui-spinner-dash 1.5s ease-in-out infinite;
+  }
+
+  &__label {
+    margin-top: var(--eui-spacing-sm);
+    font-size: var(--eui-font-size-sm);
+    color: var(--eui-text-secondary);
+    text-align: center;
+  }
+
+  &--overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+    z-index: 1000;
   }
 }
 

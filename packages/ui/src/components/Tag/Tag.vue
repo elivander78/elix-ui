@@ -21,9 +21,11 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   type?: 'primary' | 'success' | 'warning' | 'error' | 'info' | 'default'
+  variant?: 'solid' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   closable?: boolean
   round?: boolean
+  disabled?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -34,9 +36,11 @@ const tagClasses = computed(() => {
   return [
     'eui-tag',
     `eui-tag--${props.type || 'default'}`,
+    `eui-tag--${props.variant || 'solid'}`,
     `eui-tag--${props.size || 'md'}`,
     {
       'eui-tag--round': props.round,
+      'eui-tag--disabled': props.disabled,
     },
   ]
 })
@@ -75,35 +79,113 @@ const handleClose = (event: MouseEvent) => {
     border-radius: var(--eui-radius-full);
   }
 
-  &--default {
-    color: var(--eui-text-primary);
-    background-color: var(--eui-bg-secondary);
-    border: 1px solid var(--eui-border-color);
+  // Variants
+  &--solid {
+    &.eui-tag--default {
+      color: var(--eui-text-primary);
+      background-color: var(--eui-bg-secondary);
+      border: 1px solid var(--eui-border-color);
+    }
+
+    &.eui-tag--primary {
+      color: var(--eui-text-inverse);
+      background-color: var(--eui-color-primary);
+    }
+
+    &.eui-tag--success {
+      color: var(--eui-text-inverse);
+      background-color: var(--eui-color-success);
+    }
+
+    &.eui-tag--warning {
+      color: var(--eui-text-inverse);
+      background-color: var(--eui-color-warning);
+    }
+
+    &.eui-tag--error {
+      color: var(--eui-text-inverse);
+      background-color: var(--eui-color-error);
+    }
+
+    &.eui-tag--info {
+      color: var(--eui-text-inverse);
+      background-color: var(--eui-color-info);
+    }
   }
 
-  &--primary {
-    color: var(--eui-text-inverse);
-    background-color: var(--eui-color-primary);
+  &--outline {
+    background-color: transparent;
+
+    &.eui-tag--default {
+      color: var(--eui-text-primary);
+      border: 1px solid var(--eui-border-color);
+    }
+
+    &.eui-tag--primary {
+      color: var(--eui-color-primary);
+      border: 1px solid var(--eui-color-primary);
+    }
+
+    &.eui-tag--success {
+      color: var(--eui-color-success);
+      border: 1px solid var(--eui-color-success);
+    }
+
+    &.eui-tag--warning {
+      color: var(--eui-color-warning);
+      border: 1px solid var(--eui-color-warning);
+    }
+
+    &.eui-tag--error {
+      color: var(--eui-color-error);
+      border: 1px solid var(--eui-color-error);
+    }
+
+    &.eui-tag--info {
+      color: var(--eui-color-info);
+      border: 1px solid var(--eui-color-info);
+    }
   }
 
-  &--success {
-    color: var(--eui-text-inverse);
-    background-color: var(--eui-color-success);
+  &--ghost {
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    &.eui-tag--default {
+      color: var(--eui-text-primary);
+      background-color: var(--eui-bg-secondary);
+    }
+
+    &.eui-tag--primary {
+      color: var(--eui-color-primary);
+      background-color: var(--eui-color-primary-50);
+    }
+
+    &.eui-tag--success {
+      color: var(--eui-color-success);
+      background-color: var(--eui-color-success-50);
+    }
+
+    &.eui-tag--warning {
+      color: var(--eui-color-warning);
+      background-color: var(--eui-color-warning-50);
+    }
+
+    &.eui-tag--error {
+      color: var(--eui-color-error);
+      background-color: var(--eui-color-error-50);
+    }
+
+    &.eui-tag--info {
+      color: var(--eui-color-info);
+      background-color: var(--eui-color-info-50);
+    }
   }
 
-  &--warning {
-    color: var(--eui-text-inverse);
-    background-color: var(--eui-color-warning);
-  }
-
-  &--error {
-    color: var(--eui-text-inverse);
-    background-color: var(--eui-color-error);
-  }
-
-  &--info {
-    color: var(--eui-text-inverse);
-    background-color: var(--eui-color-info);
+  &--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 
   &__icon {

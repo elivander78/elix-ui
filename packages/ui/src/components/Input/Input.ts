@@ -2,6 +2,7 @@ import type { PropType } from 'vue'
 
 export type InputSize = 'xs' | 'sm' | 'md' | 'lg'
 export type InputState = 'default' | 'error' | 'success' | 'warning'
+export type InputAppearance = 'border' | 'shadow' | 'border-shadow'
 
 export interface InputProps {
   modelValue?: string | number
@@ -12,6 +13,7 @@ export interface InputProps {
   readonly?: boolean
   state?: InputState
   clearable?: boolean
+  appearance?: InputAppearance
 }
 
 export const inputProps = {
@@ -46,6 +48,10 @@ export const inputProps = {
   clearable: {
     type: Boolean,
     default: false,
+  },
+  appearance: {
+    type: String as PropType<InputAppearance>,
+    default: 'border' as InputAppearance,
   },
 }
 

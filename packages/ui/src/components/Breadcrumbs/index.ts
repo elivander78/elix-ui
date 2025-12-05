@@ -6,6 +6,6 @@ Breadcrumbs.install = (app: App) => {
 }
 
 export { Breadcrumbs }
-export type { BreadcrumbItem } from './Breadcrumbs'
+export type { BreadcrumbItem } from './types'
 export default Breadcrumbs
 

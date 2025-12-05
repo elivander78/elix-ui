@@ -1,0 +1,11 @@
+<template>
+  <DatePicker v-model="datePicker2" format="DD.MM.YYYY" />
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { DatePicker } from '@elix/ui'
+
+const datePicker2 = ref<Date | null>(null)
+</script>
+

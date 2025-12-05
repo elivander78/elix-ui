@@ -96,6 +96,7 @@ const renderedComponent = computed(() => {
   :deep(.preview-radios),
   :deep(.preview-tags),
   :deep(.preview-avatars),
+  :deep(.preview-badges),
   :deep(.preview-modal-wrapper),
   :deep(.preview-drawer-wrapper),
   :deep(.preview-notification-wrapper),

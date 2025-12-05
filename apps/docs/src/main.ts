@@ -122,6 +122,42 @@ const router = createRouter({
       path: '/components/sidebar',
       component: () => import('./pages/Components/Sidebar.vue'),
     },
+    {
+      path: '/components/alert',
+      component: () => import('./pages/Components/Alert.vue'),
+    },
+    {
+      path: '/components/collapse',
+      component: () => import('./pages/Components/Collapse.vue'),
+    },
+    {
+      path: '/components/slider',
+      component: () => import('./pages/Components/Slider.vue'),
+    },
+    {
+      path: '/components/steps',
+      component: () => import('./pages/Components/Steps.vue'),
+    },
+    {
+      path: '/components/dropdown',
+      component: () => import('./pages/Components/Dropdown.vue'),
+    },
+    {
+      path: '/components/upload',
+      component: () => import('./pages/Components/Upload.vue'),
+    },
+    {
+      path: '/components/container',
+      component: () => import('./pages/Components/Container.vue'),
+    },
+    {
+      path: '/components/stack',
+      component: () => import('./pages/Components/Stack.vue'),
+    },
+    {
+      path: '/components/datepicker',
+      component: () => import('./pages/Components/DatePicker.vue'),
+    },
   ],
 })
 

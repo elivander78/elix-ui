@@ -1,10 +1,14 @@
 <template>
   <div 
     ref="wrapperRef" 
-    class="eui-tooltip-wrapper" 
-    @mouseenter="props.trigger !== 'click' ? showTooltip() : undefined"
-    @mouseleave="props.trigger !== 'click' ? hideTooltip() : undefined"
-    @click="props.trigger === 'click' ? showTooltip($event) : undefined"
+    class="eui-tooltip-wrapper"
+    :tabindex="props.trigger === 'focus' && !props.disabled ? 0 : undefined"
+    @mouseenter="!props.disabled && props.trigger === 'hover' ? showTooltip() : undefined"
+    @mouseleave="!props.disabled && props.trigger === 'hover' ? hideTooltip() : undefined"
+    @click.stop="!props.disabled && props.trigger === 'click' ? showTooltip($event) : undefined"
+    @focus="!props.disabled && props.trigger === 'focus' ? showTooltip() : undefined"
+    @blur="!props.disabled && props.trigger === 'focus' ? hideTooltip() : undefined"
+    :style="props.trigger === 'focus' ? { display: 'inline-block', outline: 'none' } : undefined"
   >
     <slot />
     <Teleport to="body">
@@ -22,10 +26,16 @@ import { ref, computed, nextTick, onMounted, onUnmounted, withDefaults } from 'v
 
 const props = withDefaults(defineProps<{
   content: string
-  placement?: 'top' | 'bottom' | 'left' | 'right'
-  trigger?: 'hover' | 'click'
+  placement?: 'top' | 'bottom' | 'left' | 'right' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end' | 'left-start' | 'left-end' | 'right-start' | 'right-end'
+  trigger?: 'hover' | 'click' | 'focus'
+  disabled?: boolean
+  theme?: 'dark' | 'light'
+  size?: 'sm' | 'md' | 'lg'
 }>(), {
   trigger: 'hover',
+  disabled: false,
+  theme: 'dark',
+  size: 'md',
 })
 
 const isVisible = ref(false)
@@ -36,6 +46,8 @@ const tooltipClasses = computed(() => {
   return [
     'eui-tooltip',
     `eui-tooltip--${props.placement || 'top'}`,
+    `eui-tooltip--${props.theme}`,
+    `eui-tooltip--${props.size}`,
   ]
 })
 
@@ -44,18 +56,31 @@ const tooltipStyle = computed(() => {
 })
 
 const showTooltip = async (e?: Event) => {
+  if (props.disabled) return
   if (e && props.trigger === 'click') {
     e.stopPropagation()
   }
-  if (!isVisible.value) {
-    isVisible.value = true
-    await nextTick()
-    updatePosition()
+  if (props.trigger === 'click') {
+    // Toggle for click
+    isVisible.value = !isVisible.value
+    if (isVisible.value) {
+      await nextTick()
+      updatePosition()
+    }
+  } else {
+    // Show for hover/focus
+    if (!isVisible.value) {
+      isVisible.value = true
+      await nextTick()
+      updatePosition()
+    }
   }
 }
 
 const hideTooltip = () => {
-  isVisible.value = false
+  if (props.trigger !== 'click') {
+    isVisible.value = false
+  }
 }
 
 const updatePosition = () => {
@@ -93,9 +118,12 @@ const updatePosition = () => {
 
 const handleClickOutside = (event: MouseEvent) => {
   if (props.trigger === 'click' && isVisible.value) {
-    if (wrapperRef.value && !wrapperRef.value.contains(event.target as Node)) {
-      hideTooltip()
-    }
+    // Use setTimeout to ensure the toggle happens first
+    setTimeout(() => {
+      if (wrapperRef.value && !wrapperRef.value.contains(event.target as Node)) {
+        hideTooltip()
+      }
+    }, 0)
   }
 }
 
@@ -121,11 +149,38 @@ onUnmounted(() => {
   z-index: 1500;
   padding: var(--eui-spacing-xs) var(--eui-spacing-sm);
   font-size: var(--eui-font-size-sm);
-  color: var(--eui-text-inverse);
-  background-color: rgba(0, 0, 0, 0.85);
   border-radius: var(--eui-radius-md);
   white-space: nowrap;
   pointer-events: none;
+
+  // Themes
+  &--dark {
+    color: var(--eui-text-inverse);
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  &--light {
+    color: var(--eui-text-primary);
+    background-color: var(--eui-bg-primary);
+    border: 1px solid var(--eui-border-color);
+    box-shadow: var(--eui-shadow-lg);
+  }
+
+  // Sizes
+  &--sm {
+    padding: 2px var(--eui-spacing-xs);
+    font-size: var(--eui-font-size-xs);
+  }
+
+  &--md {
+    padding: var(--eui-spacing-xs) var(--eui-spacing-sm);
+    font-size: var(--eui-font-size-sm);
+  }
+
+  &--lg {
+    padding: var(--eui-spacing-sm) var(--eui-spacing-md);
+    font-size: var(--eui-font-size-base);
+  }
 
   &::before {
     content: '';
@@ -135,43 +190,78 @@ onUnmounted(() => {
     border: 6px solid transparent;
   }
 
-  &--top::before {
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
+  &--dark &--top::before {
     border-top-color: rgba(0, 0, 0, 0.85);
   }
 
-  &--bottom::before {
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
+  &--dark &--bottom::before {
     border-bottom-color: rgba(0, 0, 0, 0.85);
   }
 
-  &--left::before {
-    right: -12px;
-    top: 50%;
-    transform: translateY(-50%);
+  &--dark &--left::before {
     border-left-color: rgba(0, 0, 0, 0.85);
   }
 
-  &--right::before {
-    left: -12px;
-    top: 50%;
-    transform: translateY(-50%);
+  &--dark &--right::before {
     border-right-color: rgba(0, 0, 0, 0.85);
+  }
+
+  &--light &--top::before {
+    border-top-color: var(--eui-bg-primary);
+  }
+
+  &--light &--bottom::before {
+    border-bottom-color: var(--eui-bg-primary);
+  }
+
+  &--light &--left::before {
+    border-left-color: var(--eui-bg-primary);
+  }
+
+  &--light &--right::before {
+    border-right-color: var(--eui-bg-primary);
   }
 }
 
 .eui-tooltip-enter-active,
 .eui-tooltip-leave-active {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.eui-tooltip-enter-active .eui-tooltip,
+.eui-tooltip-leave-active .eui-tooltip {
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .eui-tooltip-enter-from,
 .eui-tooltip-leave-to {
   opacity: 0;
+}
+
+.eui-tooltip-enter-from .eui-tooltip,
+.eui-tooltip-leave-to .eui-tooltip {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.eui-tooltip--top .eui-tooltip-enter-from .eui-tooltip,
+.eui-tooltip--top .eui-tooltip-leave-to .eui-tooltip {
+  transform: scale(0.9) translateY(4px);
+}
+
+.eui-tooltip--bottom .eui-tooltip-enter-from .eui-tooltip,
+.eui-tooltip--bottom .eui-tooltip-leave-to .eui-tooltip {
+  transform: scale(0.9) translateY(-4px);
+}
+
+.eui-tooltip--left .eui-tooltip-enter-from .eui-tooltip,
+.eui-tooltip--left .eui-tooltip-leave-to .eui-tooltip {
+  transform: scale(0.9) translateX(4px);
+}
+
+.eui-tooltip--right .eui-tooltip-enter-from .eui-tooltip,
+.eui-tooltip--right .eui-tooltip-leave-to .eui-tooltip {
+  transform: scale(0.9) translateX(-4px);
 }
 </style>
 

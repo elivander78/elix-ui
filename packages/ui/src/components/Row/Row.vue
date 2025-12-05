@@ -9,7 +9,7 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   gutter?: number | [number, number]
-  align?: 'start' | 'center' | 'end' | 'stretch'
+  align?: 'top' | 'middle' | 'bottom' | 'start' | 'center' | 'end' | 'stretch'
   justify?: 'start' | 'center' | 'end' | 'space-between' | 'space-around' | 'space-evenly'
 }>()
 
@@ -49,14 +49,17 @@ const rowStyle = computed(() => {
   display: flex;
   flex-wrap: wrap;
 
+  &--align-top,
   &--align-start {
     align-items: flex-start;
   }
 
+  &--align-middle,
   &--align-center {
     align-items: center;
   }
 
+  &--align-bottom,
   &--align-end {
     align-items: flex-end;
   }

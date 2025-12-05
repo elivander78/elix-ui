@@ -1,10 +1,10 @@
 <template>
   <component :is="asTag" :class="progressClasses">
-    <div v-if="showInfo" class="eui-progress__info">
+    <div v-if="showInfo || showLabel" class="eui-progress__info">
       <span class="eui-progress__text">{{ displayText }}</span>
-      <span v-if="percentage !== undefined" class="eui-progress__percentage">{{ percentage }}%</span>
+      <span v-if="(percentage !== undefined || percent !== undefined)" class="eui-progress__percentage">{{ displayPercentage }}%</span>
     </div>
-    <div class="eui-progress__bar">
+    <div :class="barClasses">
       <div
         class="eui-progress__fill"
         :style="fillStyle"
@@ -18,29 +18,58 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   percentage?: number
-  status?: 'success' | 'error' | 'active'
+  percent?: number
+  status?: 'success' | 'error' | 'normal' | 'warning' | 'active'
   showInfo?: boolean
+  showLabel?: boolean
   strokeWidth?: number
   text?: string
   as?: string
+  size?: 'sm' | 'md' | 'lg'
+  type?: 'line' | 'circle'
+  variant?: 'line' | 'circle'
+  color?: string
+  striped?: boolean
+  animated?: boolean
+  appearance?: 'border' | 'shadow'
 }>()
 
 const asTag = computed(() => props.as || 'div')
 
 const progressClasses = computed(() => {
+  const type = props.type || props.variant || 'line'
+  const appearance = props.appearance || 'shadow'
   return [
     'eui-progress',
     {
       [`eui-progress--${props.status}`]: props.status,
+      [`eui-progress--${props.size || 'md'}`]: props.size,
+      [`eui-progress--${type}`]: type,
+      [`eui-progress--${appearance}`]: appearance,
     },
   ]
 })
 
+const barClasses = computed(() => {
+  return [
+    'eui-progress__bar',
+    {
+      'eui-progress__bar--striped': props.striped,
+    },
+  ]
+})
+
+const displayPercentage = computed(() => {
+  return Math.min(100, Math.max(0, props.percent !== undefined ? props.percent : (props.percentage || 0)))
+})
+
 const fillStyle = computed(() => {
-  const percentage = Math.min(100, Math.max(0, props.percentage || 0))
+  const percentage = displayPercentage.value
+  const height = props.strokeWidth || (props.size === 'sm' ? 4 : props.size === 'lg' ? 12 : 8)
   return {
     width: `${percentage}%`,
-    height: props.strokeWidth ? `${props.strokeWidth}px` : undefined,
+    height: `${height}px`,
+    backgroundColor: props.color || undefined,
   }
 })
 
@@ -71,13 +100,54 @@ const displayText = computed(() => {
     background-color: var(--eui-bg-secondary);
     border-radius: var(--eui-radius-full);
     overflow: hidden;
+    
+    &--striped {
+      .eui-progress__fill {
+        background-image: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.15) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.15) 50%,
+          rgba(255, 255, 255, 0.15) 75%,
+          transparent 75%,
+          transparent
+        );
+        background-size: 1rem 1rem;
+      }
+    }
+  }
+  
+  &--border &__bar {
+    border: 1px solid var(--eui-border-color);
+  }
+  
+  &--shadow &__bar {
+    box-shadow: var(--eui-shadow-sm);
   }
 
   &__fill {
     height: 100%;
     background-color: var(--eui-color-primary);
     border-radius: var(--eui-radius-full);
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    
+    .eui-progress--animated & {
+      animation: eui-progress-striped 1s linear infinite;
+    }
+  }
+
+  // Sizes
+  &--sm &__bar {
+    height: 4px;
+  }
+
+  &--md &__bar {
+    height: 8px;
+  }
+
+  &--lg &__bar {
+    height: 12px;
   }
 
   &--success &__fill {
@@ -88,7 +158,8 @@ const displayText = computed(() => {
     background-color: var(--eui-color-error);
   }
 
-  &--active &__fill {
+  &--active &__fill,
+  &--normal &__fill {
     background: linear-gradient(
       90deg,
       var(--eui-color-primary) 0%,
@@ -98,6 +169,10 @@ const displayText = computed(() => {
     background-size: 200% 100%;
     animation: eui-progress-active 2s linear infinite;
   }
+
+  &--warning &__fill {
+    background-color: var(--eui-color-warning);
+  }
 }
 
 @keyframes eui-progress-active {
@@ -106,6 +181,15 @@ const displayText = computed(() => {
   }
   100% {
     background-position: -200% 0;
+  }
+}
+
+@keyframes eui-progress-striped {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1rem 0;
   }
 }
 </style>

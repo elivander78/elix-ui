@@ -15,15 +15,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, useSlots } from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps<{
   modelValue?: boolean
   disabled?: boolean
   indeterminate?: boolean
 }>()
-
-const slots = useSlots()
 
 const emit = defineEmits<{
   'update:modelValue': [value: boolean]

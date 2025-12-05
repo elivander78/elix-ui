@@ -11,6 +11,6 @@ const install = (app: App) => {
 }
 
 export { Form, FormItem, install }
-export type { FormRules } from './Form'
+export type { FormRules, FormInstance } from './types'
 export default { install }
 

@@ -1,8 +1,24 @@
 {
   "name": "@elix/ui",
-  "version": "0.1.0",
-  "description": "Vue 3 UI Kit with theming and responsive design",
+  "version": "0.1.0-beta",
+  "description": "Vue 3 UI Kit with theming and responsive design (beta version)",
   "type": "module",
+  "keywords": [
+    "vue",
+    "vue3",
+    "ui-kit",
+    "components",
+    "theming",
+    "responsive",
+    "design-system"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elivander78/elix-ui.git"
+  },
+  "homepage": "https://github.com/elivander78/elix-ui#readme",
+  "author": "elivander",
+  "license": "MIT",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",

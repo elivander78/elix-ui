@@ -4,18 +4,25 @@
     <p>The Form component is used to collect and validate user input.</p>
 
     <h2>Basic Usage</h2>
-    <Playground :code="basicCode" />
+    <Playground :demo-component="FormBasicDemo" :code="basicCode" />
 
     <h2>All Input Types</h2>
-    <Playground :code="allInputsCode" />
+    <Playground :demo-component="FormInputsDemo" :code="allInputsCode" />
+
+    <h2>Email + Password Form</h2>
+    <Playground :demo-component="FormEmailPasswordDemo" :code="emailPasswordCode" />
 
     <h2>Validation Examples</h2>
-    <Playground :code="validationCode" />
+    <Playground :demo-component="FormValidationDemo" :code="validationCode" />
   </div>
 </template>
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
+import FormBasicDemo from '../../components/demos/FormBasicDemo.vue'
+import FormInputsDemo from '../../components/demos/FormInputsDemo.vue'
+import FormEmailPasswordDemo from '../../components/demos/FormEmailPasswordDemo.vue'
+import FormValidationDemo from '../../components/demos/FormValidationDemo.vue'
 
 const basicCode = `<template>
   <Form :model="formData" :rules="rules" @submit="handleSubmit">
@@ -117,6 +124,55 @@ const handleReset = () => {
     radio: 'option1',
     switch: false,
   }
+}
+<\/script>`
+
+const emailPasswordCode = `<template>
+  <Form :model="formData" :rules="rules" @submit="handleSubmit">
+    <FormItem label="Email" prop="email" required>
+      <Input v-model="formData.email" type="email" placeholder="Enter your email" />
+    </FormItem>
+    <FormItem label="Password" prop="password" required>
+      <Input v-model="formData.password" type="password" placeholder="Enter your password" />
+    </FormItem>
+    <FormItem>
+      <Button type="primary" native-type="submit">Submit</Button>
+    </FormItem>
+  </Form>
+  <Notification :notifications="notifications" @remove="remove" />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import { Form, FormItem, Input, Button, Notification, useNotification } from '@elix/ui'
+
+const formData = ref({
+  email: '',
+  password: '',
+})
+
+const rules = {
+  email: [
+    { required: true, message: 'Email is required' },
+    { 
+      validator: (value) => /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(value),
+      message: 'Invalid email format'
+    },
+  ],
+  password: [
+    { required: true, message: 'Password is required' },
+    {
+      validator: (value) => value.length >= 6,
+      message: 'Password must be at least 6 characters'
+    },
+  ],
+}
+
+const { notifications, success, remove } = useNotification()
+
+const handleSubmit = (values) => {
+  console.log('Form submitted:', values)
+  success('Success', 'Form submitted successfully!')
 }
 <\/script>`
 

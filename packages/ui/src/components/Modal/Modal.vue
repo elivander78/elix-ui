@@ -34,7 +34,7 @@
 <script setup lang="ts">
 import { computed, watch } from 'vue'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   modelValue: boolean
   title?: string
   width?: string | number
@@ -42,7 +42,10 @@ const props = defineProps<{
   maskClosable?: boolean
   centered?: boolean
   originPoint?: { x: number; y: number }
-}>()
+}>(), {
+  closable: true,
+  maskClosable: true,
+})
 
 const emit = defineEmits<{
   'update:modelValue': [value: boolean]

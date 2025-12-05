@@ -17,11 +17,15 @@
 
     <h2>Combined Features</h2>
     <Playground :code="combinedCode" />
+
+    <h2>Simple Version</h2>
+    <Playground :demo-component="PaginationSimpleDemo" :code="simpleCode" />
   </div>
 </template>
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
+import PaginationSimpleDemo from '../../components/demos/PaginationSimpleDemo.vue'
 
 const basicCode = `<template>
   <Pagination v-model="currentPage" :total="100" :page-size="10" />
@@ -89,6 +93,21 @@ import { ref } from 'vue'
 import { Pagination } from '@elix/ui'
 
 const currentPage = ref(1)
+<\/script>`
+
+const simpleCode = `<template>
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <Pagination v-model="currentPage1" :total="100" :page-size="10" simple />
+    <Pagination v-model="currentPage2" :total="250" :page-size="10" simple />
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import { Pagination } from '@elix/ui'
+
+const currentPage1 = ref(1)
+const currentPage2 = ref(1)
 <\/script>`
 </script>
 

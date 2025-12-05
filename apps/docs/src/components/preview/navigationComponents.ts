@@ -69,6 +69,24 @@ export function renderNavigationComponents(
         size: 'md',
       })
     }
+    if (codeLower.includes('simple') || codeLower.includes('simple version')) {
+      return () => h('div', { style: 'display: flex; flex-direction: column; gap: 20px;' }, [
+        h(Pagination, {
+          modelValue: state.tabsValues.value[`${paginationKey}-simple1`] as number || 1,
+          'onUpdate:modelValue': (v: number) => { state.tabsValues.value[`${paginationKey}-simple1`] = v },
+          total: 100,
+          pageSize: 10,
+          simple: true,
+        }),
+        h(Pagination, {
+          modelValue: state.tabsValues.value[`${paginationKey}-simple2`] as number || 1,
+          'onUpdate:modelValue': (v: number) => { state.tabsValues.value[`${paginationKey}-simple2`] = v },
+          total: 250,
+          pageSize: 10,
+          simple: true,
+        }),
+      ])
+    }
     return () => h(Pagination, {
       modelValue: state.tabsValues.value[paginationKey] as number,
       'onUpdate:modelValue': (v: number) => { state.tabsValues.value[paginationKey] = v },

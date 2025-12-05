@@ -1,8 +1,16 @@
 <template>
   <div :class="skeletonClasses" :style="skeletonStyle">
     <div v-if="loading" class="eui-skeleton__content">
-      <div v-if="avatar" class="eui-skeleton__avatar"></div>
-      <div class="eui-skeleton__body">
+      <template v-if="type === 'avatar' || avatar">
+        <div :class="avatarClasses"></div>
+      </template>
+      <template v-else-if="type === 'rect'">
+        <div class="eui-skeleton__rect"></div>
+      </template>
+      <template v-else-if="type === 'circle'">
+        <div class="eui-skeleton__circle"></div>
+      </template>
+      <div v-if="type === 'text' || type === 'avatar' || avatar" class="eui-skeleton__body">
         <div v-for="i in rows" :key="i" :class="lineClasses(i)"></div>
       </div>
     </div>
@@ -20,6 +28,8 @@ const props = defineProps<{
   avatar?: boolean
   rows?: number
   animated?: boolean
+  variant?: 'pulse' | 'wave'
+  type?: 'text' | 'avatar' | 'rect' | 'circle'
 }>()
 
 const skeletonClasses = computed(() => {
@@ -27,12 +37,22 @@ const skeletonClasses = computed(() => {
     'eui-skeleton',
     {
       'eui-skeleton--animated': props.animated !== false,
+      [`eui-skeleton--${props.variant || 'wave'}`]: props.animated !== false,
     },
   ]
 })
 
 const skeletonStyle = computed(() => {
   return {}
+})
+
+const avatarClasses = computed(() => {
+  return [
+    'eui-skeleton__avatar',
+    {
+      'eui-skeleton__avatar--animated': props.animated !== false,
+    },
+  ]
 })
 
 const lineClasses = (index: number) => {
@@ -60,6 +80,21 @@ const lineClasses = (index: number) => {
     flex-shrink: 0;
   }
 
+  &__rect {
+    width: 100%;
+    height: 200px;
+    background-color: var(--eui-color-neutral-200);
+    border-radius: var(--eui-radius-md);
+  }
+
+  &__circle {
+    width: 100px;
+    height: 100px;
+    background-color: var(--eui-color-neutral-200);
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
   &__body {
     flex: 1;
     display: flex;
@@ -78,26 +113,48 @@ const lineClasses = (index: number) => {
   }
 
   &--animated {
-    .eui-skeleton__avatar,
-    .eui-skeleton__line {
-      background: linear-gradient(
-        90deg,
-        var(--eui-color-neutral-200) 25%,
-        var(--eui-color-neutral-100) 50%,
-        var(--eui-color-neutral-200) 75%
-      );
-      background-size: 200% 100%;
-      animation: eui-skeleton-loading 1.5s ease-in-out infinite;
+    &.eui-skeleton--wave {
+      .eui-skeleton__avatar,
+      .eui-skeleton__line,
+      .eui-skeleton__rect,
+      .eui-skeleton__circle {
+        background: linear-gradient(
+          90deg,
+          var(--eui-color-neutral-200) 25%,
+          var(--eui-color-neutral-100) 50%,
+          var(--eui-color-neutral-200) 75%
+        );
+        background-size: 200% 100%;
+        animation: eui-skeleton-wave 1.5s ease-in-out infinite;
+      }
+    }
+
+    &.eui-skeleton--pulse {
+      .eui-skeleton__avatar,
+      .eui-skeleton__line,
+      .eui-skeleton__rect,
+      .eui-skeleton__circle {
+        animation: eui-skeleton-pulse 1.5s ease-in-out infinite;
+      }
     }
   }
 }
 
-@keyframes eui-skeleton-loading {
+@keyframes eui-skeleton-wave {
   0% {
     background-position: 200% 0;
   }
   100% {
     background-position: -200% 0;
+  }
+}
+
+@keyframes eui-skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
   }
 }
 </style>

@@ -29,12 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-
-export interface BreadcrumbItem {
-  label: string
-  to?: string | { path: string }
-}
+import type { BreadcrumbItem } from './types'
 
 const props = defineProps<{
   items: BreadcrumbItem[]

@@ -146,6 +146,18 @@
   --eui-shadow-xl: #{$shadows-xl};
   --eui-shadow-2xl: #{$shadows-2xl};
 
+  // Border mode: 'border' | 'shadow' | 'both'
+  --eui-border-mode: border;
+
+  // Border shadow equivalents (for when border-mode is 'shadow' or 'both')
+  --eui-border-shadow-sm: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  --eui-border-shadow-md: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  --eui-border-shadow-lg: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  --eui-border-shadow-color: var(--eui-border-color);
+  --eui-border-shadow-color-hover: var(--eui-border-color-hover);
+  --eui-border-shadow-color-focus: var(--eui-border-color-focus);
+  --eui-border-shadow-color-error: var(--eui-border-color-error);
+
   // Breakpoints (for JS usage)
   --eui-breakpoint-xs: #{$breakpoints-xs};
   --eui-breakpoint-sm: #{$breakpoints-sm};

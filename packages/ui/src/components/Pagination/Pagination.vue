@@ -1,49 +1,81 @@
 <template>
   <div :class="paginationClasses">
-    <div v-if="showTotal" class="eui-pagination__total">
-      Total: {{ total }} items
-    </div>
-    <button
-      class="eui-pagination__prev"
-      :disabled="currentPage === 1"
-      @click="handlePrev"
-    >
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-    <template v-for="(page, index) in visiblePages" :key="index">
+    <template v-if="simple">
       <button
-        v-if="page !== 'ellipsis'"
-        :class="pageClasses(page)"
-        @click="handlePageClick(page)"
+        class="eui-pagination__prev"
+        :disabled="currentPage === 1"
+        @click="handlePrev"
       >
-        {{ page }}
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </button>
-      <span v-else class="eui-pagination__ellipsis">...</span>
-    </template>
-    <button
-      class="eui-pagination__next"
-      :disabled="currentPage === totalPages"
-      @click="handleNext"
-    >
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-    <div v-if="showQuickJumper" class="eui-pagination__jumper">
-      <span>Go to</span>
       <input
         type="number"
         :min="1"
         :max="totalPages"
-        :value="jumpPage"
-        @input="handleJumpInput"
-        @keyup.enter="handleJump"
-        class="eui-pagination__jumper-input"
+        :value="currentPage"
+        @input="handleSimpleInput"
+        class="eui-pagination__simple-input"
       />
-      <button @click="handleJump" class="eui-pagination__jumper-btn">Go</button>
-    </div>
+      <span class="eui-pagination__simple-separator">/</span>
+      <span class="eui-pagination__simple-total">{{ totalPages }}</span>
+      <button
+        class="eui-pagination__next"
+        :disabled="currentPage === totalPages"
+        @click="handleNext"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </template>
+    <template v-else>
+      <div v-if="showTotal" class="eui-pagination__total">
+        Total: {{ total }} items
+      </div>
+      <button
+        class="eui-pagination__prev"
+        :disabled="currentPage === 1"
+        @click="handlePrev"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <template v-for="(page, index) in visiblePages" :key="index">
+        <button
+          v-if="page !== 'ellipsis'"
+          :class="pageClasses(page)"
+          @click="handlePageClick(page)"
+        >
+          {{ page }}
+        </button>
+        <span v-else class="eui-pagination__ellipsis">...</span>
+      </template>
+      <button
+        class="eui-pagination__next"
+        :disabled="currentPage === totalPages"
+        @click="handleNext"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div v-if="showQuickJumper" class="eui-pagination__jumper">
+        <span>Go to</span>
+        <input
+          type="number"
+          :min="1"
+          :max="totalPages"
+          :value="jumpPage"
+          @input="handleJumpInput"
+          @keyup.enter="handleJump"
+          class="eui-pagination__jumper-input"
+        />
+        <button @click="handleJump" class="eui-pagination__jumper-btn">Go</button>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -52,12 +84,14 @@ import { computed, ref } from 'vue'
 
 const props = defineProps<{
   modelValue?: number
+  page?: number
   total: number
   pageSize?: number
   showSizeChanger?: boolean
   size?: 'sm' | 'md' | 'lg'
   showTotal?: boolean
   showQuickJumper?: boolean
+  simple?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -65,7 +99,7 @@ const emit = defineEmits<{
   change: [page: number]
 }>()
 
-const currentPage = computed(() => props.modelValue || 1)
+const currentPage = computed(() => props.modelValue || props.page || 1)
 const totalPages = computed(() => Math.ceil(props.total / (props.pageSize || 10)))
 const jumpPage = ref(1)
 
@@ -74,6 +108,7 @@ const paginationClasses = computed(() => {
     'eui-pagination',
     {
       [`eui-pagination--${props.size || 'md'}`]: true,
+      'eui-pagination--simple': props.simple,
     },
   ]
 })
@@ -143,8 +178,9 @@ const handleJump = () => {
 
 const handlePrev = () => {
   if (currentPage.value > 1) {
-    emit('update:modelValue', currentPage.value - 1)
-    emit('change', currentPage.value - 1)
+    const newPage = currentPage.value - 1
+    emit('update:modelValue', newPage)
+    emit('change', newPage)
   }
 }
 
@@ -152,6 +188,14 @@ const handleNext = () => {
   if (currentPage.value < totalPages.value) {
     emit('update:modelValue', currentPage.value + 1)
     emit('change', currentPage.value + 1)
+  }
+}
+
+const handleSimpleInput = (e: Event) => {
+  const value = parseInt((e.target as HTMLInputElement).value)
+  if (!isNaN(value) && value >= 1 && value <= totalPages.value) {
+    emit('update:modelValue', value)
+    emit('change', value)
   }
 }
 </script>
@@ -268,6 +312,30 @@ const handleNext = () => {
       min-width: 40px;
       height: 40px;
       font-size: var(--eui-font-size-lg);
+    }
+  }
+
+  &--simple {
+    .eui-pagination__simple-input {
+      width: 50px;
+      padding: var(--eui-spacing-xs) var(--eui-spacing-sm);
+      font-size: var(--eui-font-size-base);
+      color: var(--eui-text-primary);
+      background-color: var(--eui-bg-primary);
+      border: 1px solid var(--eui-border-color);
+      border-radius: var(--eui-radius-sm);
+      text-align: center;
+      margin: 0 var(--eui-spacing-xs);
+    }
+
+    .eui-pagination__simple-separator {
+      margin: 0 var(--eui-spacing-xs);
+      color: var(--eui-text-secondary);
+    }
+
+    .eui-pagination__simple-total {
+      margin-left: var(--eui-spacing-xs);
+      color: var(--eui-text-secondary);
     }
   }
 }

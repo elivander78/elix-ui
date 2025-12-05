@@ -6,15 +6,7 @@
 
 <script setup lang="ts">
 import { computed, provide, ref } from 'vue'
-
-export interface FormRules {
-  [key: string]: Array<{
-    required?: boolean
-    message?: string
-    validator?: (value: any) => boolean | Promise<boolean>
-    trigger?: 'blur' | 'change'
-  }>
-}
+import type { FormRules } from './types'
 
 const props = defineProps<{
   model: Record<string, any>
@@ -78,11 +70,30 @@ const handleSubmit = async () => {
   }
 }
 
+const reset = () => {
+  errors.value = {}
+  Object.keys(props.model).forEach((key) => {
+    if (Array.isArray(props.model[key])) {
+      props.model[key] = []
+    } else if (typeof props.model[key] === 'boolean') {
+      props.model[key] = false
+    } else {
+      props.model[key] = ''
+    }
+  })
+}
+
+defineExpose({
+  validate,
+  reset,
+})
+
 provide('form', {
   model: props.model,
   rules: props.rules,
   errors,
   labelWidth: props.labelWidth,
+  reset,
 })
 </script>
 

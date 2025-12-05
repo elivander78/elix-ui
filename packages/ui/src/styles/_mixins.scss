@@ -1,0 +1,54 @@
+// Border/Shadow Mixin
+// Applies border or box-shadow based on border-mode
+// Usage: @include border-shadow($color: var(--eui-border-color), $width: 1px);
+// Components using this mixin will automatically support border-mode switching
+@mixin border-shadow($color: var(--eui-border-color), $width: 1px, $style: solid) {
+  // Default: use border
+  border: #{$width} #{$style} #{$color};
+  
+  // When border-mode is 'shadow', hide border and show shadow
+  :root[data-border-mode="shadow"] &,
+  :root.border-mode-shadow & {
+    border-color: transparent;
+    box-shadow: 0 0 0 #{$width} #{$color};
+  }
+  
+  // When border-mode is 'both', show both
+  :root[data-border-mode="both"] &,
+  :root.border-mode-both & {
+    box-shadow: 0 0 0 #{$width} #{$color};
+  }
+  
+  // When border-mode is 'border' (default), only show border
+  :root[data-border-mode="border"] &,
+  :root.border-mode-border & {
+    box-shadow: none;
+  }
+}
+
+// Border/Shadow for specific sides  
+@mixin border-shadow-side($side: top, $color: var(--eui-border-color), $width: 1px, $style: solid) {
+  border-#{$side}: #{$width} #{$style} #{$color};
+  
+  // When border-mode is 'shadow', convert to shadow
+  :root[data-border-mode="shadow"] &,
+  :root.border-mode-shadow & {
+    border-#{$side}-color: transparent;
+    @if $side == 'top' {
+      box-shadow: 0 -#{$width} 0 0 #{$color};
+    } @else if $side == 'right' {
+      box-shadow: #{$width} 0 0 0 #{$color};
+    } @else if $side == 'bottom' {
+      box-shadow: 0 #{$width} 0 0 #{$color};
+    } @else if $side == 'left' {
+      box-shadow: -#{$width} 0 0 0 #{$color};
+    }
+  }
+}
+
+// Remove border/shadow
+@mixin border-shadow-none() {
+  border: none;
+  box-shadow: none;
+}
+

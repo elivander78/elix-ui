@@ -9,7 +9,8 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   fluid?: boolean
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | string
+  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | number
+  padded?: boolean
 }>()
 
 const containerClasses = computed(() => {
@@ -17,15 +18,16 @@ const containerClasses = computed(() => {
     'eui-container',
     {
       'eui-container--fluid': props.fluid,
-      [`eui-container--${props.maxWidth}`]: props.maxWidth && !props.fluid,
+      'eui-container--padded': props.padded,
+      [`eui-container--${props.maxWidth}`]: props.maxWidth && typeof props.maxWidth === 'string' && !props.fluid,
     },
   ]
 })
 
 const containerStyle = computed(() => {
-  if (props.maxWidth && typeof props.maxWidth === 'string' && !['sm', 'md', 'lg', 'xl', '2xl'].includes(props.maxWidth)) {
+  if (props.maxWidth && typeof props.maxWidth === 'number') {
     return {
-      maxWidth: props.maxWidth,
+      maxWidth: `${props.maxWidth}px`,
     }
   }
   return {}
@@ -37,11 +39,21 @@ const containerStyle = computed(() => {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--eui-spacing-md);
-  padding-right: var(--eui-spacing-md);
 
   &--fluid {
     max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--padded {
+    padding-left: var(--eui-spacing-md);
+    padding-right: var(--eui-spacing-md);
+  }
+
+  &:not(&--fluid):not(&--padded) {
+    padding-left: var(--eui-spacing-md);
+    padding-right: var(--eui-spacing-md);
   }
 
   &--sm {

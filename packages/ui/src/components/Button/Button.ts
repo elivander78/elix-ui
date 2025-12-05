@@ -3,6 +3,7 @@ import type { PropType } from 'vue'
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'outline' | 'ghost' | 'text'
 export type ButtonShape = 'rounded' | 'pill' | 'square'
+export type ButtonAppearance = 'border' | 'shadow' | 'border-shadow'
 
 export interface ButtonProps {
   size?: ButtonSize
@@ -12,6 +13,7 @@ export interface ButtonProps {
   shape?: ButtonShape
   nativeType?: 'button' | 'submit' | 'reset'
   block?: boolean
+  appearance?: ButtonAppearance
 }
 
 export const buttonProps = {
@@ -42,6 +44,10 @@ export const buttonProps = {
   block: {
     type: Boolean,
     default: false,
+  },
+  appearance: {
+    type: String as PropType<ButtonAppearance>,
+    default: 'border' as ButtonAppearance,
   },
 }
 

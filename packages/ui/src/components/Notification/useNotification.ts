@@ -31,20 +31,20 @@ export function useNotification() {
     }
   }
 
-  const success = (title: string, message?: string, duration?: number) => {
-    return add({ title, message, type: 'success', duration })
+  const success = (title: string, message?: string, duration?: number, options?: Partial<NotificationOptions>) => {
+    return add({ title, message, type: 'success', duration, ...options })
   }
 
-  const error = (title: string, message?: string, duration?: number) => {
-    return add({ title, message, type: 'error', duration })
+  const error = (title: string, message?: string, duration?: number, options?: Partial<NotificationOptions>) => {
+    return add({ title, message, type: 'error', duration, ...options })
   }
 
-  const warning = (title: string, message?: string, duration?: number) => {
-    return add({ title, message, type: 'warning', duration })
+  const warning = (title: string, message?: string, duration?: number, options?: Partial<NotificationOptions>) => {
+    return add({ title, message, type: 'warning', duration, ...options })
   }
 
-  const info = (title: string, message?: string, duration?: number) => {
-    return add({ title, message, type: 'info', duration })
+  const info = (title: string, message?: string, duration?: number, options?: Partial<NotificationOptions>) => {
+    return add({ title, message, type: 'info', duration, ...options })
   }
 
   return {

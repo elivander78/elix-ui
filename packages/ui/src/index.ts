@@ -34,10 +34,10 @@ export { Divider } from './components/Divider'
 export { Tabs, TabPane } from './components/Tabs'
 export type { TabOption } from './components/Tabs'
 export { Breadcrumbs } from './components/Breadcrumbs'
-export type { BreadcrumbItem } from './components/Breadcrumbs'
+export type { BreadcrumbItem } from './components/Breadcrumbs/types'
 
 export { Form, FormItem } from './components/Form'
-export type { FormRules } from './components/Form'
+export type { FormRules, FormInstance } from './components/Form/types'
 
 export { Drawer, useDrawer } from './components/Drawer'
 
@@ -62,6 +62,29 @@ export { Progress } from './components/Progress'
 export { Header } from './components/Header'
 
 export { Sidebar } from './components/Sidebar'
+
+export { Alert } from './components/Alert'
+export type { AlertProps, AlertType, AlertVariant, AlertAppearance } from './components/Alert'
+
+export { Collapse, CollapseItem } from './components/Collapse'
+export type { CollapseProps, CollapseItemProps, CollapseAppearance } from './components/Collapse'
+
+export { Slider } from './components/Slider'
+export type { SliderProps, SliderSize, SliderTooltip } from './components/Slider'
+
+export { Steps, Step } from './components/Steps'
+export type { StepsProps, StepProps, StepsDirection, StepsStatus, StepsSize } from './components/Steps'
+
+export { Dropdown } from './components/Dropdown'
+export type { DropdownProps, DropdownItem, DropdownTrigger, DropdownPlacement } from './components/Dropdown'
+
+export { Upload } from './components/Upload'
+export type { UploadProps, UploadFile, UploadFileStatus } from './components/Upload'
+
+export { Stack } from './components/Stack'
+
+export { DatePicker, BaseDatePicker } from './components/DatePicker'
+export type { BaseDatePickerProps, DatePickerSize, DatePickerStatus, DatePickerAppearance } from './components/DatePicker/BaseDatePicker'
 
 // Composables
 export { useTheme } from './composables/useTheme'

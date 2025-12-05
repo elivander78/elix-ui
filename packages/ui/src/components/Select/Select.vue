@@ -1,12 +1,42 @@
 <template>
   <div ref="wrapperRef" :class="wrapperClasses" @click="toggleDropdown">
     <div :class="selectClasses">
-      <span v-if="selectedOption" class="eui-select__selected">
-        {{ selectedOption.label }}
-      </span>
-      <span v-else class="eui-select__placeholder">{{ placeholder }}</span>
+      <!-- Multiple mode: show tags -->
+      <template v-if="multiple">
+        <div v-if="selectedOptions.length > 0" class="eui-select__tags">
+          <span
+            v-for="(option, index) in selectedOptions"
+            :key="option.value"
+            class="eui-select__tag"
+          >
+            {{ option.label }}
+            <span
+              class="eui-select__tag-close"
+              @click.stop="handleRemoveTag(option.value)"
+            >
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M9 3L3 9M3 3l6 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+        <span v-else class="eui-select__placeholder">{{ placeholder }}</span>
+      </template>
+      <!-- Single mode: show selected option -->
+      <template v-else>
+        <span v-if="selectedOption" class="eui-select__selected">
+          {{ selectedOption.label }}
+        </span>
+        <span v-else class="eui-select__placeholder">{{ placeholder }}</span>
+      </template>
     </div>
-    <span v-if="clearable && modelValue && !disabled" class="eui-select__clear" @click.stop="handleClear">
+    <span v-if="clearable && hasValue && !disabled" class="eui-select__clear" @click.stop="handleClear">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M10.5 3.5L3.5 10.5M3.5 3.5l7 7"
@@ -30,15 +60,44 @@
     </span>
     <Teleport to="body">
       <div v-if="isOpen" ref="dropdownRef" :class="dropdownClasses">
-        <div
-          v-for="option in filteredOptions"
-          :key="option.value"
-          :class="optionClasses(option)"
-          @click="handleSelect(option)"
-        >
-          {{ option.label }}
+        <div v-if="filterable" class="eui-select-dropdown__search">
+          <input
+            ref="searchInputRef"
+            v-model="filterQuery"
+            type="text"
+            class="eui-select-search"
+            placeholder="Search..."
+            @click.stop
+          />
         </div>
-        <div v-if="filteredOptions.length === 0" class="eui-select__empty">No options</div>
+        <div class="eui-select-dropdown__options">
+          <div
+            v-for="option in filteredOptions"
+            :key="option.value"
+            :class="optionClasses(option)"
+            @click="handleSelect(option)"
+          >
+            <span v-if="multiple" class="eui-select-option__check">
+              <svg
+                v-if="selectedValues.includes(option.value)"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M13.333 4L6 11.333 2.667 8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            {{ option.label }}
+          </div>
+          <div v-if="filteredOptions.length === 0" class="eui-select__empty">No options</div>
+        </div>
       </div>
     </Teleport>
   </div>
@@ -51,8 +110,8 @@ import { selectProps, type SelectProps, type SelectOption } from './Select'
 const props = defineProps(selectProps)
 
 const emit = defineEmits<{
-  'update:modelValue': [value: string | number | undefined]
-  change: [value: string | number | undefined]
+  'update:modelValue': [value: string | number | (string | number)[] | undefined]
+  change: [value: string | number | (string | number)[] | undefined]
   clear: []
 }>()
 
@@ -60,9 +119,25 @@ const isOpen = ref(false)
 const filterQuery = ref('')
 const dropdownRef = ref<HTMLElement>()
 const wrapperRef = ref<HTMLElement>()
+const searchInputRef = ref<HTMLInputElement>()
+
+const isMultiple = computed(() => props.multiple)
+
+const selectedValues = computed(() => {
+  if (isMultiple.value) {
+    return Array.isArray(props.modelValue) ? props.modelValue : []
+  }
+  return []
+})
 
 const selectedOption = computed(() => {
+  if (isMultiple.value) return null
   return props.options.find((opt) => opt.value === props.modelValue)
+})
+
+const selectedOptions = computed(() => {
+  if (!isMultiple.value) return []
+  return props.options.filter((opt) => selectedValues.value.includes(opt.value))
 })
 
 const filteredOptions = computed(() => {
@@ -77,6 +152,7 @@ const wrapperClasses = computed(() => {
   return [
     'eui-select-wrapper',
     `eui-select-wrapper--${props.size}`,
+    `eui-select-wrapper--appearance-${props.appearance}`,
     {
       'eui-select-wrapper--disabled': props.disabled,
       'eui-select-wrapper--error': props.state === 'error',
@@ -87,11 +163,19 @@ const wrapperClasses = computed(() => {
   ]
 })
 
+const hasValue = computed(() => {
+  if (isMultiple.value) {
+    return selectedValues.value.length > 0
+  }
+  return !!props.modelValue
+})
+
 const selectClasses = computed(() => {
   return [
     'eui-select',
     {
-      'eui-select--placeholder': !selectedOption.value,
+      'eui-select--placeholder': !hasValue.value,
+      'eui-select--multiple': isMultiple.value,
     },
   ]
 })
@@ -101,10 +185,14 @@ const dropdownClasses = computed(() => {
 })
 
 const optionClasses = (option: SelectOption) => {
+  const isSelected = isMultiple.value
+    ? selectedValues.value.includes(option.value)
+    : option.value === props.modelValue
+  
   return [
     'eui-select-option',
     {
-      'eui-select-option--selected': option.value === props.modelValue,
+      'eui-select-option--selected': isSelected,
       'eui-select-option--disabled': option.disabled,
     },
   ]
@@ -118,6 +206,9 @@ const toggleDropdown = async () => {
     updateDropdownPosition()
     if (props.filterable) {
       filterQuery.value = ''
+      // Focus search input when dropdown opens
+      await nextTick()
+      searchInputRef.value?.focus()
     }
   }
 }
@@ -129,15 +220,47 @@ const closeDropdown = () => {
 
 const handleSelect = (option: SelectOption) => {
   if (option.disabled) return
-  emit('update:modelValue', option.value)
-  emit('change', option.value)
-  closeDropdown()
+  
+  if (isMultiple.value) {
+    const currentValues = Array.isArray(props.modelValue) ? [...props.modelValue] : []
+    const index = currentValues.indexOf(option.value)
+    
+    if (index > -1) {
+      // Remove if already selected
+      currentValues.splice(index, 1)
+    } else {
+      // Add if not selected
+      currentValues.push(option.value)
+    }
+    
+    emit('update:modelValue', currentValues)
+    emit('change', currentValues)
+    // Don't close dropdown in multiple mode
+  } else {
+    emit('update:modelValue', option.value)
+    emit('change', option.value)
+    closeDropdown()
+  }
+}
+
+const handleRemoveTag = (value: string | number) => {
+  if (!isMultiple.value) return
+  
+  const currentValues = Array.isArray(props.modelValue) ? [...props.modelValue] : []
+  const index = currentValues.indexOf(value)
+  
+  if (index > -1) {
+    currentValues.splice(index, 1)
+    emit('update:modelValue', currentValues)
+    emit('change', currentValues)
+  }
 }
 
 const handleClear = (e: Event) => {
   e.stopPropagation()
-  emit('update:modelValue', undefined)
-  emit('change', undefined)
+  const clearedValue = isMultiple.value ? [] : undefined
+  emit('update:modelValue', clearedValue)
+  emit('change', clearedValue)
   emit('clear')
 }
 
@@ -271,6 +394,64 @@ onUnmounted(() => {
       box-shadow: 0 0 0 2px var(--eui-color-primary-100);
     }
   }
+
+  // Appearance
+  &--appearance-shadow {
+    .eui-select {
+      border-color: transparent !important;
+      box-shadow: 0 0 0 1px var(--eui-border-color) !important;
+      
+      &:hover:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-border-color-hover) !important;
+      }
+    }
+    
+    &.eui-select-wrapper--open .eui-select {
+      box-shadow: 0 0 0 1px var(--eui-border-color-focus), 0 0 0 2px var(--eui-color-primary-100) !important;
+    }
+    
+    &.eui-select-wrapper--error .eui-select {
+      box-shadow: 0 0 0 1px var(--eui-color-error) !important;
+      &.eui-select-wrapper--open {
+        box-shadow: 0 0 0 1px var(--eui-color-error), 0 0 0 2px var(--eui-color-error-100) !important;
+      }
+    }
+    
+    &.eui-select-wrapper--success .eui-select {
+      box-shadow: 0 0 0 1px var(--eui-color-success) !important;
+      &.eui-select-wrapper--open {
+        box-shadow: 0 0 0 1px var(--eui-color-success), 0 0 0 2px var(--eui-color-success-100) !important;
+      }
+    }
+  }
+
+  &--appearance-border-shadow {
+    .eui-select {
+      box-shadow: 0 0 0 1px var(--eui-border-color) !important;
+      
+      &:hover:not(:disabled) {
+        box-shadow: 0 0 0 1px var(--eui-border-color-hover) !important;
+      }
+    }
+    
+    &.eui-select-wrapper--open .eui-select {
+      box-shadow: 0 0 0 1px var(--eui-border-color-focus), 0 0 0 2px var(--eui-color-primary-100) !important;
+    }
+    
+    &.eui-select-wrapper--error .eui-select {
+      box-shadow: 0 0 0 1px var(--eui-color-error) !important;
+      &.eui-select-wrapper--open {
+        box-shadow: 0 0 0 1px var(--eui-color-error), 0 0 0 2px var(--eui-color-error-100) !important;
+      }
+    }
+    
+    &.eui-select-wrapper--success .eui-select {
+      box-shadow: 0 0 0 1px var(--eui-color-success) !important;
+      &.eui-select-wrapper--open {
+        box-shadow: 0 0 0 1px var(--eui-color-success), 0 0 0 2px var(--eui-color-success-100) !important;
+      }
+    }
+  }
 }
 
 .eui-select {
@@ -294,6 +475,12 @@ onUnmounted(() => {
     color: var(--eui-text-tertiary);
   }
 
+  &--multiple {
+    padding: var(--eui-spacing-xs) var(--eui-spacing-md);
+    padding-right: calc(var(--eui-spacing-md) + 32px);
+    min-height: auto;
+  }
+
   &:hover:not(:disabled) {
     border-color: var(--eui-border-color-hover);
   }
@@ -301,6 +488,47 @@ onUnmounted(() => {
 
 .eui-select__selected {
   flex: 1;
+}
+
+.eui-select__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--eui-spacing-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+.eui-select__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--eui-spacing-xs);
+  padding: var(--eui-spacing-xs) var(--eui-spacing-sm);
+  font-size: var(--eui-font-size-sm);
+  color: var(--eui-text-primary);
+  background-color: var(--eui-bg-secondary);
+  border: 1px solid var(--eui-border-color);
+  border-radius: var(--eui-radius-sm);
+  line-height: 1;
+}
+
+.eui-select__tag-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: var(--eui-text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--eui-text-primary);
+  }
+
+  svg {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .eui-select__placeholder {
@@ -357,10 +585,47 @@ onUnmounted(() => {
   border-radius: var(--eui-radius-md);
   box-shadow: var(--eui-shadow-lg);
   max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.eui-select-dropdown__search {
+  padding: var(--eui-spacing-sm);
+  border-bottom: 1px solid var(--eui-border-color);
+  flex-shrink: 0;
+}
+
+.eui-select-search {
+  width: 100%;
+  padding: var(--eui-spacing-xs) var(--eui-spacing-sm);
+  font-size: var(--eui-font-size-base);
+  font-family: inherit;
+  color: var(--eui-text-primary);
+  background-color: var(--eui-bg-primary);
+  border: 1px solid var(--eui-border-color);
+  border-radius: var(--eui-radius-sm);
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+
+  &:focus {
+    border-color: var(--eui-color-primary);
+  }
+
+  &::placeholder {
+    color: var(--eui-text-tertiary);
+  }
+}
+
+.eui-select-dropdown__options {
   overflow-y: auto;
+  max-height: 250px;
 }
 
 .eui-select-option {
+  display: flex;
+  align-items: center;
+  gap: var(--eui-spacing-sm);
   padding: var(--eui-spacing-sm) var(--eui-spacing-md);
   font-size: var(--eui-font-size-base);
   color: var(--eui-text-primary);
@@ -380,6 +645,16 @@ onUnmounted(() => {
   &--disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--eui-color-primary);
   }
 }
 

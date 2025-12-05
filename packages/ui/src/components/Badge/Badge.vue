@@ -14,6 +14,7 @@ const props = defineProps<{
   max?: number
   dot?: boolean
   type?: 'primary' | 'success' | 'warning' | 'error' | 'info'
+  size?: 'sm' | 'md' | 'lg'
 }>()
 
 const displayValue = computed(() => {
@@ -29,6 +30,7 @@ const badgeClasses = computed(() => {
     {
       [`eui-badge--${props.type || 'primary'}`]: props.type || !props.dot,
       'eui-badge--dot': props.dot,
+      [`eui-badge--${props.size || 'md'}`]: props.size,
     },
   ]
 })
@@ -38,6 +40,9 @@ const badgeClasses = computed(() => {
 .eui-badge {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  line-height: 1;
 
   &__value {
     position: absolute;
@@ -55,18 +60,76 @@ const badgeClasses = computed(() => {
     color: var(--eui-text-inverse);
     background-color: var(--eui-color-primary);
     border-radius: var(--eui-radius-full);
-    transform: translate(50%, -50%);
+    box-sizing: border-box;
+    white-space: nowrap;
+    z-index: 1;
   }
 
   &__dot {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -4px;
+    right: -4px;
     width: 8px;
     height: 8px;
     background-color: var(--eui-color-primary);
     border-radius: 50%;
-    transform: translate(50%, -50%);
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  // Sizes
+  &--sm {
+    .eui-badge__value {
+      top: -6px;
+      right: -6px;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 4px;
+      font-size: 10px;
+    }
+
+    .eui-badge__dot {
+      top: -3px;
+      right: -3px;
+      width: 6px;
+      height: 6px;
+    }
+  }
+
+  &--md {
+    .eui-badge__value {
+      top: -8px;
+      right: -8px;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 6px;
+      font-size: var(--eui-font-size-xs);
+    }
+
+    .eui-badge__dot {
+      top: -4px;
+      right: -4px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  &--lg {
+    .eui-badge__value {
+      top: -10px;
+      right: -10px;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 8px;
+      font-size: var(--eui-font-size-sm);
+    }
+
+    .eui-badge__dot {
+      top: -5px;
+      right: -5px;
+      width: 10px;
+      height: 10px;
+    }
   }
 
   &--primary {

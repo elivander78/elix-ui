@@ -2,6 +2,7 @@
   <header :class="headerClasses" :style="headerStyle">
     <div class="eui-header__content">
       <div class="eui-header__left">
+        <slot name="logo" />
         <slot name="left" />
       </div>
       <div class="eui-header__center">
@@ -20,14 +21,18 @@ import { computed } from 'vue'
 const props = defineProps<{
   height?: string | number
   fixed?: boolean
+  sticky?: boolean
   bordered?: boolean
+  zIndex?: number
 }>()
 
 const headerClasses = computed(() => {
+  const isSticky = props.sticky !== false && !props.fixed // Default to sticky unless explicitly disabled or fixed
   return [
     'eui-header',
     {
       'eui-header--fixed': props.fixed,
+      'eui-header--sticky': isSticky,
       'eui-header--bordered': props.bordered,
     },
   ]
@@ -37,6 +42,11 @@ const headerStyle = computed(() => {
   const style: Record<string, string> = {}
   if (props.height) {
     style.height = typeof props.height === 'number' ? `${props.height}px` : props.height
+  } else {
+    style.height = '64px' // Default height
+  }
+  if (props.zIndex !== undefined) {
+    style.zIndex = String(props.zIndex)
   }
   return style
 })
@@ -44,8 +54,11 @@ const headerStyle = computed(() => {
 
 <style lang="scss" scoped>
 .eui-header {
+  position: relative;
   background-color: var(--eui-bg-primary);
   transition: all 0.3s ease;
+  min-height: 64px;
+  width: 100%;
 
   &--fixed {
     position: fixed;
@@ -53,6 +66,12 @@ const headerStyle = computed(() => {
     left: 0;
     right: 0;
     z-index: 1000;
+  }
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   &--bordered {
@@ -64,6 +83,7 @@ const headerStyle = computed(() => {
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    min-height: inherit;
     padding: 0 var(--eui-spacing-lg);
   }
 

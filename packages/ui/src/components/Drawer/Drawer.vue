@@ -1,7 +1,8 @@
 <template>
   <Teleport to="body">
     <Transition name="eui-drawer">
-      <div v-if="modelValue" class="eui-drawer-overlay" @click="handleOverlayClick">
+      <div v-if="modelValue" class="eui-drawer-wrapper">
+        <div class="eui-drawer-overlay" @click="handleOverlayClick"></div>
         <div :class="drawerClasses" :style="computedDrawerStyle" @click.stop>
           <div v-if="title || $slots.header" class="eui-drawer__header">
             <slot name="header">
@@ -19,7 +20,7 @@
               </svg>
             </button>
           </div>
-          <div class="eui-drawer__body">
+          <div :class="['eui-drawer__body', { 'eui-drawer__body--scrollable': scrollable }]">
             <slot />
           </div>
           <div v-if="$slots.footer" class="eui-drawer__footer">
@@ -34,15 +35,21 @@
 <script setup lang="ts">
 import { computed, watch } from 'vue'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   modelValue: boolean
   title?: string
   width?: string | number
+  size?: string | number
   placement?: 'left' | 'right' | 'top' | 'bottom'
   closable?: boolean
   maskClosable?: boolean
+  scrollable?: boolean
   originPoint?: { x: number; y: number }
-}>()
+}>(), {
+  closable: true,
+  maskClosable: true,
+  scrollable: true,
+})
 
 const emit = defineEmits<{
   'update:modelValue': [value: boolean]
@@ -58,11 +65,12 @@ const drawerClasses = computed(() => {
 
 const drawerStyle = computed(() => {
   const style: Record<string, string> = {}
-  if (props.width) {
+  const size = props.size || props.width
+  if (size) {
     if (props.placement === 'left' || props.placement === 'right') {
-      style.width = typeof props.width === 'number' ? `${props.width}px` : props.width
+      style.width = typeof size === 'number' ? `${size}px` : size
     } else {
-      style.height = typeof props.width === 'number' ? `${props.width}px` : props.width
+      style.height = typeof size === 'number' ? `${size}px` : size
     }
   }
   return style
@@ -114,11 +122,19 @@ watch(
 </script>
 
 <style lang="scss" scoped>
-.eui-drawer-overlay {
+.eui-drawer-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  width: 100%;
+  height: 100%;
+}
+
+.eui-drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -221,8 +237,12 @@ watch(
 .eui-drawer__body {
   flex: 1;
   padding: var(--eui-spacing-lg);
-  overflow-y: auto;
   color: var(--eui-text-primary);
+  overflow: hidden;
+
+  &--scrollable {
+    overflow-y: auto;
+  }
 }
 
 .eui-drawer__footer {
@@ -234,15 +254,15 @@ watch(
   border-top: 1px solid var(--eui-border-color);
 }
 
-// Transitions
+// Overlay transitions
 .eui-drawer-enter-active,
 .eui-drawer-leave-active {
   transition: opacity 0.3s ease;
 }
 
-.eui-drawer-enter-active .eui-drawer,
-.eui-drawer-leave-active .eui-drawer {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+.eui-drawer-enter-active .eui-drawer-overlay,
+.eui-drawer-leave-active .eui-drawer-overlay {
+  transition: opacity 0.3s ease;
 }
 
 .eui-drawer-enter-from,
@@ -250,24 +270,39 @@ watch(
   opacity: 0;
 }
 
+.eui-drawer-enter-from .eui-drawer-overlay,
+.eui-drawer-leave-to .eui-drawer-overlay {
+  opacity: 0;
+}
+
+// Drawer transitions based on placement
+.eui-drawer-enter-active .eui-drawer,
+.eui-drawer-leave-active .eui-drawer {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+// Left placement
 .eui-drawer-enter-from .eui-drawer--left,
 .eui-drawer-leave-to .eui-drawer--left {
-  transform: translateX(-100%) scale(0.9);
+  transform: translateX(-100%);
 }
 
+// Right placement
 .eui-drawer-enter-from .eui-drawer--right,
 .eui-drawer-leave-to .eui-drawer--right {
-  transform: translateX(100%) scale(0.9);
+  transform: translateX(100%);
 }
 
+// Top placement
 .eui-drawer-enter-from .eui-drawer--top,
 .eui-drawer-leave-to .eui-drawer--top {
-  transform: translateY(-100%) scale(0.9);
+  transform: translateY(-100%);
 }
 
+// Bottom placement
 .eui-drawer-enter-from .eui-drawer--bottom,
 .eui-drawer-leave-to .eui-drawer--bottom {
-  transform: translateY(100%) scale(0.9);
+  transform: translateY(100%);
 }
 </style>
 

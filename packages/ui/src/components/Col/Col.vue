@@ -6,48 +6,45 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { Breakpoint } from '../../tokens/breakpoints'
 
 const props = defineProps<{
-  span?: number | Partial<Record<Breakpoint, number>>
-  offset?: number | Partial<Record<Breakpoint, number>>
-  order?: number | Partial<Record<Breakpoint, number>>
+  span?: number
+  offset?: number
+  xs?: number | { span?: number; offset?: number }
+  sm?: number | { span?: number; offset?: number }
+  md?: number | { span?: number; offset?: number }
+  lg?: number | { span?: number; offset?: number }
+  xl?: number | { span?: number; offset?: number }
 }>()
-
-const breakpoints: Breakpoint[] = ['xs', 'sm', 'md', 'lg', 'xl', '2xl']
 
 const colClasses = computed(() => {
   const classes: string[] = ['eui-col']
   
-  if (typeof props.span === 'number') {
+  if (props.span !== undefined) {
     classes.push(`eui-col--span-${props.span}`)
-  } else if (props.span) {
-    breakpoints.forEach((bp) => {
-      if (props.span[bp] !== undefined) {
-        classes.push(`eui-col--${bp}-span-${props.span[bp]}`)
-      }
-    })
   }
   
-  if (typeof props.offset === 'number') {
+  if (props.offset !== undefined) {
     classes.push(`eui-col--offset-${props.offset}`)
-  } else if (props.offset) {
-    breakpoints.forEach((bp) => {
-      if (props.offset[bp] !== undefined) {
-        classes.push(`eui-col--${bp}-offset-${props.offset[bp]}`)
-      }
-    })
   }
   
-  if (typeof props.order === 'number') {
-    classes.push(`eui-col--order-${props.order}`)
-  } else if (props.order) {
-    breakpoints.forEach((bp) => {
-      if (props.order[bp] !== undefined) {
-        classes.push(`eui-col--${bp}-order-${props.order[bp]}`)
+  // Responsive props
+  const responsiveProps = ['xs', 'sm', 'md', 'lg', 'xl'] as const
+  responsiveProps.forEach((bp) => {
+    const prop = props[bp]
+    if (prop !== undefined) {
+      if (typeof prop === 'number') {
+        classes.push(`eui-col--${bp}-span-${prop}`)
+      } else {
+        if (prop.span !== undefined) {
+          classes.push(`eui-col--${bp}-span-${prop.span}`)
+        }
+        if (prop.offset !== undefined) {
+          classes.push(`eui-col--${bp}-offset-${prop.offset}`)
+        }
       }
-    })
-  }
+    }
+  })
   
   return classes
 })

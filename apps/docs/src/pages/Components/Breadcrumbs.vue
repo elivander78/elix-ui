@@ -5,14 +5,76 @@
 
     <h2>Basic Usage</h2>
     <Playground :code="basicCode" />
+
+    <h2>With Length Limit</h2>
+    <Playground :code="maxItemsCode" />
+
+    <h2>Custom Separator</h2>
+    <Playground :code="separatorCode" />
+
+    <h2>API</h2>
+    <ApiTable :props="breadcrumbsProps" :slots="breadcrumbsSlots" />
   </div>
 </template>
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
+import ApiTable from '../../components/ApiTable.vue'
+
+const breadcrumbsProps = [
+  { name: 'items', type: 'BreadcrumbItem[]', description: 'Array of breadcrumb items' },
+]
+
+const breadcrumbsSlots = [
+  { name: 'separator', description: 'Custom separator between items' },
+]
 
 const basicCode = `<template>
   <Breadcrumbs :items="items" />
+</template>
+
+<script setup>
+import { Breadcrumbs } from '@elix/ui'
+
+const items = [
+  { label: 'Home', to: '/' },
+  { label: 'Components', to: '/components' },
+  { label: 'Breadcrumbs' },
+]
+<\/script>`
+
+const maxItemsCode = `<template>
+  <div>
+    <Breadcrumbs :items="shortItems" />
+    <Breadcrumbs :items="longItems" style="margin-top: 20px;" />
+  </div>
+</template>
+
+<script setup>
+import { Breadcrumbs } from '@elix/ui'
+
+const shortItems = [
+  { label: 'Home', to: '/' },
+  { label: 'Components', to: '/components' },
+  { label: 'Breadcrumbs' },
+]
+
+const longItems = [
+  { label: 'Home', to: '/' },
+  { label: 'Products', to: '/products' },
+  { label: 'Electronics', to: '/products/electronics' },
+  { label: 'Computers', to: '/products/electronics/computers' },
+  { label: 'Laptops', to: '/products/electronics/computers/laptops' },
+  { label: 'Gaming Laptops' },
+]
+<\/script>`
+
+const separatorCode = `<template>
+  <Breadcrumbs :items="items">
+    <template #separator>
+      <span style="margin: 0 8px;">/</span>
+    </template>
+  </Breadcrumbs>
 </template>
 
 <script setup>

@@ -1,6 +1,7 @@
 @use './tokens';
 @use './themes/light';
 @use './themes/dark';
+@use './mixins';
 
 // Base styles
 * {
@@ -16,5 +17,19 @@ body {
   background-color: var(--eui-bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+// Border/Shadow mode control
+// When border-mode is 'shadow', convert borders to box-shadows
+:root[data-border-mode="shadow"],
+:root.border-mode-shadow {
+  // This will be handled per-component
+  // Components using the mixin will have their borders converted
+}
+
+// When border-mode is 'both', show both border and shadow
+:root[data-border-mode="both"],
+:root.border-mode-both {
+  // Both will be visible by default when using the mixin
 }
 

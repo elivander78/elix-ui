@@ -14,7 +14,10 @@ const props = defineProps<{
   collapsed?: boolean
   collapsedWidth?: string | number
   fixed?: boolean
+  sticky?: boolean
   bordered?: boolean
+  top?: string | number
+  zIndex?: number
 }>()
 
 const sidebarClasses = computed(() => {
@@ -23,6 +26,7 @@ const sidebarClasses = computed(() => {
     {
       'eui-sidebar--collapsed': props.collapsed,
       'eui-sidebar--fixed': props.fixed,
+      'eui-sidebar--sticky': props.sticky && !props.fixed,
       'eui-sidebar--bordered': props.bordered,
     },
   ]
@@ -35,21 +39,41 @@ const sidebarStyle = computed(() => {
   } else {
     style.width = typeof props.width === 'number' ? `${props.width}px` : (props.width || '280px')
   }
+  if (props.top !== undefined) {
+    style.top = typeof props.top === 'number' ? `${props.top}px` : props.top
+  }
+  if (props.zIndex !== undefined) {
+    style.zIndex = String(props.zIndex)
+  }
+  if (props.fixed && props.top !== undefined) {
+    const topValue = typeof props.top === 'number' ? props.top : parseInt(props.top) || 0
+    style.height = `calc(100vh - ${topValue}px)`
+  }
   return style
 })
 </script>
 
 <style lang="scss" scoped>
 .eui-sidebar {
+  position: relative;
   background-color: var(--eui-bg-secondary);
-  transition: width 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease;
+  height: 100%;
 
   &--fixed {
     position: fixed;
-    top: 0;
     left: 0;
     bottom: 0;
     z-index: 999;
+    height: 100vh;
+  }
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    max-height: 100vh;
+    overflow-y: auto;
   }
 
   &--bordered {
@@ -60,6 +84,7 @@ const sidebarStyle = computed(() => {
     height: 100%;
     padding: var(--eui-spacing-lg);
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
   &--collapsed {

@@ -1,6 +1,14 @@
 <template>
   <div class="eui-popover-wrapper" ref="wrapperRef">
-    <div @click.stop="togglePopover" @mouseenter="props.trigger === 'hover' ? showPopover() : undefined" @mouseleave="props.trigger === 'hover' ? hidePopover() : undefined">
+    <div 
+      :tabindex="props.trigger === 'focus' && !props.disabled ? 0 : undefined"
+      @click.stop="!props.disabled && props.trigger === 'click' && togglePopover()" 
+      @mouseenter="!props.disabled && props.trigger === 'hover' ? showPopover() : undefined" 
+      @mouseleave="!props.disabled && props.trigger === 'hover' ? hidePopover() : undefined"
+      @focus="!props.disabled && props.trigger === 'focus' ? showPopover() : undefined"
+      @blur="!props.disabled && props.trigger === 'focus' ? hidePopover() : undefined"
+      :style="props.trigger === 'focus' ? { display: 'inline-block', outline: 'none' } : undefined"
+    >
       <slot name="trigger" />
     </div>
     <Teleport to="body">
@@ -21,10 +29,18 @@ import { ref, computed, nextTick, onMounted, onUnmounted, withDefaults } from 'v
 
 const props = withDefaults(defineProps<{
   title?: string
-  placement?: 'top' | 'bottom' | 'left' | 'right'
-  trigger?: 'click' | 'hover'
+  placement?: 'top' | 'bottom' | 'left' | 'right' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end' | 'left-start' | 'left-end' | 'right-start' | 'right-end'
+  trigger?: 'click' | 'hover' | 'focus'
+  showArrow?: boolean
+  disabled?: boolean
+  size?: 'sm' | 'md' | 'lg'
+  variant?: 'default' | 'filled'
 }>(), {
   trigger: 'click',
+  showArrow: true,
+  disabled: false,
+  size: 'md',
+  variant: 'default',
 })
 
 const isVisible = ref(false)
@@ -35,6 +51,11 @@ const popoverClasses = computed(() => {
   return [
     'eui-popover',
     `eui-popover--${props.placement || 'bottom'}`,
+    `eui-popover--${props.size}`,
+    `eui-popover--${props.variant}`,
+    {
+      'eui-popover--no-arrow': !props.showArrow,
+    },
   ]
 })
 
@@ -43,6 +64,7 @@ const popoverStyle = computed(() => {
 })
 
 const togglePopover = async () => {
+  if (props.disabled) return
   if (props.trigger === 'click') {
     isVisible.value = !isVisible.value
     if (isVisible.value) {
@@ -53,15 +75,18 @@ const togglePopover = async () => {
 }
 
 const showPopover = async () => {
-  if (props.trigger === 'hover') {
-    isVisible.value = true
-    await nextTick()
-    updatePosition()
+  if (props.disabled) return
+  if (props.trigger === 'hover' || props.trigger === 'focus') {
+    if (!isVisible.value) {
+      isVisible.value = true
+      await nextTick()
+      updatePosition()
+    }
   }
 }
 
 const hidePopover = () => {
-  if (props.trigger === 'hover') {
+  if (props.trigger === 'hover' || props.trigger === 'focus') {
     isVisible.value = false
   }
 }
@@ -100,13 +125,18 @@ const updatePosition = () => {
 }
 
 const handleClickOutside = (event: MouseEvent) => {
-  if (
-    popoverRef.value &&
-    wrapperRef.value &&
-    !popoverRef.value.contains(event.target as Node) &&
-    !wrapperRef.value.contains(event.target as Node)
-  ) {
-    isVisible.value = false
+  if (props.trigger === 'click' && isVisible.value) {
+    // Use setTimeout to ensure the toggle happens first
+    setTimeout(() => {
+      if (
+        popoverRef.value &&
+        wrapperRef.value &&
+        !popoverRef.value.contains(event.target as Node) &&
+        !wrapperRef.value.contains(event.target as Node)
+      ) {
+        isVisible.value = false
+      }
+    }, 0)
   }
 }
 
@@ -154,9 +184,11 @@ onUnmounted(() => {
     width: 0;
     height: 0;
     border: 8px solid transparent;
+    display: none;
   }
 
   &--top::before {
+    display: block;
     bottom: -16px;
     left: 50%;
     transform: translateX(-50%);
@@ -164,6 +196,7 @@ onUnmounted(() => {
   }
 
   &--bottom::before {
+    display: block;
     top: -16px;
     left: 50%;
     transform: translateX(-50%);
@@ -171,6 +204,7 @@ onUnmounted(() => {
   }
 
   &--left::before {
+    display: block;
     right: -16px;
     top: 50%;
     transform: translateY(-50%);
@@ -178,21 +212,57 @@ onUnmounted(() => {
   }
 
   &--right::before {
+    display: block;
     left: -16px;
     top: 50%;
     transform: translateY(-50%);
     border-right-color: var(--eui-bg-primary);
   }
+
+  &--no-arrow::before {
+    display: none;
+  }
 }
 
 .eui-popover-enter-active,
 .eui-popover-leave-active {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.eui-popover-enter-active .eui-popover,
+.eui-popover-leave-active .eui-popover {
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .eui-popover-enter-from,
 .eui-popover-leave-to {
   opacity: 0;
+}
+
+.eui-popover-enter-from .eui-popover,
+.eui-popover-leave-to .eui-popover {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.eui-popover--top .eui-popover-enter-from .eui-popover,
+.eui-popover--top .eui-popover-leave-to .eui-popover {
+  transform: scale(0.95) translateY(4px);
+}
+
+.eui-popover--bottom .eui-popover-enter-from .eui-popover,
+.eui-popover--bottom .eui-popover-leave-to .eui-popover {
+  transform: scale(0.95) translateY(-4px);
+}
+
+.eui-popover--left .eui-popover-enter-from .eui-popover,
+.eui-popover--left .eui-popover-leave-to .eui-popover {
+  transform: scale(0.95) translateX(4px);
+}
+
+.eui-popover--right .eui-popover-enter-from .eui-popover,
+.eui-popover--right .eui-popover-leave-to .eui-popover {
+  transform: scale(0.95) translateX(-4px);
 }
 </style>
 
