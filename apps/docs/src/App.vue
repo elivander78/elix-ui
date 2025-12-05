@@ -52,10 +52,10 @@
             <template #right>
               <div class="docs-header__actions">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/elivander78/elix-ui"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="docs-header__action-btn"
+                  class="docs-header__action-btn docs-header__action-btn--round"
                   title="GitHub"
                 >
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@
                   </svg>
                 </a>
                 <button
-                  class="docs-header__action-btn"
+                  class="docs-header__action-btn docs-header__action-btn--round"
                   @click="toggleTheme"
                   :title="theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'"
                 >
@@ -527,6 +527,10 @@ onMounted(() => {
   svg {
     width: 18px;
     height: 18px;
+  }
+
+  &--round {
+    border-radius: 50%;
   }
 }
 </style>
