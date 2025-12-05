@@ -1,0 +1,8 @@
+# Ignore all files in .vscode except specific config files
+# This approach is more reliable than using negation patterns in root .gitignore
+*
+!settings.json
+!extensions.json
+!tasks.json
+!launch.json
+

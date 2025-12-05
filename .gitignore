@@ -9,11 +9,8 @@ es
 *.tsbuildinfo
 
 # IDE
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/tasks.json
-!.vscode/launch.json
+# .vscode directory is handled by .vscode/.gitignore for better reliability
+# This avoids issues with negation patterns after wildcards in root .gitignore
 .idea
 *.swp
 *.swo
@@ -38,4 +35,3 @@ coverage
 .env
 .env.local
 .env.*.local
-
