@@ -312,7 +312,7 @@ onUnmounted(() => {
   &:hover,
   &--active {
     border-color: var(--eui-color-primary-600);
-    box-shadow: 0 0 0 4px var(--eui-color-primary-100);
+    box-shadow: 0 0 0 4px var(--eui-focus-ring-primary);
     transform: translate(-50%, -50%) scale(1.1);
   }
 

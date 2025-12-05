@@ -156,7 +156,7 @@ onUnmounted(() => {
   // Themes
   &--dark {
     color: var(--eui-text-inverse);
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: var(--eui-tooltip-dark-bg);
   }
 
   &--light {
@@ -191,19 +191,19 @@ onUnmounted(() => {
   }
 
   &--dark &--top::before {
-    border-top-color: rgba(0, 0, 0, 0.85);
+    border-top-color: var(--eui-tooltip-dark-bg);
   }
 
   &--dark &--bottom::before {
-    border-bottom-color: rgba(0, 0, 0, 0.85);
+    border-bottom-color: var(--eui-tooltip-dark-bg);
   }
 
   &--dark &--left::before {
-    border-left-color: rgba(0, 0, 0, 0.85);
+    border-left-color: var(--eui-tooltip-dark-bg);
   }
 
   &--dark &--right::before {
-    border-right-color: rgba(0, 0, 0, 0.85);
+    border-right-color: var(--eui-tooltip-dark-bg);
   }
 
   &--light &--top::before {

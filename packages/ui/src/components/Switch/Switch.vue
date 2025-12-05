@@ -78,7 +78,7 @@ const handleChange = (event: Event) => {
     &::before {
       content: '';
       position: absolute;
-      background-color: white;
+      background-color: var(--eui-text-inverse);
       border-radius: 50%;
       transition: all 0.3s ease-in-out;
       box-shadow: var(--eui-shadow-sm);

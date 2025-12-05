@@ -86,7 +86,7 @@ const handleChange = () => {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background-color: white;
+      background-color: var(--eui-text-inverse);
     }
   }
 

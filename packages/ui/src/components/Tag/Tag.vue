@@ -158,27 +158,27 @@ const handleClose = (event: MouseEvent) => {
 
     &.eui-tag--primary {
       color: var(--eui-color-primary);
-      background-color: var(--eui-color-primary-50);
+      background-color: var(--eui-bg-hover-primary);
     }
 
     &.eui-tag--success {
       color: var(--eui-color-success);
-      background-color: var(--eui-color-success-50);
+      background-color: var(--eui-bg-hover-success);
     }
 
     &.eui-tag--warning {
       color: var(--eui-color-warning);
-      background-color: var(--eui-color-warning-50);
+      background-color: var(--eui-bg-hover-warning);
     }
 
     &.eui-tag--error {
       color: var(--eui-color-error);
-      background-color: var(--eui-color-error-50);
+      background-color: var(--eui-bg-hover-error);
     }
 
     &.eui-tag--info {
       color: var(--eui-color-info);
-      background-color: var(--eui-color-info-50);
+      background-color: var(--eui-bg-hover-info);
     }
   }
 

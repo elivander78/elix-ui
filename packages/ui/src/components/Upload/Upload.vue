@@ -333,12 +333,12 @@ const formatFileSize = (bytes: number): string => {
 
   &:hover:not(&--disabled) {
     border-color: var(--eui-color-primary);
-    background-color: var(--eui-color-primary-50);
+    background-color: var(--eui-bg-hover-primary);
   }
 
   &--active {
     border-color: var(--eui-color-primary);
-    background-color: var(--eui-color-primary-100);
+    background-color: var(--eui-bg-active-primary);
     border-style: solid;
     transform: scale(1.02);
   }

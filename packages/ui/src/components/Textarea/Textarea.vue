@@ -128,7 +128,7 @@ defineExpose({
 
     &:focus-within .eui-textarea {
       border-color: var(--eui-color-error);
-      box-shadow: 0 0 0 2px var(--eui-color-error-100);
+      box-shadow: 0 0 0 2px var(--eui-focus-ring-error);
     }
   }
 
@@ -139,7 +139,7 @@ defineExpose({
 
     &:focus-within .eui-textarea {
       border-color: var(--eui-color-success);
-      box-shadow: 0 0 0 2px var(--eui-color-success-100);
+      box-shadow: 0 0 0 2px var(--eui-focus-ring-success);
     }
   }
 
@@ -150,7 +150,7 @@ defineExpose({
 
     &:focus-within .eui-textarea {
       border-color: var(--eui-color-warning);
-      box-shadow: 0 0 0 2px var(--eui-color-warning-100);
+      box-shadow: 0 0 0 2px var(--eui-focus-ring-warning);
     }
   }
 }
@@ -179,7 +179,7 @@ defineExpose({
 
   &:focus {
     border-color: var(--eui-border-color-focus);
-    box-shadow: 0 0 0 2px var(--eui-color-primary-100);
+    box-shadow: 0 0 0 2px var(--eui-focus-ring-primary);
   }
 
   &:disabled {

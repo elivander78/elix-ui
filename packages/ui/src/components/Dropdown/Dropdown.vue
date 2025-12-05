@@ -284,7 +284,7 @@ onUnmounted(() => {
 
     &:hover:not(&--disabled),
     &--hovered:not(&--disabled) {
-      background-color: var(--eui-color-error-50);
+      background-color: var(--eui-bg-hover-error);
       color: var(--eui-color-error-700);
     }
   }

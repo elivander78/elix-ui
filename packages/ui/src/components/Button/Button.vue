@@ -106,7 +106,7 @@ const handleClick = (event: MouseEvent) => {
   &:focus-visible {
     outline: 2px solid var(--eui-border-color-focus);
     outline-offset: 2px;
-    box-shadow: 0 0 0 3px var(--eui-color-primary-100);
+    box-shadow: 0 0 0 3px var(--eui-focus-ring-primary);
   }
 
   // Sizes
@@ -175,7 +175,7 @@ const handleClick = (event: MouseEvent) => {
     }
 
     &:active:not(:disabled) {
-      background-color: var(--eui-color-neutral-200);
+      background-color: var(--eui-bg-tertiary);
     }
   }
 
@@ -185,11 +185,11 @@ const handleClick = (event: MouseEvent) => {
     @include border-shadow-none();
 
     &:hover:not(:disabled) {
-      background-color: var(--eui-color-primary-50);
+      background-color: var(--eui-bg-hover-primary);
     }
 
     &:active:not(:disabled) {
-      background-color: var(--eui-color-primary-100);
+      background-color: var(--eui-bg-active-primary);
     }
   }
 
@@ -199,12 +199,12 @@ const handleClick = (event: MouseEvent) => {
     @include border-shadow(var(--eui-color-primary), 1px);
 
     &:hover:not(:disabled) {
-      background-color: var(--eui-color-primary-50);
+      background-color: var(--eui-bg-hover-primary);
       @include border-shadow(var(--eui-color-primary-600), 1px);
     }
 
     &:active:not(:disabled) {
-      background-color: var(--eui-color-primary-100);
+      background-color: var(--eui-bg-active-primary);
       @include border-shadow(var(--eui-color-primary-700), 1px);
     }
   }

@@ -127,7 +127,7 @@ watch(
   width: 100%;
   height: 100%;
   padding: var(--eui-spacing-lg);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--eui-overlay-backdrop);
   backdrop-filter: blur(4px);
 }
 

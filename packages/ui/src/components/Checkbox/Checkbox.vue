@@ -87,7 +87,7 @@ const handleChange = (event: Event) => {
       top: 40%;
       width: 5px;
       height: 10px;
-      border: solid white;
+      border: solid var(--eui-text-inverse);
       border-width: 0 2px 2px 0;
       transform: translate(-50%, -50%) rotate(45deg);
     }
@@ -114,7 +114,7 @@ const handleChange = (event: Event) => {
         width: 10px;
         height: 2px;
         border: none;
-        background-color: white;
+        background-color: var(--eui-text-inverse);
         transform: none;
       }
     }

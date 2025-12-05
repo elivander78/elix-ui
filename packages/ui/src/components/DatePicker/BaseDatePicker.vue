@@ -334,7 +334,7 @@ onUnmounted(() => {
 
   &:focus {
     @include border-shadow(var(--eui-border-color-focus), 1px);
-    box-shadow: 0 0 0 2px var(--eui-color-primary-100);
+    box-shadow: 0 0 0 2px var(--eui-focus-ring-primary);
   }
 
   &:disabled {

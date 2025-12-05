@@ -108,7 +108,7 @@ const circleStrokeWidth = computed(() => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--eui-spinner-overlay);
     backdrop-filter: blur(2px);
     z-index: 1000;
   }

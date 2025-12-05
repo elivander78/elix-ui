@@ -2,13 +2,14 @@
   <component :is="asTag" :class="progressClasses">
     <div v-if="showInfo || showLabel" class="eui-progress__info">
       <span class="eui-progress__text">{{ displayText }}</span>
-      <span v-if="(percentage !== undefined || percent !== undefined)" class="eui-progress__percentage">{{ displayPercentage }}%</span>
+      <span
+        v-if="percentage !== undefined || percent !== undefined"
+        class="eui-progress__percentage"
+        >{{ displayPercentage }}%</span
+      >
     </div>
     <div :class="barClasses">
-      <div
-        class="eui-progress__fill"
-        :style="fillStyle"
-      />
+      <div class="eui-progress__fill" :style="fillStyle" />
     </div>
   </component>
 </template>
@@ -60,7 +61,10 @@ const barClasses = computed(() => {
 })
 
 const displayPercentage = computed(() => {
-  return Math.min(100, Math.max(0, props.percent !== undefined ? props.percent : (props.percentage || 0)))
+  return Math.min(
+    100,
+    Math.max(0, props.percent !== undefined ? props.percent : props.percentage || 0)
+  )
 })
 
 const fillStyle = computed(() => {
@@ -100,38 +104,37 @@ const displayText = computed(() => {
     background-color: var(--eui-bg-secondary);
     border-radius: var(--eui-radius-full);
     overflow: hidden;
-    
+
     &--striped {
       .eui-progress__fill {
-        background-image: linear-gradient(
+        background-image: repeating-linear-gradient(
           45deg,
-          rgba(255, 255, 255, 0.15) 25%,
-          transparent 25%,
-          transparent 50%,
-          rgba(255, 255, 255, 0.15) 50%,
-          rgba(255, 255, 255, 0.15) 75%,
-          transparent 75%,
-          transparent
+          transparent,
+          transparent 0.5rem,
+          var(--eui-progress-stripe) 0.5rem,
+          var(--eui-progress-stripe) 1rem
         );
         background-size: 1rem 1rem;
       }
     }
   }
-  
+
   &--border &__bar {
     border: 1px solid var(--eui-border-color);
   }
-  
+
   &--shadow &__bar {
     box-shadow: var(--eui-shadow-sm);
   }
 
   &__fill {
+    position: relative;
     height: 100%;
     background-color: var(--eui-color-primary);
     border-radius: var(--eui-radius-full);
     transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    
+    overflow: hidden;
+
     .eui-progress--animated & {
       animation: eui-progress-striped 1s linear infinite;
     }
@@ -193,4 +196,3 @@ const displayText = computed(() => {
   }
 }
 </style>
-

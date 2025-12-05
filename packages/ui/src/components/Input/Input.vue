@@ -122,7 +122,7 @@ defineExpose({
 
   &:focus-within:not(.eui-input-wrapper--disabled):not(.eui-input-wrapper--readonly) {
     @include border-shadow(var(--eui-border-color-focus), 1px);
-    box-shadow: 0 0 0 2px var(--eui-color-primary-100);
+    box-shadow: 0 0 0 2px var(--eui-focus-ring-primary);
 
     .eui-input__prefix,
     .eui-input__suffix {
@@ -253,7 +253,7 @@ defineExpose({
 
     &:focus-within {
       @include border-shadow(var(--eui-color-error), 1px);
-      box-shadow: 0 0 0 2px var(--eui-color-error-100);
+      box-shadow: 0 0 0 2px var(--eui-focus-ring-error);
     }
   }
 
@@ -262,7 +262,7 @@ defineExpose({
 
     &:focus-within {
       @include border-shadow(var(--eui-color-success), 1px);
-      box-shadow: 0 0 0 2px var(--eui-color-success-100);
+      box-shadow: 0 0 0 2px var(--eui-focus-ring-success);
     }
   }
 
@@ -271,7 +271,7 @@ defineExpose({
 
     &:focus-within {
       @include border-shadow(var(--eui-color-warning), 1px);
-      box-shadow: 0 0 0 2px var(--eui-color-warning-100);
+      box-shadow: 0 0 0 2px var(--eui-focus-ring-warning);
     }
   }
 
@@ -285,20 +285,20 @@ defineExpose({
     }
     
     &:focus-within:not(.eui-input-wrapper--disabled):not(.eui-input-wrapper--readonly) {
-      box-shadow: 0 0 0 1px var(--eui-border-color-focus), 0 0 0 2px var(--eui-color-primary-100) !important;
+      box-shadow: 0 0 0 1px var(--eui-border-color-focus), 0 0 0 2px var(--eui-focus-ring-primary) !important;
     }
     
     &.eui-input-wrapper--error {
       box-shadow: 0 0 0 1px var(--eui-color-error) !important;
       &:focus-within {
-        box-shadow: 0 0 0 1px var(--eui-color-error), 0 0 0 2px var(--eui-color-error-100) !important;
+        box-shadow: 0 0 0 1px var(--eui-color-error), 0 0 0 2px var(--eui-focus-ring-error) !important;
       }
     }
     
     &.eui-input-wrapper--success {
       box-shadow: 0 0 0 1px var(--eui-color-success) !important;
       &:focus-within {
-        box-shadow: 0 0 0 1px var(--eui-color-success), 0 0 0 2px var(--eui-color-success-100) !important;
+        box-shadow: 0 0 0 1px var(--eui-color-success), 0 0 0 2px var(--eui-focus-ring-success) !important;
       }
     }
   }
@@ -311,20 +311,20 @@ defineExpose({
     }
     
     &:focus-within:not(.eui-input-wrapper--disabled):not(.eui-input-wrapper--readonly) {
-      box-shadow: 0 0 0 1px var(--eui-border-color-focus), 0 0 0 2px var(--eui-color-primary-100) !important;
+      box-shadow: 0 0 0 1px var(--eui-border-color-focus), 0 0 0 2px var(--eui-focus-ring-primary) !important;
     }
     
     &.eui-input-wrapper--error {
       box-shadow: 0 0 0 1px var(--eui-color-error) !important;
       &:focus-within {
-        box-shadow: 0 0 0 1px var(--eui-color-error), 0 0 0 2px var(--eui-color-error-100) !important;
+        box-shadow: 0 0 0 1px var(--eui-color-error), 0 0 0 2px var(--eui-focus-ring-error) !important;
       }
     }
     
     &.eui-input-wrapper--success {
       box-shadow: 0 0 0 1px var(--eui-color-success) !important;
       &:focus-within {
-        box-shadow: 0 0 0 1px var(--eui-color-success), 0 0 0 2px var(--eui-color-success-100) !important;
+        box-shadow: 0 0 0 1px var(--eui-color-success), 0 0 0 2px var(--eui-focus-ring-success) !important;
       }
     }
   }

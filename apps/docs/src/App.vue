@@ -42,8 +42,20 @@
                   class="docs-header__search-input"
                 >
                   <template #prefix>
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16ZM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16ZM19 19l-4.35-4.35"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
                     </svg>
                   </template>
                 </Input>
@@ -56,10 +68,21 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="docs-header__action-btn docs-header__action-btn--round"
-                  title="GitHub"
+                  title="View on GitHub"
+                  aria-label="View source code on GitHub"
                 >
-                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 2C5.58 2 2 5.58 2 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.51v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0110 4.84c.85.004 1.7.11 2.5.32 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .28.16.59.67.51C15.13 18.17 18 14.42 18 10c0-4.42-3.58-8-8-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <svg
+                    height="20"
+                    width="20"
+                    viewBox="0 0 24 24"
+                    version="1.1"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"
+                      fill="currentColor"
+                    />
                   </svg>
                 </a>
                 <button
@@ -67,11 +90,37 @@
                   @click="toggleTheme"
                   :title="theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'"
                 >
-                  <svg v-if="theme === 'light'" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 3V1M10 19V17M17 10H19M1 10H3M15.657 4.343L16.97 3.03M3.03 16.97L4.343 15.657M15.657 15.657L16.97 16.97M3.03 3.03L4.343 4.343M14 10A4 4 0 1 1 6 10a4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <svg
+                    v-if="theme === 'light'"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 3V1M10 19V17M17 10H19M1 10H3M15.657 4.343L16.97 3.03M3.03 16.97L4.343 15.657M15.657 15.657L16.97 16.97M3.03 3.03L4.343 4.343M14 10A4 4 0 1 1 6 10a4 4 0 0 1 8 0Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
-                  <svg v-else width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.293 13.293A8 8 0 0 1 6.707 2.707a8.001 8.001 0 1 0 10.586 10.586Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <svg
+                    v-else
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.293 13.293A8 8 0 0 1 6.707 2.707a8.001 8.001 0 1 0 10.586 10.586Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </button>
               </div>
@@ -85,13 +134,24 @@
         </main>
       </div>
     </div>
-    <Notification :notifications="notificationService.notifications.value" @remove="(id: string) => notificationService.remove(id)" />
+    <Notification
+      :notifications="notificationService.notifications.value"
+      @remove="(id: string) => notificationService.remove(id)"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref, computed } from 'vue'
-import { useTheme, getCurrentTheme, Notification, useNotification, Header, Input, Container } from '@elivander/elix-ui'
+import {
+  useTheme,
+  getCurrentTheme,
+  Notification,
+  useNotification,
+  Header,
+  Input,
+  Container,
+} from '@elivander/elix-ui'
 import { useRouter } from 'vue-router'
 
 const { theme, setTheme } = useTheme()
@@ -99,9 +159,7 @@ const notificationService = useNotification()
 const router = useRouter()
 const searchQuery = ref('')
 
-type MenuItem = 
-  | { path: string; label: string; icon: string }
-  | { section: string }
+type MenuItem = { path: string; label: string; icon: string } | { section: string }
 
 const menuItems: MenuItem[] = [
   { path: '/', label: 'Getting Started', icon: 'home' },
@@ -156,11 +214,11 @@ const filteredMenuItems = computed(() => {
   if (!searchQuery.value.trim()) {
     return menuItems
   }
-  
+
   const query = searchQuery.value.toLowerCase().trim()
   const filtered: MenuItem[] = []
   const addedSections = new Set<string>()
-  
+
   menuItems.forEach((item, index) => {
     if ('section' in item) {
       // Проверяем, есть ли совпадения в этой секции
@@ -173,7 +231,7 @@ const filteredMenuItems = computed(() => {
           break
         }
       }
-      
+
       if (hasMatches && !addedSections.has(item.section)) {
         filtered.push(item)
         addedSections.add(item.section)
@@ -188,62 +246,98 @@ const filteredMenuItems = computed(() => {
           break
         }
       }
-      
+
       // Добавляем секцию, если её ещё нет
       if (section && !addedSections.has(section)) {
         filtered.push({ section })
         addedSections.add(section)
       }
-      
+
       filtered.push(item)
     }
   })
-  
+
   return filtered
 })
 
 const getIcon = (name: string): string => {
   const icons: Record<string, string> = {
     home: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10l7-7 7 7M5 10v7a1 1 0 001 1h3M15 10v7a1 1 0 01-1 1h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    palette: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13l3 3 7-7-7-7-3 3-4 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v14h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    button: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
-    input: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
-    select: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 7l-3 3-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    checkbox: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    radio: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" fill="currentColor"/></svg>',
-    switch: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="16" height="8" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="10" r="3" fill="currentColor"/></svg>',
-    textarea: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 8h8M6 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    palette:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13l3 3 7-7-7-7-3 3-4 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v14h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    button:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    input:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    select:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 7l-3 3-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    checkbox:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    radio:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" fill="currentColor"/></svg>',
+    switch:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="16" height="8" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="10" r="3" fill="currentColor"/></svg>',
+    textarea:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 8h8M6 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
     form: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 7h6M7 10h6M7 13h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
-    modal: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 8h8M6 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
-    drawer: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 8h16" stroke="currentColor" stroke-width="2"/></svg>',
-    popover: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L3 7v11h14V7l-7-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="12" r="2" fill="currentColor"/></svg>',
-    tooltip: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16z" stroke="currentColor" stroke-width="2"/><path d="M10 6v4M10 14h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    modal:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 8h8M6 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    drawer:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 8h16" stroke="currentColor" stroke-width="2"/></svg>',
+    popover:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L3 7v11h14V7l-7-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="12" r="2" fill="currentColor"/></svg>',
+    tooltip:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16z" stroke="currentColor" stroke-width="2"/><path d="M10 6v4M10 14h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
     card: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 8h14" stroke="currentColor" stroke-width="2"/></svg>',
-    table: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h14M10 3v14" stroke="currentColor" stroke-width="2"/></svg>',
-    badge: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="4" fill="currentColor"/></svg>',
+    table:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h14M10 3v14" stroke="currentColor" stroke-width="2"/></svg>',
+    badge:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="4" fill="currentColor"/></svg>',
     tag: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7l7-4 7 4v10l-7 4-7-4V7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    avatar: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M5 17c0-2.5 2.5-5 5-5s5 2.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
-    divider: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    avatar:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M5 17c0-2.5 2.5-5 5-5s5 2.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    divider:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
     tabs: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 8h16" stroke="currentColor" stroke-width="2"/></svg>',
-    breadcrumbs: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10l7-7 7 7M3 17l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    notification: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 6a5 5 0 00-10 0c0 7-3 9-3 9h16s-3-2-3-9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.73 18a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    alert: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6v4M10 14h.01M2 10a8 8 0 1116 0 8 8 0 01-16 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    skeleton: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2"/></svg>',
-    spinner: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/></svg>',
-    progress: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="8" width="16" height="4" rx="2" stroke="currentColor" stroke-width="2"/><rect x="2" y="8" width="10" height="4" rx="2" fill="currentColor"/></svg>',
-    pagination: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    steps: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="6" cy="5" r="1.5" fill="currentColor"/><circle cx="6" cy="10" r="1.5" fill="currentColor"/><circle cx="6" cy="15" r="1.5" fill="currentColor"/></svg>',
-    dropdown: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    slider: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="7" cy="10" r="3" fill="currentColor"/></svg>',
-    upload: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3v14M3 10l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    calendar: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 8h14M7 2v4M13 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
-    collapse: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    header: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="16" height="4" rx="1" stroke="currentColor" stroke-width="2"/><path d="M2 7h16" stroke="currentColor" stroke-width="2"/></svg>',
-    sidebar: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="6" height="14" rx="1" stroke="currentColor" stroke-width="2"/><path d="M2 7h6" stroke="currentColor" stroke-width="2"/></svg>',
-    container: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/></svg>',
-    stack: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="4" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="9" width="14" height="4" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="15" width="14" height="4" rx="1" stroke="currentColor" stroke-width="2"/></svg>',
+    breadcrumbs:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10l7-7 7 7M3 17l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    notification:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 6a5 5 0 00-10 0c0 7-3 9-3 9h16s-3-2-3-9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.73 18a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    alert:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6v4M10 14h.01M2 10a8 8 0 1116 0 8 8 0 01-16 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    skeleton:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2"/></svg>',
+    spinner:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/></svg>',
+    progress:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="8" width="16" height="4" rx="2" stroke="currentColor" stroke-width="2"/><rect x="2" y="8" width="10" height="4" rx="2" fill="currentColor"/></svg>',
+    pagination:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    steps:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="6" cy="5" r="1.5" fill="currentColor"/><circle cx="6" cy="10" r="1.5" fill="currentColor"/><circle cx="6" cy="15" r="1.5" fill="currentColor"/></svg>',
+    dropdown:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    slider:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="7" cy="10" r="3" fill="currentColor"/></svg>',
+    upload:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3v14M3 10l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    calendar:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 8h14M7 2v4M13 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    collapse:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    header:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="16" height="4" rx="1" stroke="currentColor" stroke-width="2"/><path d="M2 7h16" stroke="currentColor" stroke-width="2"/></svg>',
+    sidebar:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="6" height="14" rx="1" stroke="currentColor" stroke-width="2"/><path d="M2 7h6" stroke="currentColor" stroke-width="2"/></svg>',
+    container:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/></svg>',
+    stack:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="4" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="9" width="14" height="4" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="15" width="14" height="4" rx="1" stroke="currentColor" stroke-width="2"/></svg>',
   }
-  return icons[name] || '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/></svg>'
+  return (
+    icons[name] ||
+    '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/></svg>'
+  )
 }
 
 const toggleTheme = () => {
@@ -252,7 +346,10 @@ const toggleTheme = () => {
 
 onMounted(() => {
   // Detect system theme preference if no theme is set
-  if (!document.documentElement.classList.contains('theme-light') && !document.documentElement.classList.contains('theme-dark')) {
+  if (
+    !document.documentElement.classList.contains('theme-light') &&
+    !document.documentElement.classList.contains('theme-dark')
+  ) {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     setTheme(prefersDark ? 'dark' : 'light')
   } else {
@@ -280,8 +377,9 @@ onMounted(() => {
 }
 
 .docs-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   align-self: flex-start;
   width: 280px;
   min-width: 280px;
@@ -309,7 +407,7 @@ onMounted(() => {
   &::-webkit-scrollbar-thumb {
     background-color: var(--eui-color-neutral-300);
     border-radius: var(--eui-radius-full);
-    
+
     &:hover {
       background-color: var(--eui-color-neutral-400);
     }
@@ -375,7 +473,7 @@ onMounted(() => {
 
         &.router-link-active {
           color: var(--eui-color-primary);
-          background-color: var(--eui-color-primary-100);
+          background-color: var(--eui-bg-hover-primary);
           font-weight: var(--eui-font-weight-normal);
 
           &::before {
@@ -392,7 +490,6 @@ onMounted(() => {
         }
       }
     }
-
   }
 
   &__icon {
@@ -404,7 +501,7 @@ onMounted(() => {
     height: 18px;
     color: currentColor;
     transition: transform 0.2s ease;
-    
+
     :deep(svg) {
       width: 100%;
       height: 100%;
@@ -439,6 +536,7 @@ onMounted(() => {
   min-height: 100vh;
   min-width: 0;
   max-width: 100%;
+  margin-left: 280px;
 
   // Remove padding from Header content since Container provides it
   :deep(.eui-container .eui-header__content) {
@@ -529,9 +627,8 @@ onMounted(() => {
     height: 18px;
   }
 
-  &--round {
-    border-radius: 50%;
+  &.docs-header__action-btn--round {
+    border-radius: 50% !important;
   }
 }
 </style>
-

@@ -158,6 +158,42 @@
   --eui-border-shadow-color-focus: var(--eui-border-color-focus);
   --eui-border-shadow-color-error: var(--eui-border-color-error);
 
+  // Overlay and backdrop colors
+  --eui-overlay-backdrop: rgba(0, 0, 0, 0.5);
+  --eui-overlay-light: rgba(0, 0, 0, 0.1);
+  --eui-tooltip-dark-bg: rgba(0, 0, 0, 0.85);
+  --eui-spinner-overlay: rgba(255, 255, 255, 0.8);
+  --eui-progress-stripe: rgba(255, 255, 255, 0.15);
+
+  // Hover/Active background colors for interactive elements
+  --eui-bg-hover-primary: var(--eui-color-primary-50);
+  --eui-bg-active-primary: var(--eui-color-primary-100);
+  --eui-bg-hover-success: var(--eui-color-success-50);
+  --eui-bg-active-success: var(--eui-color-success-100);
+  --eui-bg-hover-warning: var(--eui-color-warning-50);
+  --eui-bg-active-warning: var(--eui-color-warning-100);
+  --eui-bg-hover-error: var(--eui-color-error-50);
+  --eui-bg-active-error: var(--eui-color-error-100);
+  --eui-bg-hover-info: var(--eui-color-info-50);
+  --eui-bg-active-info: var(--eui-color-info-100);
+
+  // Focus ring colors
+  --eui-focus-ring-primary: var(--eui-color-primary-100);
+  --eui-focus-ring-success: var(--eui-color-success-100);
+  --eui-focus-ring-warning: var(--eui-color-warning-100);
+  --eui-focus-ring-error: var(--eui-color-error-100);
+  --eui-focus-ring-info: var(--eui-color-info-100);
+
+  // Soft variant backgrounds
+  --eui-bg-soft-success: var(--eui-color-success-50);
+  --eui-bg-soft-info: var(--eui-color-info-50);
+  --eui-bg-soft-warning: var(--eui-color-warning-50);
+  --eui-bg-soft-error: var(--eui-color-error-50);
+
+  // Skeleton colors
+  --eui-skeleton-bg: var(--eui-color-neutral-200);
+  --eui-skeleton-bg-shimmer: var(--eui-color-neutral-100);
+
   // Breakpoints (for JS usage)
   --eui-breakpoint-xs: #{$breakpoints-xs};
   --eui-breakpoint-sm: #{$breakpoints-sm};
@@ -178,8 +214,52 @@
   --eui-text-secondary: var(--eui-color-neutral-300);
   --eui-text-tertiary: var(--eui-color-neutral-400);
   --eui-text-disabled: var(--eui-color-neutral-600);
+  --eui-text-inverse: var(--eui-color-neutral-900);
 
   --eui-border-color: var(--eui-color-neutral-700);
   --eui-border-color-hover: var(--eui-color-neutral-600);
+  --eui-border-color-focus: var(--eui-color-primary-500);
+  --eui-border-color-error: var(--eui-color-error-500);
+
+  // Border shadow equivalents for dark theme
+  --eui-border-shadow-sm: 0 0 0 1px rgba(255, 255, 255, 0.1);
+  --eui-border-shadow-md: 0 0 0 1px rgba(255, 255, 255, 0.15);
+  --eui-border-shadow-lg: 0 0 0 1px rgba(255, 255, 255, 0.2);
+
+  // Overlay and backdrop colors for dark theme
+  --eui-overlay-backdrop: rgba(0, 0, 0, 0.7);
+  --eui-overlay-light: rgba(255, 255, 255, 0.1);
+  --eui-tooltip-dark-bg: rgba(255, 255, 255, 0.9);
+  --eui-spinner-overlay: rgba(0, 0, 0, 0.8);
+  --eui-progress-stripe: rgba(0, 0, 0, 0.2);
+
+  // Hover/Active background colors for dark theme (darker variants)
+  --eui-bg-hover-primary: rgba(22, 119, 255, 0.2);
+  --eui-bg-active-primary: rgba(22, 119, 255, 0.3);
+  --eui-bg-hover-success: rgba(82, 196, 26, 0.2);
+  --eui-bg-active-success: rgba(82, 196, 26, 0.3);
+  --eui-bg-hover-warning: rgba(250, 173, 20, 0.2);
+  --eui-bg-active-warning: rgba(250, 173, 20, 0.3);
+  --eui-bg-hover-error: rgba(255, 77, 79, 0.2);
+  --eui-bg-active-error: rgba(255, 77, 79, 0.3);
+  --eui-bg-hover-info: rgba(24, 144, 255, 0.2);
+  --eui-bg-active-info: rgba(24, 144, 255, 0.3);
+
+  // Focus ring colors for dark theme (lighter, more visible)
+  --eui-focus-ring-primary: rgba(22, 119, 255, 0.3);
+  --eui-focus-ring-success: rgba(82, 196, 26, 0.3);
+  --eui-focus-ring-warning: rgba(250, 173, 20, 0.3);
+  --eui-focus-ring-error: rgba(255, 77, 79, 0.3);
+  --eui-focus-ring-info: rgba(24, 144, 255, 0.3);
+
+  // Soft variant backgrounds for dark theme (darker, more visible)
+  --eui-bg-soft-success: rgba(82, 196, 26, 0.15);
+  --eui-bg-soft-info: rgba(24, 144, 255, 0.15);
+  --eui-bg-soft-warning: rgba(250, 173, 20, 0.15);
+  --eui-bg-soft-error: rgba(255, 77, 79, 0.15);
+
+  // Skeleton colors for dark theme (darker, more visible)
+  --eui-skeleton-bg: var(--eui-color-neutral-700);
+  --eui-skeleton-bg-shimmer: var(--eui-color-neutral-600);
 }
 

@@ -75,7 +75,7 @@ const lineClasses = (index: number) => {
   &__avatar {
     width: 40px;
     height: 40px;
-    background-color: var(--eui-color-neutral-200);
+    background-color: var(--eui-skeleton-bg);
     border-radius: 50%;
     flex-shrink: 0;
   }
@@ -83,14 +83,14 @@ const lineClasses = (index: number) => {
   &__rect {
     width: 100%;
     height: 200px;
-    background-color: var(--eui-color-neutral-200);
+    background-color: var(--eui-skeleton-bg);
     border-radius: var(--eui-radius-md);
   }
 
   &__circle {
     width: 100px;
     height: 100px;
-    background-color: var(--eui-color-neutral-200);
+    background-color: var(--eui-skeleton-bg);
     border-radius: 50%;
     margin: 0 auto;
   }
@@ -104,7 +104,7 @@ const lineClasses = (index: number) => {
 
   &__line {
     height: 16px;
-    background-color: var(--eui-color-neutral-200);
+    background-color: var(--eui-skeleton-bg);
     border-radius: var(--eui-radius-sm);
 
     &--short {
@@ -120,9 +120,9 @@ const lineClasses = (index: number) => {
       .eui-skeleton__circle {
         background: linear-gradient(
           90deg,
-          var(--eui-color-neutral-200) 25%,
-          var(--eui-color-neutral-100) 50%,
-          var(--eui-color-neutral-200) 75%
+          var(--eui-skeleton-bg) 25%,
+          var(--eui-skeleton-bg-shimmer) 50%,
+          var(--eui-skeleton-bg) 75%
         );
         background-size: 200% 100%;
         animation: eui-skeleton-wave 1.5s ease-in-out infinite;

@@ -182,7 +182,7 @@ const defaultIcon = computed(() => {
     --eui-step-icon-color: var(--eui-text-inverse);
     --eui-step-icon-background: var(--eui-color-primary);
     --eui-step-icon-border-color: var(--eui-color-primary);
-    --eui-step-icon-box-shadow: 0 0 0 4px var(--eui-color-primary-100);
+    --eui-step-icon-box-shadow: 0 0 0 4px var(--eui-focus-ring-primary);
     --eui-step-title-color: var(--eui-color-primary);
     --eui-step-title-font-weight: var(--eui-font-weight-semibold);
     --eui-step-description-color: var(--eui-text-secondary);

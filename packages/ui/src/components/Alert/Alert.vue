@@ -157,22 +157,22 @@ const handleClose = () => {
   // Variants
   &--soft {
     &.eui-alert--success {
-      background-color: var(--eui-color-success-50);
+      background-color: var(--eui-bg-soft-success);
       color: var(--eui-color-success-700);
     }
 
     &.eui-alert--info {
-      background-color: var(--eui-color-info-50);
+      background-color: var(--eui-bg-soft-info);
       color: var(--eui-color-info-700);
     }
 
     &.eui-alert--warning {
-      background-color: var(--eui-color-warning-50);
+      background-color: var(--eui-bg-soft-warning);
       color: var(--eui-color-warning-700);
     }
 
     &.eui-alert--error {
-      background-color: var(--eui-color-error-50);
+      background-color: var(--eui-bg-soft-error);
       color: var(--eui-color-error-700);
     }
   }
@@ -324,7 +324,7 @@ const handleClose = () => {
 
   &:hover {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--eui-overlay-light);
   }
 
   svg {
