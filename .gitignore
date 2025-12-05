@@ -9,8 +9,7 @@ es
 *.tsbuildinfo
 
 # IDE
-# .vscode directory is handled by .vscode/.gitignore for better reliability
-# This avoids issues with negation patterns after wildcards in root .gitignore
+.vscode
 .idea
 *.swp
 *.swo
