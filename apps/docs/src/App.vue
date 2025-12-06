@@ -15,18 +15,6 @@
               </router-link>
             </li>
           </template>
-          <li>
-            <router-link to="/components/input">
-              <span class="docs-nav__icon" v-html="getIcon('input')"></span>
-              <span>Input</span>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/components/select">
-              <span class="docs-nav__icon" v-html="getIcon('select')"></span>
-              <span>Select</span>
-            </router-link>
-          </li>
         </ul>
       </nav>
       <div class="docs-right">
@@ -166,6 +154,7 @@ const menuItems: MenuItem[] = [
   { path: '/theming', label: 'Theming', icon: 'palette' },
   { section: 'Form Components' },
   { path: '/components/button', label: 'Button', icon: 'button' },
+  { path: '/components/button-group', label: 'ButtonGroup', icon: 'button-group' },
   { path: '/components/input', label: 'Input', icon: 'input' },
   { path: '/components/select', label: 'Select', icon: 'select' },
   { path: '/components/checkbox', label: 'Checkbox', icon: 'checkbox' },
@@ -181,28 +170,32 @@ const menuItems: MenuItem[] = [
   { section: 'Data Display' },
   { path: '/components/card', label: 'Card', icon: 'card' },
   { path: '/components/table', label: 'Table', icon: 'table' },
+  { path: '/components/list', label: 'List', icon: 'list' },
+  { path: '/components/empty', label: 'Empty', icon: 'empty' },
+  { path: '/components/statistic', label: 'Statistic', icon: 'statistic' },
   { path: '/components/badge', label: 'Badge', icon: 'badge' },
   { path: '/components/tag', label: 'Tag', icon: 'tag' },
   { path: '/components/avatar', label: 'Avatar', icon: 'avatar' },
   { path: '/components/divider', label: 'Divider', icon: 'divider' },
   { path: '/components/tabs', label: 'Tabs', icon: 'tabs' },
   { path: '/components/breadcrumbs', label: 'Breadcrumbs', icon: 'breadcrumbs' },
+  { path: '/components/collapse', label: 'Collapse', icon: 'collapse' },
   { section: 'Feedback' },
   { path: '/components/notification', label: 'Notification', icon: 'notification' },
   { path: '/components/alert', label: 'Alert', icon: 'alert' },
+  { path: '/components/result', label: 'Result', icon: 'result' },
   { path: '/components/skeleton', label: 'Skeleton', icon: 'skeleton' },
   { path: '/components/spinner', label: 'Spinner', icon: 'spinner' },
   { path: '/components/progress', label: 'Progress', icon: 'progress' },
   { section: 'Navigation' },
   { path: '/components/pagination', label: 'Pagination', icon: 'pagination' },
   { path: '/components/steps', label: 'Steps', icon: 'steps' },
+  { path: '/components/timeline', label: 'Timeline', icon: 'timeline' },
   { path: '/components/dropdown', label: 'Dropdown', icon: 'dropdown' },
   { section: 'Data Entry' },
   { path: '/components/slider', label: 'Slider', icon: 'slider' },
   { path: '/components/upload', label: 'Upload', icon: 'upload' },
   { path: '/components/datepicker', label: 'DatePicker', icon: 'calendar' },
-  { section: 'Data Display' },
-  { path: '/components/collapse', label: 'Collapse', icon: 'collapse' },
   { section: 'Layout' },
   { path: '/components/header', label: 'Header', icon: 'header' },
   { path: '/components/sidebar', label: 'Sidebar', icon: 'sidebar' },
@@ -267,6 +260,8 @@ const getIcon = (name: string): string => {
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13l3 3 7-7-7-7-3 3-4 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v14h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     button:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    'button-group':
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="5" height="10" rx="1" stroke="currentColor" stroke-width="2"/><rect x="8" y="5" width="5" height="10" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="5" width="5" height="10" rx="1" stroke="currentColor" stroke-width="2"/></svg>',
     input:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
     select:
@@ -291,6 +286,12 @@ const getIcon = (name: string): string => {
     card: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 8h14" stroke="currentColor" stroke-width="2"/></svg>',
     table:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h14M10 3v14" stroke="currentColor" stroke-width="2"/></svg>',
+    list:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5h14M3 10h14M3 15h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="6" cy="5" r="1" fill="currentColor"/><circle cx="6" cy="10" r="1" fill="currentColor"/><circle cx="6" cy="15" r="1" fill="currentColor"/></svg>',
+    empty:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2"/><path d="M10 6v4M10 13h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    statistic:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="8" width="14" height="8" rx="1" stroke="currentColor" stroke-width="2"/><path d="M7 12l2-2 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     badge:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="4" fill="currentColor"/></svg>',
     tag: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7l7-4 7 4v10l-7 4-7-4V7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -305,6 +306,8 @@ const getIcon = (name: string): string => {
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 6a5 5 0 00-10 0c0 7-3 9-3 9h16s-3-2-3-9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.73 18a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     alert:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6v4M10 14h.01M2 10a8 8 0 1116 0 8 8 0 01-16 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    result:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     skeleton:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2"/></svg>',
     spinner:
@@ -315,6 +318,8 @@ const getIcon = (name: string): string => {
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 5l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     steps:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="6" cy="5" r="1.5" fill="currentColor"/><circle cx="6" cy="10" r="1.5" fill="currentColor"/><circle cx="6" cy="15" r="1.5" fill="currentColor"/></svg>',
+    timeline:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="3" r="2" fill="currentColor"/><circle cx="10" cy="10" r="2" fill="currentColor"/><circle cx="10" cy="17" r="2" fill="currentColor"/></svg>',
     dropdown:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     slider:

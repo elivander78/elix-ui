@@ -51,8 +51,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, inject } from 'vue'
 import { buttonProps } from './Button'
+import type { ButtonSize, ButtonType, ButtonAppearance } from './Button'
 
 const props = defineProps(buttonProps)
 
@@ -60,13 +61,40 @@ const emit = defineEmits<{
   click: [event: MouseEvent]
 }>()
 
+interface ButtonGroupContext {
+  size?: ButtonSize
+  variant?: ButtonType
+  appearance?: ButtonAppearance
+}
+
+const buttonGroup = inject<ButtonGroupContext | undefined>('buttonGroup', undefined)
+
+// Используем props напрямую, если переданы, иначе из buttonGroup, иначе дефолты
+const computedSize = computed(() => {
+  if (props.size !== undefined) return props.size
+  if (buttonGroup?.size !== undefined) return buttonGroup.size
+  return 'md'
+})
+
+const computedType = computed(() => {
+  if (props.type !== undefined) return props.type
+  if (buttonGroup?.variant !== undefined) return buttonGroup.variant
+  return 'primary'
+})
+
+const computedAppearance = computed(() => {
+  if (props.appearance !== undefined) return props.appearance
+  if (buttonGroup?.appearance !== undefined) return buttonGroup.appearance
+  return 'border'
+})
+
 const buttonClasses = computed(() => {
   return [
     'eui-button',
-    `eui-button--${props.size}`,
-    `eui-button--${props.type}`,
+    `eui-button--${computedSize.value}`,
+    `eui-button--${computedType.value}`,
     `eui-button--${props.shape}`,
-    `eui-button--appearance-${props.appearance}`,
+    `eui-button--appearance-${computedAppearance.value}`,
     {
       'eui-button--disabled': props.disabled,
       'eui-button--loading': props.loading,

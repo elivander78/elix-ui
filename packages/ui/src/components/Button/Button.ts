@@ -19,11 +19,11 @@ export interface ButtonProps {
 export const buttonProps = {
   size: {
     type: String as PropType<ButtonSize>,
-    default: 'md' as ButtonSize,
+    default: undefined,
   },
   type: {
     type: String as PropType<ButtonType>,
-    default: 'primary' as ButtonType,
+    default: undefined,
   },
   disabled: {
     type: Boolean,

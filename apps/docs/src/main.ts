@@ -19,6 +19,10 @@ const router = createRouter({
       component: () => import('./pages/Components/Button.vue'),
     },
     {
+      path: '/components/button-group',
+      component: () => import('./pages/Components/ButtonGroup.vue'),
+    },
+    {
       path: '/components/input',
       component: () => import('./pages/Components/Input.vue'),
     },
@@ -157,6 +161,26 @@ const router = createRouter({
     {
       path: '/components/datepicker',
       component: () => import('./pages/Components/DatePicker.vue'),
+    },
+    {
+      path: '/components/list',
+      component: () => import('./pages/Components/List.vue'),
+    },
+    {
+      path: '/components/empty',
+      component: () => import('./pages/Components/Empty.vue'),
+    },
+    {
+      path: '/components/result',
+      component: () => import('./pages/Components/Result.vue'),
+    },
+    {
+      path: '/components/timeline',
+      component: () => import('./pages/Components/Timeline.vue'),
+    },
+    {
+      path: '/components/statistic',
+      component: () => import('./pages/Components/Statistic.vue'),
     },
   ],
 })
