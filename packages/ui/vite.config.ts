@@ -34,12 +34,6 @@ export default defineConfig({
           preserveModulesRoot: 'src',
           dir: 'es',
           exports: 'named',
-          assetFileNames: (assetInfo) => {
-            if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-              return '../dist/style.css'
-            }
-            return assetInfo.name || 'assets/[name][extname]'
-          },
         },
         {
           format: 'cjs',
