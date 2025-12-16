@@ -17,7 +17,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ElixUI',
       formats: ['es', 'cjs'],
-      fileName: (format) => {
+      fileName: (format, entryName) => {
         if (format === 'es') {
           return 'index.js'
         }
@@ -31,15 +31,19 @@ export default defineConfig({
           format: 'es',
           entryFileNames: '[name].js',
           preserveModules: true,
-          preserveModulesRoot: 'src',
+          preserveModulesRoot: '.',
           dir: 'es',
           exports: 'named',
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.name?.endsWith('.css')) return 'style.css'
+            return 'assets/[name][extname]'
+          },
         },
         {
           format: 'cjs',
           entryFileNames: '[name].js',
           preserveModules: true,
-          preserveModulesRoot: 'src',
+          preserveModulesRoot: '.',
           dir: 'lib',
           exports: 'named',
         },
