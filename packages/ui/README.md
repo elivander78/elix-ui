@@ -19,18 +19,22 @@ yarn add @elivander/elix-ui
 ```typescript
 import { createApp } from 'vue'
 import { createUi, Button, Input } from '@elivander/elix-ui'
-// Import styles
+// ⚠️ IMPORTANT: Import styles (required)
 import '@elivander/elix-ui/styles'
 
 const app = createApp(App)
 app.use(createUi({ theme: 'light' }))
 ```
 
+**Note:** The styles import is mandatory. Without it, components will not have their default styling.
+
 ### Tree-shakeable Imports
 
 ```typescript
 import { Button } from '@elivander/elix-ui/button'
 import { Input } from '@elivander/elix-ui/input'
+// Don't forget to import styles!
+import '@elivander/elix-ui/styles'
 ```
 
 ## Components

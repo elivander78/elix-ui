@@ -1,6 +1,6 @@
 {
   "name": "@elivander/elix-ui",
-  "version": "0.2.31",
+  "version": "0.2.32",
   "description": "Vue 3 UI Kit with theming and responsive design (beta version)",
   "type": "module",
   "keywords": [

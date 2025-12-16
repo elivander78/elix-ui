@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import { createUi } from '@elivander/elix-ui'
 // Import UI kit styles
-import '@elivander/elix-ui/styles/index.scss'
+import '@elivander/elix-ui/styles'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
