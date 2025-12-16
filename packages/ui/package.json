@@ -1,6 +1,6 @@
 {
   "name": "@elivander/elix-ui",
-  "version": "0.2.30",
+  "version": "0.2.31",
   "description": "Vue 3 UI Kit with theming and responsive design (beta version)",
   "type": "module",
   "keywords": [
@@ -22,14 +22,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./lib/index.js",
-  "module": "./es/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./lib/src/index.js",
+  "module": "./es/src/index.js",
+  "types": "./lib/src/index.d.ts",
   "exports": {
     ".": {
-      "import": "./es/index.js",
-      "require": "./lib/index.js",
-      "types": "./lib/index.d.ts"
+      "import": "./es/src/index.js",
+      "require": "./lib/src/index.js",
+      "types": "./lib/src/index.d.ts"
     },
     "./styles": {
       "default": "./es/style.css"
@@ -38,28 +38,28 @@
       "default": "./es/style.css"
     },
     "./button": {
-      "import": "./es/components/Button/index.js",
-      "require": "./lib/components/Button/index.js",
+      "import": "./es/src/components/Button/index.js",
+      "require": "./lib/src/components/Button/index.js",
       "types": "./lib/components/Button/index.d.ts"
     },
     "./input": {
-      "import": "./es/components/Input/index.js",
-      "require": "./lib/components/Input/index.js",
+      "import": "./es/src/components/Input/index.js",
+      "require": "./lib/src/components/Input/index.js",
       "types": "./lib/components/Input/index.d.ts"
     },
     "./card": {
-      "import": "./es/components/Card/index.js",
-      "require": "./lib/components/Card/index.js",
+      "import": "./es/src/components/Card/index.js",
+      "require": "./lib/src/components/Card/index.js",
       "types": "./lib/components/Card/index.d.ts"
     },
     "./select": {
-      "import": "./es/components/Select/index.js",
-      "require": "./lib/components/Select/index.js",
+      "import": "./es/src/components/Select/index.js",
+      "require": "./lib/src/components/Select/index.js",
       "types": "./lib/components/Select/index.d.ts"
     },
     "./modal": {
-      "import": "./es/components/Modal/index.js",
-      "require": "./lib/components/Modal/index.js",
+      "import": "./es/src/components/Modal/index.js",
+      "require": "./lib/src/components/Modal/index.js",
       "types": "./lib/components/Modal/index.d.ts"
     }
   },
