@@ -68,6 +68,9 @@
     "lib",
     "dist"
   ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "dev": "vite build --watch --mode development",
     "build": "vite build && mkdir -p dist && (cp es/style.css dist/style.css 2>/dev/null || true)",
