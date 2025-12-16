@@ -1,6 +1,6 @@
 {
   "name": "@elivander/elix-ui",
-  "version": "0.2.28",
+  "version": "0.2.29",
   "description": "Vue 3 UI Kit with theming and responsive design (beta version)",
   "type": "module",
   "keywords": [
@@ -32,10 +32,10 @@
       "types": "./lib/index.d.ts"
     },
     "./styles": {
-      "default": "./dist/style.css"
+      "default": "./es/style.css"
     },
     "./styles.css": {
-      "default": "./dist/style.css"
+      "default": "./es/style.css"
     },
     "./button": {
       "import": "./es/components/Button/index.js",
@@ -73,7 +73,7 @@
   ],
   "scripts": {
     "dev": "vite build --watch --mode development",
-    "build": "vite build && mkdir -p dist && (cp es/style.css dist/style.css 2>/dev/null || true)",
+    "build": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
     "test": "vitest"
