@@ -1,6 +1,6 @@
 {
   "name": "@elivander/elix-ui",
-  "version": "0.2.32",
+  "version": "0.2.33",
   "description": "Vue 3 UI Kit with theming and responsive design (beta version)",
   "type": "module",
   "keywords": [
@@ -32,9 +32,13 @@
       "types": "./lib/src/index.d.ts"
     },
     "./styles": {
+      "import": "./es/style.css",
+      "require": "./lib/style.css",
       "default": "./es/style.css"
     },
     "./styles.css": {
+      "import": "./es/style.css",
+      "require": "./lib/style.css",
       "default": "./es/style.css"
     },
     "./button": {

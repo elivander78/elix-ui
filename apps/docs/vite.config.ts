@@ -8,7 +8,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-      '@elivander/elix-ui': resolve(__dirname, '../../packages/ui/src'),
+      // Remove alias for @elivander/elix-ui to allow proper package resolution
+      // '@elivander/elix-ui': resolve(__dirname, '../../packages/ui/src'),
     },
   },
   css: {
