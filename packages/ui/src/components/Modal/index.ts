@@ -3,7 +3,7 @@ import { useModal } from './useModal'
 import type { App } from 'vue'
 
 Modal.install = (app: App) => {
-  app.component(Modal.name || 'EuiModal', Modal)
+  app.component(Modal.name, Modal)
 }
 
 export { Modal, useModal }

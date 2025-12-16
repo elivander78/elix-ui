@@ -19,72 +19,72 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import StepsBasicDemo from '../../components/demos/StepsBasicDemo.vue'
-import StepsDescriptionDemo from '../../components/demos/StepsDescriptionDemo.vue'
-import StepsVerticalDemo from '../../components/demos/StepsVerticalDemo.vue'
-import StepsStatusDemo from '../../components/demos/StepsStatusDemo.vue'
+import StepsBasicDemo from '../../components/demos/Steps/Basic.vue'
+import StepsDescriptionDemo from '../../components/demos/Steps/Description.vue'
+import StepsVerticalDemo from '../../components/demos/Steps/Vertical.vue'
+import StepsStatusDemo from '../../components/demos/Steps/Status.vue'
 
 const basicCode = `<template>
-  <Steps :current="current">
-    <Step title="Step 1" />
-    <Step title="Step 2" />
-    <Step title="Step 3" />
-    <Step title="Step 4" />
-  </Steps>
+  <EuiSteps :current="current">
+    <EuiStep title="Step 1" />
+    <EuiStep title="Step 2" />
+    <EuiStep title="Step 3" />
+    <EuiStep title="Step 4" />
+  </EuiSteps>
   <div style="margin-top: 16px;">
-    <Button @click="current = Math.max(0, current - 1)">Previous</Button>
-    <Button @click="current = Math.min(3, current + 1)">Next</Button>
+    <EuiButton @click="current = Math.max(0, current - 1)">Previous</EuiButton>
+    <EuiButton @click="current = Math.min(3, current + 1)">Next</EuiButton>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Steps, Step, Button } from '@elivander/elix-ui'
+import { Steps as EuiSteps, Step as EuiStep, Button as EuiButton } from '@elivander/elix-ui'
 
 const current = ref(1)
 <\/script>`
 
 const descriptionCode = `<template>
-  <Steps :current="current">
-    <Step title="Finished" description="This is a description" />
-    <Step title="In Progress" description="This is a description" />
-    <Step title="Waiting" description="This is a description" />
-  </Steps>
+  <EuiSteps :current="current">
+    <EuiStep title="Finished" description="This is a description" />
+    <EuiStep title="In Progress" description="This is a description" />
+    <EuiStep title="Waiting" description="This is a description" />
+  </EuiSteps>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Steps, Step } from '@elivander/elix-ui'
+import { Steps as EuiSteps, Step as EuiStep } from '@elivander/elix-ui'
 
 const current = ref(1)
 <\/script>`
 
 const verticalCode = `<template>
-  <Steps :current="current" direction="vertical">
-    <Step title="Step 1" description="Description 1" />
-    <Step title="Step 2" description="Description 2" />
-    <Step title="Step 3" description="Description 3" />
-  </Steps>
+  <EuiSteps :current="current" direction="vertical">
+    <EuiStep title="Step 1" description="Description 1" />
+    <EuiStep title="Step 2" description="Description 2" />
+    <EuiStep title="Step 3" description="Description 3" />
+  </EuiSteps>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Steps, Step } from '@elivander/elix-ui'
+import { Steps as EuiSteps, Step as EuiStep } from '@elivander/elix-ui'
 
 const current = ref(1)
 <\/script>`
 
 const statusCode = `<template>
-  <Steps :current="2" status="error">
-    <Step title="Step 1" />
-    <Step title="Step 2" />
-    <Step title="Step 3" />
-    <Step title="Step 4" />
-  </Steps>
+  <EuiSteps :current="2" status="error">
+    <EuiStep title="Step 1" />
+    <EuiStep title="Step 2" />
+    <EuiStep title="Step 3" />
+    <EuiStep title="Step 4" />
+  </EuiSteps>
 </template>
 
 <script setup>
-import { Steps, Step } from '@elivander/elix-ui'
+import { Steps as EuiSteps, Step as EuiStep } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

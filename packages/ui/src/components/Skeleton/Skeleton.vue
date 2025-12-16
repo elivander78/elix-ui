@@ -21,6 +21,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiSkeleton',
+
+})
+
 import { computed } from 'vue'
 
 const props = defineProps<{

@@ -2,7 +2,7 @@ import Upload from './Upload.vue'
 import type { App } from 'vue'
 
 Upload.install = (app: App) => {
-  app.component(Upload.name || 'EuiUpload', Upload)
+  app.component(Upload.name, Upload)
 }
 
 export { Upload }

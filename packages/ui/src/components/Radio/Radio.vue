@@ -16,6 +16,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiRadio',
+
+})
+
 import { computed, useSlots } from 'vue'
 
 const props = defineProps<{

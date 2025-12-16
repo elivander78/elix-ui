@@ -2,7 +2,7 @@ import ButtonGroup from './ButtonGroup.vue'
 import type { App } from 'vue'
 
 ButtonGroup.install = (app: App) => {
-  app.component(ButtonGroup.name || 'EuiButtonGroup', ButtonGroup)
+  app.component(ButtonGroup.name, ButtonGroup)
 }
 
 export { ButtonGroup }

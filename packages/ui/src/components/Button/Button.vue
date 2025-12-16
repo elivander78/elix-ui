@@ -51,6 +51,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiButton',
+
+})
+
 import { computed, inject } from 'vue'
 import { buttonProps } from './Button'
 import type { ButtonSize, ButtonType, ButtonAppearance } from './Button'

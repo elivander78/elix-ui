@@ -8,6 +8,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiDivider',
+
+})
+
 import { computed } from 'vue'
 
 const props = defineProps<{

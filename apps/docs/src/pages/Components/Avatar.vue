@@ -45,76 +45,76 @@ const avatarSlots = [
 
 const basicCode = `<template>
   <div style="display: flex; gap: 16px; align-items: center;">
-    <Avatar>JD</Avatar>
-    <Avatar src="https://i.pravatar.cc/150?img=1" />
-    <Avatar src="https://i.pravatar.cc/150?img=2" shape="square" />
+    <EuiAvatar>JD</EuiAvatar>
+    <EuiAvatar src="https://i.pravatar.cc/150?img=1" />
+    <EuiAvatar src="https://i.pravatar.cc/150?img=2" shape="square" />
   </div>
 </template>
 
 <script setup>
-import { Avatar } from '@elivander/elix-ui'
+import { Avatar as EuiAvatar } from '@elivander/elix-ui'
 <\/script>`
 
 const photoCode = `<template>
   <div style="display: flex; gap: 16px; align-items: center;">
-    <Avatar src="https://i.pravatar.cc/150?img=1" />
-    <Avatar src="https://i.pravatar.cc/150?img=2" />
-    <Avatar src="https://i.pravatar.cc/150?img=3" />
+    <EuiAvatar src="https://i.pravatar.cc/150?img=1" />
+    <EuiAvatar src="https://i.pravatar.cc/150?img=2" />
+    <EuiAvatar src="https://i.pravatar.cc/150?img=3" />
   </div>
 </template>
 
 <script setup>
-import { Avatar } from '@elivander/elix-ui'
+import { Avatar as EuiAvatar } from '@elivander/elix-ui'
 <\/script>`
 
 const lettersCode = `<template>
   <div style="display: flex; gap: 16px; align-items: center;">
-    <Avatar>JD</Avatar>
-    <Avatar>AB</Avatar>
-    <Avatar>CD</Avatar>
+    <EuiAvatar>JD</EuiAvatar>
+    <EuiAvatar>AB</EuiAvatar>
+    <EuiAvatar>CD</EuiAvatar>
   </div>
 </template>
 
 <script setup>
-import { Avatar } from '@elivander/elix-ui'
+import { Avatar as EuiAvatar } from '@elivander/elix-ui'
 <\/script>`
 
 const iconCode = `<template>
   <div style="display: flex; gap: 16px; align-items: center;">
-    <Avatar />
-    <Avatar size="lg" />
+    <EuiAvatar />
+    <EuiAvatar size="lg" />
   </div>
 </template>
 
 <script setup>
-import { Avatar } from '@elivander/elix-ui'
+import { Avatar as EuiAvatar } from '@elivander/elix-ui'
 <\/script>`
 
 const sizesCode = `<template>
   <div style="display: flex; gap: 16px; align-items: center;">
-    <Avatar size="xs">XS</Avatar>
-    <Avatar size="sm">SM</Avatar>
-    <Avatar size="md">MD</Avatar>
-    <Avatar size="lg">LG</Avatar>
-    <Avatar size="xl">XL</Avatar>
+    <EuiAvatar size="xs">XS</EuiAvatar>
+    <EuiAvatar size="sm">SM</EuiAvatar>
+    <EuiAvatar size="md">MD</EuiAvatar>
+    <EuiAvatar size="lg">LG</EuiAvatar>
+    <EuiAvatar size="xl">XL</EuiAvatar>
   </div>
 </template>
 
 <script setup>
-import { Avatar } from '@elivander/elix-ui'
+import { Avatar as EuiAvatar } from '@elivander/elix-ui'
 <\/script>`
 
 const shapesCode = `<template>
   <div style="display: flex; gap: 16px; align-items: center;">
-    <Avatar shape="circle">C</Avatar>
-    <Avatar shape="square">S</Avatar>
-    <Avatar src="https://i.pravatar.cc/150?img=1" shape="circle" />
-    <Avatar src="https://i.pravatar.cc/150?img=2" shape="square" />
+    <EuiAvatar shape="circle">C</EuiAvatar>
+    <EuiAvatar shape="square">S</EuiAvatar>
+    <EuiAvatar src="https://i.pravatar.cc/150?img=1" shape="circle" />
+    <EuiAvatar src="https://i.pravatar.cc/150?img=2" shape="square" />
   </div>
 </template>
 
 <script setup>
-import { Avatar } from '@elivander/elix-ui'
+import { Avatar as EuiAvatar } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

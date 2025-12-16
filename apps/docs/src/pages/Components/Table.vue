@@ -47,12 +47,12 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import TableSortableDemo from '../../components/demos/TableSortableDemo.vue'
-import TableFixedDemo from '../../components/demos/TableFixedDemo.vue'
-import TableSortableFixedDemo from '../../components/demos/TableSortableFixedDemo.vue'
-import TableSizesDemo from '../../components/demos/TableSizesDemo.vue'
-import TableSelectableDemo from '../../components/demos/TableSelectableDemo.vue'
-import TableSelectableSortableFixedDemo from '../../components/demos/TableSelectableSortableFixedDemo.vue'
+import TableSortableDemo from '../../components/demos/Table/Sortable.vue'
+import TableFixedDemo from '../../components/demos/Table/Fixed.vue'
+import TableSortableFixedDemo from '../../components/demos/Table/SortableFixed.vue'
+import TableSizesDemo from '../../components/demos/Table/Sizes.vue'
+import TableSelectableDemo from '../../components/demos/Table/Selectable.vue'
+import TableSelectableSortableFixedDemo from '../../components/demos/Table/SelectableSortableFixed.vue'
 
 const tableProps = [
   { name: 'columns', type: 'TableColumn[]', description: 'Table column definitions' },
@@ -71,11 +71,11 @@ const tableEvents = [
 ]
 
 const basicCode = `<template>
-  <Table :columns="columns" :data="data" />
+  <EuiTable :columns="columns" :data="data" />
 </template>
 
 <script setup>
-import { Table } from '@elivander/elix-ui'
+import { Table as EuiTable } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name' },
@@ -91,11 +91,11 @@ const data = [
 <\/script>`
 
 const stripedCode = `<template>
-  <Table :columns="columns" :data="data" striped />
+  <EuiTable :columns="columns" :data="data" striped />
 </template>
 
 <script setup>
-import { Table } from '@elivander/elix-ui'
+import { Table as EuiTable } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name' },
@@ -112,11 +112,11 @@ const data = [
 <\/script>`
 
 const borderedCode = `<template>
-  <Table :columns="columns" :data="data" bordered />
+  <EuiTable :columns="columns" :data="data" bordered />
 </template>
 
 <script setup>
-import { Table } from '@elivander/elix-ui'
+import { Table as EuiTable } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name' },
@@ -133,20 +133,20 @@ const data = [
 
 const loadingCode = `<template>
   <div>
-    <Table v-if="loading" :columns="columns" :data="[]">
+    <EuiTable v-if="loading" :columns="columns" :data="[]">
       <template #empty>
         <div style="padding: 40px; text-align: center;">
-          <Skeleton :rows="3" />
+          <EuiSkeleton :rows="3" />
         </div>
       </template>
-    </Table>
-    <Table v-else :columns="columns" :data="data" />
+    </EuiTable>
+    <EuiTable v-else :columns="columns" :data="data" />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Table, Skeleton } from '@elivander/elix-ui'
+import { Table as EuiTable, Skeleton as EuiSkeleton } from '@elivander/elix-ui'
 
 const loading = ref(true)
 
@@ -174,12 +174,12 @@ const sortableCode = `<template>
     <p style="margin-bottom: 12px; color: var(--eui-text-secondary);">
       Click column headers to sort. Notice how rows reorder while maintaining their data.
     </p>
-    <Table :columns="columns" :data="data" hoverable striped />
+    <EuiTable :columns="columns" :data="data" hoverable striped />
   </div>
 </template>
 
 <script setup>
-import { Table } from '@elivander/elix-ui'
+import { Table as EuiTable } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name', sortable: true },
@@ -204,13 +204,13 @@ const fixedColumnsCode = `<template>
       Scroll horizontally - ID and Salary columns stay fixed. Notice the shadow and border on fixed columns.
     </p>
     <div style="max-width: 600px; overflow-x: auto; border: 1px solid var(--eui-border-color); border-radius: var(--eui-radius-md); padding: 8px;">
-      <Table :columns="columns" :data="data" hoverable striped />
+      <EuiTable :columns="columns" :data="data" hoverable striped />
     </div>
   </div>
 </template>
 
 <script setup>
-import { Table } from '@elivander/elix-ui'
+import { Table as EuiTable } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'id', title: 'ID', fixed: 'left', width: 80, align: 'center' },
@@ -236,13 +236,13 @@ const sortableFixedCode = `<template>
       Sort any column - fixed columns stay in place. Scroll horizontally to see fixed columns work.
     </p>
     <div style="max-width: 700px; overflow-x: auto; border: 1px solid var(--eui-border-color); border-radius: var(--eui-radius-md); padding: 8px;">
-      <Table :columns="columns" :data="data" hoverable striped />
+      <EuiTable :columns="columns" :data="data" hoverable striped />
     </div>
   </div>
 </template>
 
 <script setup>
-import { Table } from '@elivander/elix-ui'
+import { Table as EuiTable } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name', fixed: 'left', width: 150, sortable: true },
@@ -266,18 +266,18 @@ const data = [
 const sizesCode = `<template>
   <div>
     <h3 style="margin-bottom: 12px;">Small</h3>
-    <Table :columns="columns" :data="data" size="sm" hoverable />
+    <EuiTable :columns="columns" :data="data" size="sm" hoverable />
     
     <h3 style="margin-top: 32px; margin-bottom: 12px;">Medium (Default)</h3>
-    <Table :columns="columns" :data="data" size="md" hoverable />
+    <EuiTable :columns="columns" :data="data" size="md" hoverable />
     
     <h3 style="margin-top: 32px; margin-bottom: 12px;">Large</h3>
-    <Table :columns="columns" :data="data" size="lg" hoverable />
+    <EuiTable :columns="columns" :data="data" size="lg" hoverable />
   </div>
 </template>
 
 <script setup>
-import { Table } from '@elivander/elix-ui'
+import { Table as EuiTable } from '@elivander/elix-ui'
 
 const columns = [
   { key: 'name', title: 'Name' },
@@ -294,7 +294,7 @@ const data = [
 
 const selectableCode = `<template>
   <div>
-    <Table 
+    <EuiTable 
       :columns="columns" 
       :data="data" 
       selectable 
@@ -310,7 +310,7 @@ const selectableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Table } from '@elivander/elix-ui'
+import { Table as EuiTable } from '@elivander/elix-ui'
 
 const selected = ref([])
 
@@ -336,7 +336,7 @@ const handleSelect = (rows) => {
 
 const selectableSortableFixedCode = `<template>
   <div style="max-width: 700px; overflow-x: auto;">
-    <Table 
+    <EuiTable 
       :columns="columns" 
       :data="data" 
       selectable 
@@ -356,7 +356,7 @@ const selectableSortableFixedCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Table } from '@elivander/elix-ui'
+import { Table as EuiTable } from '@elivander/elix-ui'
 
 const selected = ref([])
 const sortInfo = ref(null)

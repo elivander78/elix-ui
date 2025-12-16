@@ -15,6 +15,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiAvatar',
+
+})
+
 import { computed, ref } from 'vue'
 
 const props = defineProps<{

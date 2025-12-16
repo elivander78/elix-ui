@@ -2,7 +2,7 @@ import Breadcrumbs from './Breadcrumbs.vue'
 import type { App } from 'vue'
 
 Breadcrumbs.install = (app: App) => {
-  app.component(Breadcrumbs.name || 'EuiBreadcrumbs', Breadcrumbs)
+  app.component(Breadcrumbs.name, Breadcrumbs)
 }
 
 export { Breadcrumbs }

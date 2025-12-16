@@ -3,12 +3,12 @@ import Step from './Step.vue'
 import type { App } from 'vue'
 
 Steps.install = (app: App) => {
-  app.component(Steps.name || 'EuiSteps', Steps)
-  app.component(Step.name || 'EuiStep', Step)
+  app.component(Steps.name, Steps)
+  app.component(Step.name, Step)
 }
 
 Step.install = (app: App) => {
-  app.component(Step.name || 'EuiStep', Step)
+  app.component(Step.name, Step)
 }
 
 export { Steps, Step }

@@ -2,7 +2,7 @@ import Radio from './Radio.vue'
 import type { App } from 'vue'
 
 Radio.install = (app: App) => {
-  app.component(Radio.name || 'EuiRadio', Radio)
+  app.component(Radio.name, Radio)
 }
 
 export { Radio }

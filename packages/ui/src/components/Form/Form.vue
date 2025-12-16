@@ -5,6 +5,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiForm',
+
+})
+
 import { computed, provide, ref } from 'vue'
 import type { FormRules } from './types'
 

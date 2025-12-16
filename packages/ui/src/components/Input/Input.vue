@@ -39,6 +39,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiInput',
+
+})
+
 import { computed, ref, useSlots } from 'vue'
 import { inputProps, type InputProps } from './Input'
 

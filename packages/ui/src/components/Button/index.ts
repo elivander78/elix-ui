@@ -2,7 +2,7 @@ import Button from './Button.vue'
 import type { App } from 'vue'
 
 Button.install = (app: App) => {
-  app.component(Button.name || 'EuiButton', Button)
+  app.component(Button.name, Button)
 }
 
 export { Button }

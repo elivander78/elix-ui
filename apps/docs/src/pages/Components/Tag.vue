@@ -49,65 +49,65 @@ const tagEvents = [
 ]
 
 const basicCode = `<template>
-  <Tag>Tag</Tag>
-  <Tag type="primary">Primary</Tag>
-  <Tag type="success">Success</Tag>
+  <EuiTag>Tag</EuiTag>
+  <EuiTag type="primary">Primary</EuiTag>
+  <EuiTag type="success">Success</EuiTag>
 </template>
 
 <script setup>
-import { Tag } from '@elivander/elix-ui'
+import { Tag as EuiTag } from '@elivander/elix-ui'
 <\/script>`
 
 const setCode = `<template>
   <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-    <Tag>Default</Tag>
-    <Tag type="primary">Primary</Tag>
-    <Tag type="success">Success</Tag>
-    <Tag type="warning">Warning</Tag>
-    <Tag type="error">Error</Tag>
-    <Tag type="info">Info</Tag>
+    <EuiTag>Default</EuiTag>
+    <EuiTag type="primary">Primary</EuiTag>
+    <EuiTag type="success">Success</EuiTag>
+    <EuiTag type="warning">Warning</EuiTag>
+    <EuiTag type="error">Error</EuiTag>
+    <EuiTag type="info">Info</EuiTag>
   </div>
 </template>
 
 <script setup>
-import { Tag } from '@elivander/elix-ui'
+import { Tag as EuiTag } from '@elivander/elix-ui'
 <\/script>`
 
 const iconsCode = `<template>
   <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-    <Tag>
+    <EuiTag>
       <template #icon>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <path d="M7 1L9 5L13 6L9 7L7 11L5 7L1 6L5 5L7 1Z" fill="currentColor"/>
         </svg>
       </template>
       Star
-    </Tag>
-    <Tag type="success">
+    </EuiTag>
+    <EuiTag type="success">
       <template #icon>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <path d="M11.5 3.5L5.5 9.5L2.5 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </template>
       Verified
-    </Tag>
+    </EuiTag>
   </div>
 </template>
 
 <script setup>
-import { Tag } from '@elivander/elix-ui'
+import { Tag as EuiTag } from '@elivander/elix-ui'
 <\/script>`
 
 const closableCode = `<template>
   <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-    <Tag closable @close="handleClose">Closable</Tag>
-    <Tag type="primary" closable @close="handleClose">Primary</Tag>
-    <Tag type="success" closable @close="handleClose">Success</Tag>
+    <EuiTag closable @close="handleClose">Closable</EuiTag>
+    <EuiTag type="primary" closable @close="handleClose">Primary</EuiTag>
+    <EuiTag type="success" closable @close="handleClose">Success</EuiTag>
   </div>
 </template>
 
 <script setup>
-import { Tag } from '@elivander/elix-ui'
+import { Tag as EuiTag } from '@elivander/elix-ui'
 
 const handleClose = () => {
   console.log('Tag closed')
@@ -116,26 +116,26 @@ const handleClose = () => {
 
 const roundCode = `<template>
   <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-    <Tag round>Round</Tag>
-    <Tag type="primary" round>Primary</Tag>
-    <Tag type="success" round>Success</Tag>
+    <EuiTag round>Round</EuiTag>
+    <EuiTag type="primary" round>Primary</EuiTag>
+    <EuiTag type="success" round>Success</EuiTag>
   </div>
 </template>
 
 <script setup>
-import { Tag } from '@elivander/elix-ui'
+import { Tag as EuiTag } from '@elivander/elix-ui'
 <\/script>`
 
 const sizesCode = `<template>
   <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
-    <Tag size="sm">Small</Tag>
-    <Tag size="md">Medium</Tag>
-    <Tag size="lg">Large</Tag>
+    <EuiTag size="sm">Small</EuiTag>
+    <EuiTag size="md">Medium</EuiTag>
+    <EuiTag size="lg">Large</EuiTag>
   </div>
 </template>
 
 <script setup>
-import { Tag } from '@elivander/elix-ui'
+import { Tag as EuiTag } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

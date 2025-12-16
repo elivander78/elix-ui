@@ -34,6 +34,10 @@
 <script setup lang="ts">
 import { computed, watch } from 'vue'
 
+defineOptions({
+  name: 'EuiModal',
+})
+
 const props = withDefaults(defineProps<{
   modelValue: boolean
   title?: string

@@ -25,43 +25,43 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import HeaderStickyScrollDemo from '../../components/demos/HeaderStickyScrollDemo.vue'
+import HeaderStickyScrollDemo from '../../components/demos/Header/StickyScroll.vue'
 
 const basicCode = `<template>
-  <Header bordered>
+  <EuiHeader bordered>
     <template #left>
       <h2 style="margin: 0;">Logo</h2>
     </template>
     <template #right>
-      <Button>Login</Button>
+      <EuiButton>Login</EuiButton>
     </template>
-  </Header>
+  </EuiHeader>
 </template>
 
 <script setup>
-import { Header, Button } from '@elivander/elix-ui'
+import { Header as EuiHeader, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const fixedCode = `<template>
-  <Header fixed bordered>
+  <EuiHeader fixed bordered>
     <template #left>
       <h2 style="margin: 0;">Logo</h2>
     </template>
     <template #right>
-      <Button>Menu</Button>
+      <EuiButton>Menu</EuiButton>
     </template>
-  </Header>
+  </EuiHeader>
   <div style="height: 200vh; padding: 20px;">
     Scroll to see fixed header
   </div>
 </template>
 
 <script setup>
-import { Header, Button } from '@elivander/elix-ui'
+import { Header as EuiHeader, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const navigationCode = `<template>
-  <Header height="64px" bordered>
+  <EuiHeader height="64px" bordered>
     <template #left>
       <h2 style="margin: 0;">Company</h2>
     </template>
@@ -74,57 +74,57 @@ const navigationCode = `<template>
       </nav>
     </template>
     <template #right>
-      <Button type="outline">Sign In</Button>
-      <Button type="primary">Sign Up</Button>
+      <EuiButton type="outline">Sign In</EuiButton>
+      <EuiButton type="primary">Sign Up</EuiButton>
     </template>
-  </Header>
+  </EuiHeader>
 </template>
 
 <script setup>
-import { Header, Button } from '@elivander/elix-ui'
+import { Header as EuiHeader, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const searchCode = `<template>
-  <Header bordered>
+  <EuiHeader bordered>
     <template #left>
       <h2 style="margin: 0;">Logo</h2>
     </template>
     <template #center>
-      <Input placeholder="Search..." style="width: 300px;" />
+      <EuiInput placeholder="Search..." style="width: 300px;" />
     </template>
     <template #right>
-      <Button>Profile</Button>
+      <EuiButton>Profile</EuiButton>
     </template>
-  </Header>
+  </EuiHeader>
 </template>
 
 <script setup>
-import { Header, Button, Input } from '@elivander/elix-ui'
+import { Header as EuiHeader, Button as EuiButton, Input as EuiInput } from '@elivander/elix-ui'
 <\/script>`
 
 const userMenuCode = `<template>
-  <Header bordered>
+  <EuiHeader bordered>
     <template #left>
-      <Avatar>JD</Avatar>
+      <EuiAvatar>JD</EuiAvatar>
       <span style="margin-left: 10px;">John Doe</span>
     </template>
     <template #right>
-      <Badge :value="3">
-        <Button type="ghost">Notifications</Button>
-      </Badge>
-      <Button type="ghost">Settings</Button>
-      <Button type="outline">Logout</Button>
+      <EuiBadge :value="3">
+        <EuiButton type="ghost">Notifications</EuiButton>
+      </EuiBadge>
+      <EuiButton type="ghost">Settings</EuiButton>
+      <EuiButton type="outline">Logout</EuiButton>
     </template>
-  </Header>
+  </EuiHeader>
 </template>
 
 <script setup>
-import { Header, Button, Avatar, Badge } from '@elivander/elix-ui'
+import { Header as EuiHeader, Button as EuiButton, Avatar as EuiAvatar, Badge as EuiBadge } from '@elivander/elix-ui'
 <\/script>`
 
 const stickyScrollCode = `<template>
   <div style="position: relative; height: 400px; overflow: auto; border: 1px solid var(--eui-border-color); border-radius: var(--eui-radius-md);">
-    <Header sticky bordered>
+    <EuiHeader sticky bordered>
       <template #logo>
         <h2 style="margin: 0;">Logo</h2>
       </template>
@@ -136,9 +136,9 @@ const stickyScrollCode = `<template>
         </nav>
       </template>
       <template #right>
-        <Button>Profile</Button>
+        <EuiButton>Profile</EuiButton>
       </template>
-    </Header>
+    </EuiHeader>
     <div style="padding: 20px; height: 200vh;">
       <p>Scroll down to see the sticky header behavior. The header will remain at the top while scrolling.</p>
       <p style="margin-top: 100vh;">You've scrolled far down. The header is still visible at the top.</p>
@@ -147,7 +147,7 @@ const stickyScrollCode = `<template>
 </template>
 
 <script setup>
-import { Header, Button } from '@elivander/elix-ui'
+import { Header as EuiHeader, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

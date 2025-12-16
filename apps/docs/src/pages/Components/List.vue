@@ -30,9 +30,9 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import ListBasicDemo from '../../components/demos/ListBasicDemo.vue'
-import ListWithDescriptionDemo from '../../components/demos/ListWithDescriptionDemo.vue'
-import ListWithIconDemo from '../../components/demos/ListWithIconDemo.vue'
+import ListBasicDemo from '../../components/demos/List/Basic.vue'
+import ListWithDescriptionDemo from '../../components/demos/List/WithDescription.vue'
+import ListWithIconDemo from '../../components/demos/List/WithIcon.vue'
 
 const listProps = [
   { name: 'bordered', type: 'boolean', default: 'false', description: 'Добавить границу вокруг списка' },
@@ -68,34 +68,34 @@ const listItemEvents = [
 ]
 
 const basicCode = `<template>
-  <List>
-    <ListItem title="Item 1" />
-    <ListItem title="Item 2" />
-    <ListItem title="Item 3" />
-  </List>
+  <EuiList>
+    <EuiListItem title="Item 1" />
+    <EuiListItem title="Item 2" />
+    <EuiListItem title="Item 3" />
+  </EuiList>
 </template>`
 
 const descriptionCode = `<template>
-  <List>
-    <ListItem title="Settings" description="Manage your account settings" />
-    <ListItem title="Privacy" description="Control your privacy settings" />
-  </List>
+  <EuiList>
+    <EuiListItem title="Settings" description="Manage your account settings" />
+    <EuiListItem title="Privacy" description="Control your privacy settings" />
+  </EuiList>
 </template>`
 
 const iconCode = `<template>
-  <List>
-    <ListItem title="Settings">
+  <EuiList>
+    <EuiListItem title="Settings">
       <template #icon>
         <svg>...</svg>
       </template>
-    </ListItem>
-    <ListItem title="Notifications" clickable>
+    </EuiListItem>
+    <EuiListItem title="Notifications" clickable>
       <template #icon>...</template>
       <template #extra>
-        <Badge>New</Badge>
+        <EuiBadge>New</EuiBadge>
       </template>
-    </ListItem>
-  </List>
+    </EuiListItem>
+  </EuiList>
 </template>`
 </script>
 

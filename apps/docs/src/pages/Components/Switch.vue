@@ -30,32 +30,32 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import SwitchBasicDemo from '../../components/demos/SwitchBasicDemo.vue'
-import SwitchSizesDemo from '../../components/demos/SwitchSizesDemo.vue'
-import SwitchLabelsDemo from '../../components/demos/SwitchLabelsDemo.vue'
-import SwitchLoadingDemo from '../../components/demos/SwitchLoadingDemo.vue'
-import SwitchDisabledDemo from '../../components/demos/SwitchDisabledDemo.vue'
+import SwitchBasicDemo from '../../components/demos/Switch/Basic.vue'
+import SwitchSizesDemo from '../../components/demos/Switch/Sizes.vue'
+import SwitchLabelsDemo from '../../components/demos/Switch/Labels.vue'
+import SwitchLoadingDemo from '../../components/demos/Switch/Loading.vue'
+import SwitchDisabledDemo from '../../components/demos/Switch/Disabled.vue'
 
 const basicCode = `<template>
-  <Switch v-model="checked" />
+  <EuiSwitch v-model="checked" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elivander/elix-ui'
+import { Switch as EuiSwitch } from '@elivander/elix-ui'
 
 const checked = ref(false)
 <\/script>`
 
 const sizesCode = `<template>
-  <Switch v-model="checked1" size="sm" />
-  <Switch v-model="checked2" size="md" />
-  <Switch v-model="checked3" size="lg" />
+  <EuiSwitch v-model="checked1" size="sm" />
+  <EuiSwitch v-model="checked2" size="md" />
+  <EuiSwitch v-model="checked3" size="lg" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elivander/elix-ui'
+import { Switch as EuiSwitch } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(true)
@@ -63,38 +63,38 @@ const checked3 = ref(false)
 <\/script>`
 
 const labelsCode = `<template>
-  <Switch v-model="checked1">Enable notifications</Switch>
-  <Switch v-model="checked2" checked-label="On" unchecked-label="Off" />
+  <EuiSwitch v-model="checked1">Enable notifications</EuiSwitch>
+  <EuiSwitch v-model="checked2" checked-label="On" unchecked-label="Off" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elivander/elix-ui'
+import { Switch as EuiSwitch } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(true)
 <\/script>`
 
 const loadingCode = `<template>
-  <Switch v-model="checked" loading />
+  <EuiSwitch v-model="checked" loading />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elivander/elix-ui'
+import { Switch as EuiSwitch } from '@elivander/elix-ui'
 
 const checked = ref(false)
 <\/script>`
 
 const disabledCode = `<template>
-  <Switch v-model="checked1" />
-  <Switch v-model="checked2" disabled />
-  <Switch v-model="checked3" disabled :checked="true" />
+  <EuiSwitch v-model="checked1" />
+  <EuiSwitch v-model="checked2" disabled />
+  <EuiSwitch v-model="checked3" disabled :checked="true" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Switch } from '@elivander/elix-ui'
+import { Switch as EuiSwitch } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(false)

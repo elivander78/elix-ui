@@ -33,70 +33,70 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import InputBasicDemo from '../../components/demos/InputBasicDemo.vue'
-import InputSizesDemo from '../../components/demos/InputSizesDemo.vue'
-import InputStatesDemo from '../../components/demos/InputStatesDemo.vue'
-import InputIconsDemo from '../../components/demos/InputIconsDemo.vue'
-import InputClearableDemo from '../../components/demos/InputClearableDemo.vue'
-import InputAppearanceDemo from '../../components/demos/InputAppearanceDemo.vue'
+import InputBasicDemo from '../../components/demos/Input/Basic.vue'
+import InputSizesDemo from '../../components/demos/Input/Sizes.vue'
+import InputStatesDemo from '../../components/demos/Input/States.vue'
+import InputIconsDemo from '../../components/demos/Input/Icons.vue'
+import InputClearableDemo from '../../components/demos/Input/Clearable.vue'
+import InputAppearanceDemo from '../../components/demos/Input/Appearance.vue'
 
 const basicCode = `<template>
-  <Input v-model="value" placeholder="Enter text" />
+  <EuiInput v-model="value" placeholder="Enter text" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Input } from '@elivander/elix-ui'
+import { Input as EuiInput } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
 
 const sizesCode = `<template>
-  <Input size="xs" placeholder="Extra Small" />
-  <Input size="sm" placeholder="Small" />
-  <Input size="md" placeholder="Medium" />
-  <Input size="lg" placeholder="Large" />
+  <EuiInput size="xs" placeholder="Extra Small" />
+  <EuiInput size="sm" placeholder="Small" />
+  <EuiInput size="md" placeholder="Medium" />
+  <EuiInput size="lg" placeholder="Large" />
 </template>`
 
 const statesCode = `<template>
-  <Input placeholder="Normal" />
-  <Input placeholder="Error" state="error" />
-  <Input placeholder="Success" state="success" />
-  <Input placeholder="Disabled" disabled />
+  <EuiInput placeholder="Normal" />
+  <EuiInput placeholder="Error" state="error" />
+  <EuiInput placeholder="Success" state="success" />
+  <EuiInput placeholder="Disabled" disabled />
 </template>`
 
 const iconsCode = `<template>
-  <Input placeholder="With prefix icon">
+  <EuiInput placeholder="With prefix icon">
     <template #prefix>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M7.333 2.667a4.667 4.667 0 1 0 0 9.333 4.667 4.667 0 0 0 0-9.333ZM14 14l-2.9-2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
     </template>
-  </Input>
-  <Input placeholder="With suffix icon">
+  </EuiInput>
+  <EuiInput placeholder="With suffix icon">
     <template #suffix>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </template>
-  </Input>
+  </EuiInput>
 </template>`
 
 const clearableCode = `<template>
-  <Input v-model="value" placeholder="Type to see clear button" clearable />
+  <EuiInput v-model="value" placeholder="Type to see clear button" clearable />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Input } from '@elivander/elix-ui'
+import { Input as EuiInput } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
 
 const appearanceCode = `<template>
-  <Input appearance="border" placeholder="Border" />
-  <Input appearance="shadow" placeholder="Shadow" />
-  <Input appearance="border-shadow" placeholder="Border + Shadow" />
+  <EuiInput appearance="border" placeholder="Border" />
+  <EuiInput appearance="shadow" placeholder="Shadow" />
+  <EuiInput appearance="border-shadow" placeholder="Border + Shadow" />
 </template>`
 
 const inputProps = [

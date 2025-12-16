@@ -14,6 +14,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiFormItem',
+
+})
+
 import { computed, inject } from 'vue'
 
 const props = defineProps<{

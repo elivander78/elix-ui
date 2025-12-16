@@ -25,50 +25,50 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import AlertBasicDemo from '../../components/demos/AlertBasicDemo.vue'
-import AlertTypesDemo from '../../components/demos/AlertTypesDemo.vue'
-import AlertVariantsDemo from '../../components/demos/AlertVariantsDemo.vue'
-import AlertDescriptionDemo from '../../components/demos/AlertDescriptionDemo.vue'
-import AlertClosableDemo from '../../components/demos/AlertClosableDemo.vue'
-import AlertAppearanceDemo from '../../components/demos/AlertAppearanceDemo.vue'
+import AlertBasicDemo from '../../components/demos/Alert/Basic.vue'
+import AlertTypesDemo from '../../components/demos/Alert/Types.vue'
+import AlertVariantsDemo from '../../components/demos/Alert/Variants.vue'
+import AlertDescriptionDemo from '../../components/demos/Alert/Description.vue'
+import AlertClosableDemo from '../../components/demos/Alert/Closable.vue'
+import AlertAppearanceDemo from '../../components/demos/Alert/Appearance.vue'
 
 const basicCode = `<template>
-  <Alert type="info" title="Info Alert">
+  <EuiAlert type="info" title="Info Alert">
     This is an informational message.
-  </Alert>
+  </EuiAlert>
 </template>
 
 <script setup>
-import { Alert } from '@elivander/elix-ui'
+import { Alert as EuiAlert } from '@elivander/elix-ui'
 <\/script>`
 
 const typesCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 12px;">
-    <Alert type="success" title="Success" />
-    <Alert type="info" title="Info" />
-    <Alert type="warning" title="Warning" />
-    <Alert type="error" title="Error" />
+    <EuiAlert type="success" title="Success" />
+    <EuiAlert type="info" title="Info" />
+    <EuiAlert type="warning" title="Warning" />
+    <EuiAlert type="error" title="Error" />
   </div>
 </template>
 
 <script setup>
-import { Alert } from '@elivander/elix-ui'
+import { Alert as EuiAlert } from '@elivander/elix-ui'
 <\/script>`
 
 const variantsCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 12px;">
-    <Alert type="info" variant="soft" title="Soft variant" />
-    <Alert type="info" variant="solid" title="Solid variant" />
-    <Alert type="info" variant="outlined" title="Outlined variant" />
+    <EuiAlert type="info" variant="soft" title="Soft variant" />
+    <EuiAlert type="info" variant="solid" title="Solid variant" />
+    <EuiAlert type="info" variant="outlined" title="Outlined variant" />
   </div>
 </template>
 
 <script setup>
-import { Alert } from '@elivander/elix-ui'
+import { Alert as EuiAlert } from '@elivander/elix-ui'
 <\/script>`
 
 const descriptionCode = `<template>
-  <Alert 
+  <EuiAlert 
     type="warning" 
     title="Warning" 
     description="This is a longer description that provides more context about the alert message."
@@ -76,11 +76,11 @@ const descriptionCode = `<template>
 </template>
 
 <script setup>
-import { Alert } from '@elivander/elix-ui'
+import { Alert as EuiAlert } from '@elivander/elix-ui'
 <\/script>`
 
 const closableCode = `<template>
-  <Alert 
+  <EuiAlert 
     type="info" 
     title="Closable Alert" 
     description="Click the X button to close this alert."
@@ -91,7 +91,7 @@ const closableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Alert } from '@elivander/elix-ui'
+import { Alert as EuiAlert } from '@elivander/elix-ui'
 
 const handleClose = () => {
   console.log('Alert closed')
@@ -100,14 +100,14 @@ const handleClose = () => {
 
 const appearanceCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 12px;">
-    <Alert type="info" appearance="border" variant="outlined" title="Border" />
-    <Alert type="info" appearance="shadow" variant="outlined" title="Shadow" />
-    <Alert type="info" appearance="border-shadow" variant="outlined" title="Border + Shadow" />
+    <EuiAlert type="info" appearance="border" variant="outlined" title="Border" />
+    <EuiAlert type="info" appearance="shadow" variant="outlined" title="Shadow" />
+    <EuiAlert type="info" appearance="border-shadow" variant="outlined" title="Border + Shadow" />
   </div>
 </template>
 
 <script setup>
-import { Alert } from '@elivander/elix-ui'
+import { Alert as EuiAlert } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

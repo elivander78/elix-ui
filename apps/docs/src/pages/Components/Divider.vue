@@ -35,54 +35,54 @@ const dividerSlots = [
 
 const basicCode = `<template>
   <p>Content above</p>
-  <Divider />
+  <EuiDivider />
   <p>Content below</p>
 </template>
 
 <script setup>
-import { Divider } from '@elivander/elix-ui'
+import { Divider as EuiDivider } from '@elivander/elix-ui'
 <\/script>`
 
 const horizontalCode = `<template>
   <div>
     <p>Solid divider</p>
-    <Divider />
+    <EuiDivider />
     <p>Dashed divider</p>
-    <Divider dashed />
+    <EuiDivider dashed />
     <p>More content</p>
   </div>
 </template>
 
 <script setup>
-import { Divider } from '@elivander/elix-ui'
+import { Divider as EuiDivider } from '@elivander/elix-ui'
 <\/script>`
 
 const verticalCode = `<template>
   <div style="display: flex; align-items: center;">
     <span>Left</span>
-    <Divider vertical />
+    <EuiDivider vertical />
     <span>Middle</span>
-    <Divider vertical dashed />
+    <EuiDivider vertical dashed />
     <span>Right</span>
   </div>
 </template>
 
 <script setup>
-import { Divider } from '@elivander/elix-ui'
+import { Divider as EuiDivider } from '@elivander/elix-ui'
 <\/script>`
 
 const textCode = `<template>
   <div>
     <p>Content above</p>
-    <Divider>OR</Divider>
+    <EuiDivider>OR</EuiDivider>
     <p>Content below</p>
-    <Divider dashed>Dashed with text</Divider>
+    <EuiDivider dashed>Dashed with text</EuiDivider>
     <p>More content</p>
   </div>
 </template>
 
 <script setup>
-import { Divider } from '@elivander/elix-ui'
+import { Divider as EuiDivider } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

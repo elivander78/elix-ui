@@ -25,77 +25,77 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import ProgressPlaygroundDemo from '../../components/demos/ProgressPlaygroundDemo.vue'
+import ProgressPlaygroundDemo from '../../components/demos/Progress/Playground.vue'
 
 const basicCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 20px;">
-    <Progress :percentage="30" />
-    <Progress :percentage="50" />
-    <Progress :percentage="75" />
-    <Progress :percentage="100" />
+    <EuiProgress :percentage="30" />
+    <EuiProgress :percentage="50" />
+    <EuiProgress :percentage="75" />
+    <EuiProgress :percentage="100" />
   </div>
 </template>
 
 <script setup>
-import { Progress } from '@elivander/elix-ui'
+import { Progress as EuiProgress } from '@elivander/elix-ui'
 <\/script>`
 
 const statusCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 20px;">
-    <Progress :percentage="50" status="active" />
-    <Progress :percentage="75" status="success" />
-    <Progress :percentage="30" status="error" />
+    <EuiProgress :percentage="50" status="active" />
+    <EuiProgress :percentage="75" status="success" />
+    <EuiProgress :percentage="30" status="error" />
   </div>
 </template>
 
 <script setup>
-import { Progress } from '@elivander/elix-ui'
+import { Progress as EuiProgress } from '@elivander/elix-ui'
 <\/script>`
 
 const textCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 20px;">
-    <Progress :percentage="50" :show-info="true" text="Uploading..." />
-    <Progress :percentage="75" :show-info="true" text="Processing..." />
-    <Progress :percentage="100" :show-info="true" text="Complete" />
+    <EuiProgress :percentage="50" :show-info="true" text="Uploading..." />
+    <EuiProgress :percentage="75" :show-info="true" text="Processing..." />
+    <EuiProgress :percentage="100" :show-info="true" text="Complete" />
   </div>
 </template>
 
 <script setup>
-import { Progress } from '@elivander/elix-ui'
+import { Progress as EuiProgress } from '@elivander/elix-ui'
 <\/script>`
 
 const sizesCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 20px;">
-    <Progress :percentage="50" :stroke-width="4" />
-    <Progress :percentage="50" :stroke-width="8" />
-    <Progress :percentage="50" :stroke-width="12" />
+    <EuiProgress :percentage="50" :stroke-width="4" />
+    <EuiProgress :percentage="50" :stroke-width="8" />
+    <EuiProgress :percentage="50" :stroke-width="12" />
   </div>
 </template>
 
 <script setup>
-import { Progress } from '@elivander/elix-ui'
+import { Progress as EuiProgress } from '@elivander/elix-ui'
 <\/script>`
 
 const animatedCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 20px;">
-    <Progress :percentage="percentage" status="active" :show-info="true" />
+    <EuiProgress :percentage="percentage" status="active" :show-info="true" />
     <div style="display: flex; gap: 10px;">
-      <Button @click="percentage = Math.max(0, percentage - 10)">-10%</Button>
-      <Button @click="percentage = Math.min(100, percentage + 10)">+10%</Button>
+      <EuiButton @click="percentage = Math.max(0, percentage - 10)">-10%</EuiButton>
+      <EuiButton @click="percentage = Math.min(100, percentage + 10)">+10%</EuiButton>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Progress, Button } from '@elivander/elix-ui'
+import { Progress as EuiProgress, Button as EuiButton } from '@elivander/elix-ui'
 
 const percentage = ref(50)
 <\/script>`
 
 const playgroundCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 20px;">
-    <Progress 
+    <EuiProgress 
       :percent="percent" 
       :type="type"
       :status="status"
@@ -112,15 +112,15 @@ const playgroundCode = `<template>
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
         <label style="min-width: 100px;">Type:</label>
-        <Select v-model="type" :options="typeOptions" style="width: 150px;" />
+        <EuiSelect v-model="type" :options="typeOptions" style="width: 150px;" />
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
         <label style="min-width: 100px;">Status:</label>
-        <Select v-model="status" :options="statusOptions" style="width: 150px;" />
+        <EuiSelect v-model="status" :options="statusOptions" style="width: 150px;" />
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
         <label style="min-width: 100px;">Appearance:</label>
-        <Select v-model="appearance" :options="appearanceOptions" style="width: 150px;" />
+        <EuiSelect v-model="appearance" :options="appearanceOptions" style="width: 150px;" />
       </div>
       <div style="display: flex; gap: 20px;">
         <label><input type="checkbox" v-model="showLabel" /> Show Label</label>
@@ -133,7 +133,7 @@ const playgroundCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Progress, Select } from '@elivander/elix-ui'
+import { Progress as EuiProgress, Select as EuiSelect } from '@elivander/elix-ui'
 
 const percent = ref(50)
 const type = ref('line')

@@ -62,6 +62,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiTable',
+
+})
+
 import { computed, ref } from 'vue'
 import { Checkbox } from '../Checkbox'
 

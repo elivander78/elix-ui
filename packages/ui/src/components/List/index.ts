@@ -3,11 +3,11 @@ import ListItem from './ListItem.vue'
 import type { App } from 'vue'
 
 List.install = (app: App) => {
-  app.component(List.name || 'EuiList', List)
+  app.component(List.name, List)
 }
 
 ListItem.install = (app: App) => {
-  app.component(ListItem.name || 'EuiListItem', ListItem)
+  app.component(ListItem.name, ListItem)
 }
 
 export { List, ListItem }

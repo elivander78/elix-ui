@@ -33,6 +33,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiDrawer',
+
+})
+
 import { computed, watch } from 'vue'
 
 const props = withDefaults(defineProps<{

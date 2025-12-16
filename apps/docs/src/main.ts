@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import { createUi } from '@elivander/elix-ui'
+// Import UI kit styles
+import '@elivander/elix-ui/styles/index.scss'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -133,6 +135,10 @@ const router = createRouter({
     {
       path: '/components/collapse',
       component: () => import('./pages/Components/Collapse.vue'),
+    },
+    {
+      path: '/components/accordion',
+      component: () => import('./pages/Components/Accordion.vue'),
     },
     {
       path: '/components/slider',

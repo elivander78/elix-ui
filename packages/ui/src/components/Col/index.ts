@@ -2,7 +2,7 @@ import Col from './Col.vue'
 import type { App } from 'vue'
 
 Col.install = (app: App) => {
-  app.component(Col.name || 'EuiCol', Col)
+  app.component(Col.name, Col)
 }
 
 export { Col }

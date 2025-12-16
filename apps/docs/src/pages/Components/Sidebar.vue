@@ -25,11 +25,11 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import SidebarLayoutDemo from '../../components/demos/SidebarLayoutDemo.vue'
+import SidebarLayoutDemo from '../../components/demos/Sidebar/Layout.vue'
 
 const basicCode = `<template>
   <div style="display: flex;">
-    <Sidebar width="280px" bordered>
+    <EuiSidebar width="280px" bordered>
       <nav class="sidebar-nav">
         <ul class="sidebar-nav__list">
           <li class="sidebar-nav__item">
@@ -76,7 +76,7 @@ const basicCode = `<template>
           </li>
         </ul>
       </nav>
-    </Sidebar>
+    </EuiSidebar>
     <main style="flex: 1; padding: 20px;">
       Main content
     </main>
@@ -84,7 +84,7 @@ const basicCode = `<template>
 </template>
 
 <script setup>
-import { Sidebar } from '@elivander/elix-ui'
+import { Sidebar as EuiSidebar } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>
@@ -133,7 +133,7 @@ import { Sidebar } from '@elivander/elix-ui'
 
 const collapsedCode = `<template>
   <div style="display: flex;">
-    <Sidebar :collapsed="collapsed" width="280px" collapsed-width="64px" bordered>
+    <EuiSidebar :collapsed="collapsed" width="280px" collapsed-width="64px" bordered>
       <nav class="sidebar-nav">
         <ul class="sidebar-nav__list">
           <li class="sidebar-nav__item">
@@ -169,9 +169,9 @@ const collapsedCode = `<template>
           </li>
         </ul>
       </nav>
-    </Sidebar>
+    </EuiSidebar>
     <main style="flex: 1; padding: 20px;">
-      <Button @click="collapsed = !collapsed">Toggle Sidebar</Button>
+      <EuiButton @click="collapsed = !collapsed">Toggle Sidebar</EuiButton>
       <p>Main content</p>
     </main>
   </div>
@@ -179,7 +179,7 @@ const collapsedCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Sidebar, Button } from '@elivander/elix-ui'
+import { Sidebar as EuiSidebar, Button as EuiButton } from '@elivander/elix-ui'
 
 const collapsed = ref(false)
 <\/script>
@@ -231,7 +231,7 @@ const collapsed = ref(false)
 
 const fixedCode = `<template>
   <div style="position: relative;">
-    <Sidebar fixed width="280px" bordered>
+    <EuiSidebar fixed width="280px" bordered>
       <nav class="sidebar-nav">
         <ul class="sidebar-nav__list">
           <li class="sidebar-nav__item">
@@ -267,7 +267,7 @@ const fixedCode = `<template>
           </li>
         </ul>
       </nav>
-    </Sidebar>
+    </EuiSidebar>
     <main style="margin-left: 280px; padding: 20px;">
       Main content with fixed sidebar
     </main>
@@ -275,7 +275,7 @@ const fixedCode = `<template>
 </template>
 
 <script setup>
-import { Sidebar } from '@elivander/elix-ui'
+import { Sidebar as EuiSidebar } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>
@@ -324,7 +324,7 @@ import { Sidebar } from '@elivander/elix-ui'
 
 const iconsCode = `<template>
   <div style="display: flex;">
-    <Sidebar width="280px" bordered>
+    <EuiSidebar width="280px" bordered>
       <nav class="sidebar-nav">
         <ul class="sidebar-nav__list">
           <li class="sidebar-nav__item">
@@ -361,7 +361,7 @@ const iconsCode = `<template>
           </li>
         </ul>
       </nav>
-    </Sidebar>
+    </EuiSidebar>
     <main style="flex: 1; padding: 20px;">
       Main content
     </main>
@@ -369,7 +369,7 @@ const iconsCode = `<template>
 </template>
 
 <script setup>
-import { Sidebar } from '@elivander/elix-ui'
+import { Sidebar as EuiSidebar } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>
@@ -418,7 +418,7 @@ import { Sidebar } from '@elivander/elix-ui'
 
 const groupsCode = `<template>
   <div style="display: flex;">
-    <Sidebar width="280px" bordered>
+    <EuiSidebar width="280px" bordered>
       <nav class="sidebar-nav">
         <div class="sidebar-nav__group-title">Main</div>
         <ul class="sidebar-nav__list">
@@ -470,7 +470,7 @@ const groupsCode = `<template>
           </li>
         </ul>
       </nav>
-    </Sidebar>
+    </EuiSidebar>
     <main style="flex: 1; padding: 20px;">
       Main content
     </main>
@@ -478,7 +478,7 @@ const groupsCode = `<template>
 </template>
 
 <script setup>
-import { Sidebar } from '@elivander/elix-ui'
+import { Sidebar as EuiSidebar } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>
@@ -541,16 +541,16 @@ import { Sidebar } from '@elivander/elix-ui'
 
 const layoutCode = `<template>
   <div style="display: flex; flex-direction: column; height: 500px; border: 1px solid var(--eui-border-color); border-radius: var(--eui-radius-md); overflow: hidden;">
-    <Header sticky bordered>
+    <EuiHeader sticky bordered>
       <template #logo>
         <h2 style="margin: 0;">App Name</h2>
       </template>
       <template #right>
-        <Button>Menu</Button>
+        <EuiButton>Menu</EuiButton>
       </template>
-    </Header>
+    </EuiHeader>
     <div style="display: flex; flex: 1; overflow: hidden;">
-      <Sidebar sticky width="280px" bordered>
+      <EuiSidebar sticky width="280px" bordered>
         <nav class="sidebar-nav">
           <ul class="sidebar-nav__list">
             <li class="sidebar-nav__item">
@@ -598,7 +598,7 @@ const layoutCode = `<template>
             </li>
           </ul>
         </nav>
-      </Sidebar>
+      </EuiSidebar>
       <main style="flex: 1; padding: 20px; overflow-y: auto;">
         <h3>Main Content</h3>
         <p>This is the main content area. When you scroll, only this area scrolls while the header and sidebar remain fixed.</p>
@@ -612,7 +612,7 @@ const layoutCode = `<template>
 </template>
 
 <script setup>
-import { Header, Sidebar, Button } from '@elivander/elix-ui'
+import { Header as EuiHeader, Sidebar as EuiSidebar, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>
 
 <style scoped>

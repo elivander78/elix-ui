@@ -22,14 +22,14 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import UploadBasicDemo from '../../components/demos/UploadBasicDemo.vue'
-import UploadDragDemo from '../../components/demos/UploadDragDemo.vue'
-import UploadMultipleDemo from '../../components/demos/UploadMultipleDemo.vue'
-import UploadValidationDemo from '../../components/demos/UploadValidationDemo.vue'
-import UploadWithFilesDemo from '../../components/demos/UploadWithFilesDemo.vue'
+import UploadBasicDemo from '../../components/demos/Upload/Basic.vue'
+import UploadDragDemo from '../../components/demos/Upload/Drag.vue'
+import UploadMultipleDemo from '../../components/demos/Upload/Multiple.vue'
+import UploadValidationDemo from '../../components/demos/Upload/Validation.vue'
+import UploadWithFilesDemo from '../../components/demos/Upload/WithFiles.vue'
 
 const basicCode = `<template>
-  <Upload 
+  <EuiUpload 
     :file-list="fileList"
     @change="handleChange"
     @remove="handleRemove"
@@ -38,7 +38,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload } from '@elivander/elix-ui'
+import { Upload as EuiUpload } from '@elivander/elix-ui'
 
 const fileList = ref([])
 
@@ -53,7 +53,7 @@ const handleRemove = (file) => {
 <\/script>`
 
 const dragCode = `<template>
-  <Upload 
+  <EuiUpload 
     :drag="true"
     :file-list="fileList"
     @change="handleChange"
@@ -62,7 +62,7 @@ const dragCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload } from '@elivander/elix-ui'
+import { Upload as EuiUpload } from '@elivander/elix-ui'
 
 const fileList = ref([])
 
@@ -72,7 +72,7 @@ const handleChange = (files) => {
 <\/script>`
 
 const multipleCode = `<template>
-  <Upload 
+  <EuiUpload 
     :multiple="true"
     :file-list="fileList"
     @change="handleChange"
@@ -81,7 +81,7 @@ const multipleCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload } from '@elivander/elix-ui'
+import { Upload as EuiUpload } from '@elivander/elix-ui'
 
 const fileList = ref([])
 
@@ -91,7 +91,7 @@ const handleChange = (files) => {
 <\/script>`
 
 const validationCode = `<template>
-  <Upload 
+  <EuiUpload 
     accept="image/*"
     :max-size-mb="5"
     :file-list="fileList"
@@ -101,7 +101,7 @@ const validationCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload } from '@elivander/elix-ui'
+import { Upload as EuiUpload } from '@elivander/elix-ui'
 
 const fileList = ref([])
 
@@ -111,7 +111,7 @@ const handleChange = (files) => {
 <\/script>`
 
 const withFilesCode = `<template>
-  <Upload 
+  <EuiUpload 
     :file-list="fileList"
     @change="handleChange"
     @remove="handleRemove"
@@ -120,7 +120,7 @@ const withFilesCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Upload, type UploadFile } from '@elivander/elix-ui'
+import { Upload as EuiUpload, type UploadFile } from '@elivander/elix-ui'
 
 const fileList = ref([
   {

@@ -16,6 +16,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiTextarea',
+
+})
+
 import { computed, ref } from 'vue'
 import type { InputSize, InputState } from '../Input/Input'
 

@@ -4,7 +4,12 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+defineOptions({
+  name: 'EuiCardHeader',
+})
+</script>
 
 <style lang="scss" scoped>
 .eui-card-header {

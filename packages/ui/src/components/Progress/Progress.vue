@@ -15,6 +15,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiProgress',
+
+})
+
 import { computed } from 'vue'
 
 const props = defineProps<{

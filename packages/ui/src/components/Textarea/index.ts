@@ -2,7 +2,7 @@ import Textarea from './Textarea.vue'
 import type { App } from 'vue'
 
 Textarea.install = (app: App) => {
-  app.component(Textarea.name || 'EuiTextarea', Textarea)
+  app.component(Textarea.name, Textarea)
 }
 
 export { Textarea }

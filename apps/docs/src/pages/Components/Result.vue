@@ -24,9 +24,9 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import ResultSuccessDemo from '../../components/demos/ResultSuccessDemo.vue'
-import ResultErrorDemo from '../../components/demos/ResultErrorDemo.vue'
-import Result404Demo from '../../components/demos/Result404Demo.vue'
+import ResultSuccessDemo from '../../components/demos/Result/Success.vue'
+import ResultErrorDemo from '../../components/demos/Result/Error.vue'
+import Result404Demo from '../../components/demos/Result/404.vue'
 
 const resultProps = [
   { name: 'status', type: "'success' | 'error' | 'info' | 'warning' | '404' | '500'", default: '', description: 'Статус результата (required)' },
@@ -46,19 +46,19 @@ const resultSlots = [
 const resultEvents = []
 
 const successCode = `<template>
-  <Result
+  <EuiResult
     status="success"
     title="Success"
     description="Your operation has been completed successfully."
   >
     <template #extra>
-      <Button>Go Home</Button>
+      <EuiButton>Go Home</EuiButton>
     </template>
-  </Result>
+  </EuiResult>
 </template>`
 
 const errorCode = `<template>
-  <Result
+  <EuiResult
     status="error"
     title="Error"
     description="Something went wrong."
@@ -66,7 +66,7 @@ const errorCode = `<template>
 </template>`
 
 const notFoundCode = `<template>
-  <Result
+  <EuiResult
     status="404"
     title="404"
     description="The page you are looking for does not exist."

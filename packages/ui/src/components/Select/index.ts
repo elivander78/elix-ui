@@ -2,7 +2,7 @@ import Select from './Select.vue'
 import type { App } from 'vue'
 
 Select.install = (app: App) => {
-  app.component(Select.name || 'EuiSelect', Select)
+  app.component(Select.name, Select)
 }
 
 export { Select }

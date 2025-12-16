@@ -3,11 +3,11 @@ import TimelineItem from './TimelineItem.vue'
 import type { App } from 'vue'
 
 Timeline.install = (app: App) => {
-  app.component(Timeline.name || 'EuiTimeline', Timeline)
+  app.component(Timeline.name, Timeline)
 }
 
 TimelineItem.install = (app: App) => {
-  app.component(TimelineItem.name || 'EuiTimelineItem', TimelineItem)
+  app.component(TimelineItem.name, TimelineItem)
 }
 
 export { Timeline, TimelineItem }

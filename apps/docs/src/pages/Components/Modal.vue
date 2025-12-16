@@ -30,43 +30,43 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import ModalBasicDemo from '../../components/demos/ModalBasicDemo.vue'
-import ModalClosableDemo from '../../components/demos/ModalClosableDemo.vue'
-import ModalMaskClosableDemo from '../../components/demos/ModalMaskClosableDemo.vue'
-import ModalSizeDemo from '../../components/demos/ModalSizeDemo.vue'
-import ModalSlotsDemo from '../../components/demos/ModalSlotsDemo.vue'
-import ModalCenteredDemo from '../../components/demos/ModalCenteredDemo.vue'
+import ModalBasicDemo from '../../components/demos/Modal/Basic.vue'
+import ModalClosableDemo from '../../components/demos/Modal/Closable.vue'
+import ModalMaskClosableDemo from '../../components/demos/Modal/MaskClosable.vue'
+import ModalSizeDemo from '../../components/demos/Modal/Size.vue'
+import ModalSlotsDemo from '../../components/demos/Modal/Slots.vue'
+import ModalCenteredDemo from '../../components/demos/Modal/Centered.vue'
 
 const basicCode = `<template>
-  <Button @click="showModal = true">Open Modal</Button>
-  <Modal v-model="showModal" title="Modal Title">
+  <EuiButton @click="showModal = true">Open Modal</EuiButton>
+  <EuiModal v-model="showModal" title="Modal Title">
     <p>Modal content goes here</p>
-  </Modal>
+  </EuiModal>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elivander/elix-ui'
+import { Button as EuiButton, Modal as EuiModal } from '@elivander/elix-ui'
 
 const showModal = ref(false)
 <\/script>`
 
 const closableCode = `<template>
   <div>
-    <Button @click="showModal1 = true">With Close Button (default)</Button>
-    <Button @click="showModal2 = true">Without Close Button</Button>
+    <EuiButton @click="showModal1 = true">With Close Button (default)</EuiButton>
+    <EuiButton @click="showModal2 = true">Without Close Button</EuiButton>
   </div>
-  <Modal v-model="showModal1" title="Modal with Close Button">
+  <EuiModal v-model="showModal1" title="Modal with Close Button">
     <p>This modal has a close button (default behavior).</p>
-  </Modal>
-  <Modal v-model="showModal2" title="Modal without Close Button" :closable="false">
+  </EuiModal>
+  <EuiModal v-model="showModal2" title="Modal without Close Button" :closable="false">
     <p>This modal doesn't have a close button. You can only close it by clicking the overlay.</p>
-  </Modal>
+  </EuiModal>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elivander/elix-ui'
+import { Button as EuiButton, Modal as EuiModal } from '@elivander/elix-ui'
 
 const showModal1 = ref(false)
 const showModal2 = ref(false)
@@ -74,20 +74,20 @@ const showModal2 = ref(false)
 
 const maskClosableCode = `<template>
   <div>
-    <Button @click="showModal1 = true">Mask Closable (default)</Button>
-    <Button @click="showModal2 = true">Mask Not Closable</Button>
+    <EuiButton @click="showModal1 = true">Mask Closable (default)</EuiButton>
+    <EuiButton @click="showModal2 = true">Mask Not Closable</EuiButton>
   </div>
-  <Modal v-model="showModal1" title="Mask Closable">
+  <EuiModal v-model="showModal1" title="Mask Closable">
     <p>This modal can be closed by clicking the overlay (default behavior).</p>
-  </Modal>
-  <Modal v-model="showModal2" title="Mask Not Closable" :mask-closable="false">
+  </EuiModal>
+  <EuiModal v-model="showModal2" title="Mask Not Closable" :mask-closable="false">
     <p>This modal cannot be closed by clicking the overlay. You must use the close button.</p>
-  </Modal>
+  </EuiModal>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elivander/elix-ui'
+import { Button as EuiButton, Modal as EuiModal } from '@elivander/elix-ui'
 
 const showModal1 = ref(false)
 const showModal2 = ref(false)
@@ -95,12 +95,12 @@ const showModal2 = ref(false)
 
 const sizeCode = `<template>
   <div>
-    <Button @click="openModal('narrow')">Narrow (400px)</Button>
-    <Button @click="openModal('default')">Default (520px)</Button>
-    <Button @click="openModal('wide')">Wide (800px)</Button>
-    <Button @click="openModal('custom')">Custom Size</Button>
+    <EuiButton @click="openModal('narrow')">Narrow (400px)</EuiButton>
+    <EuiButton @click="openModal('default')">Default (520px)</EuiButton>
+    <EuiButton @click="openModal('wide')">Wide (800px)</EuiButton>
+    <EuiButton @click="openModal('custom')">Custom Size</EuiButton>
   </div>
-  <Modal 
+  <EuiModal 
     v-model="showModal" 
     title="Modal Title" 
     :width="currentWidth"
@@ -112,7 +112,7 @@ const sizeCode = `<template>
 
 <script setup>
 import { ref, computed } from 'vue'
-import { Button, Modal } from '@elivander/elix-ui'
+import { Button as EuiButton, Modal as EuiModal } from '@elivander/elix-ui'
 
 const showModal = ref(false)
 const modalType = ref('default')
@@ -144,12 +144,12 @@ const openModal = (type) => {
 <\/script>`
 
 const slotsCode = `<template>
-  <Button @click="showModal = true">Open Modal with Slots</Button>
-  <Modal v-model="showModal">
+  <EuiButton @click="showModal = true">Open Modal with Slots</EuiButton>
+  <EuiModal v-model="showModal">
     <template #header>
       <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
         <h3 style="margin: 0;">Custom Header</h3>
-        <Button size="sm" type="outline">Action</Button>
+        <EuiButton size="sm" type="outline">Action</EuiButton>
       </div>
     </template>
     
@@ -160,36 +160,36 @@ const slotsCode = `<template>
     
     <template #footer>
       <div style="display: flex; gap: 8px; justify-content: flex-end;">
-        <Button type="outline" @click="showModal = false">Cancel</Button>
-        <Button type="primary" @click="showModal = false">Save</Button>
+        <EuiButton type="outline" @click="showModal = false">Cancel</EuiButton>
+        <EuiButton type="primary" @click="showModal = false">Save</EuiButton>
       </div>
     </template>
-  </Modal>
+  </EuiModal>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elivander/elix-ui'
+import { Button as EuiButton, Modal as EuiModal } from '@elivander/elix-ui'
 
 const showModal = ref(false)
 <\/script>`
 
 const centeredCode = `<template>
   <div>
-    <Button @click="showModal1 = true">Centered (default)</Button>
-    <Button @click="showModal2 = true">Not Centered</Button>
+    <EuiButton @click="showModal1 = true">Centered (default)</EuiButton>
+    <EuiButton @click="showModal2 = true">Not Centered</EuiButton>
   </div>
-  <Modal v-model="showModal1" title="Centered Modal" :centered="true">
+  <EuiModal v-model="showModal1" title="Centered Modal" :centered="true">
     <p>This modal is centered on the screen (default behavior).</p>
-  </Modal>
-  <Modal v-model="showModal2" title="Not Centered Modal" :centered="false">
+  </EuiModal>
+  <EuiModal v-model="showModal2" title="Not Centered Modal" :centered="false">
     <p>This modal is not explicitly centered (positioned by default flex centering).</p>
-  </Modal>
+  </EuiModal>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Modal } from '@elivander/elix-ui'
+import { Button as EuiButton, Modal as EuiModal } from '@elivander/elix-ui'
 
 const showModal1 = ref(false)
 const showModal2 = ref(false)

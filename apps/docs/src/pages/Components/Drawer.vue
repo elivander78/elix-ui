@@ -38,48 +38,48 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import DrawerBasicDemo from '../../components/demos/DrawerBasicDemo.vue'
-import DrawerPlacementDemo from '../../components/demos/DrawerPlacementDemo.vue'
-import DrawerClosableDemo from '../../components/demos/DrawerClosableDemo.vue'
-import DrawerMaskClosableDemo from '../../components/demos/DrawerMaskClosableDemo.vue'
-import DrawerScrollableDemo from '../../components/demos/DrawerScrollableDemo.vue'
-import DrawerSizeDemo from '../../components/demos/DrawerSizeDemo.vue'
-import DrawerSlotsDemo from '../../components/demos/DrawerSlotsDemo.vue'
+import DrawerBasicDemo from '../../components/demos/Drawer/Basic.vue'
+import DrawerPlacementDemo from '../../components/demos/Drawer/Placement.vue'
+import DrawerClosableDemo from '../../components/demos/Drawer/Closable.vue'
+import DrawerMaskClosableDemo from '../../components/demos/Drawer/MaskClosable.vue'
+import DrawerScrollableDemo from '../../components/demos/Drawer/Scrollable.vue'
+import DrawerSizeDemo from '../../components/demos/Drawer/Size.vue'
+import DrawerSlotsDemo from '../../components/demos/Drawer/Slots.vue'
 
 const basicCode = `<template>
-  <Button @click="showDrawer = true">Open Drawer</Button>
-  <Drawer v-model="showDrawer" title="Drawer Title" placement="right">
+  <EuiButton @click="showDrawer = true">Open Drawer</EuiButton>
+  <EuiDrawer v-model="showDrawer" title="Drawer Title" placement="right">
     <p>Drawer content goes here</p>
-  </Drawer>
+  </EuiDrawer>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elivander/elix-ui'
+import { Button as EuiButton, Drawer as EuiDrawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 <\/script>`
 
 const placementCode = `<template>
   <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-    <Button @click="openDrawer('left')">Open Left</Button>
-    <Button @click="openDrawer('right')">Open Right</Button>
-    <Button @click="openDrawer('top')">Open Top</Button>
-    <Button @click="openDrawer('bottom')">Open Bottom</Button>
+    <EuiButton @click="openDrawer('left')">Open Left</EuiButton>
+    <EuiButton @click="openDrawer('right')">Open Right</EuiButton>
+    <EuiButton @click="openDrawer('top')">Open Top</EuiButton>
+    <EuiButton @click="openDrawer('bottom')">Open Bottom</EuiButton>
   </div>
-  <Drawer 
+  <EuiDrawer 
     v-model="showDrawer" 
     title="Drawer Title" 
     :placement="placement"
     :maskClosable="maskClosable"
   >
     <p>Drawer content goes here</p>
-  </Drawer>
+  </EuiDrawer>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elivander/elix-ui'
+import { Button as EuiButton, Drawer as EuiDrawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 const placement = ref<'left' | 'right' | 'top' | 'bottom'>('right')
@@ -93,20 +93,20 @@ const openDrawer = (pos: 'left' | 'right' | 'top' | 'bottom') => {
 
 const closableCode = `<template>
   <div>
-    <Button @click="showDrawer1 = true">With Close Button (default)</Button>
-    <Button @click="showDrawer2 = true">Without Close Button</Button>
+    <EuiButton @click="showDrawer1 = true">With Close Button (default)</EuiButton>
+    <EuiButton @click="showDrawer2 = true">Without Close Button</EuiButton>
   </div>
-  <Drawer v-model="showDrawer1" title="Drawer with Close Button" placement="right">
+  <EuiDrawer v-model="showDrawer1" title="Drawer with Close Button" placement="right">
     <p>This drawer has a close button (default behavior).</p>
-  </Drawer>
-  <Drawer v-model="showDrawer2" title="Drawer without Close Button" placement="right" :closable="false">
+  </EuiDrawer>
+  <EuiDrawer v-model="showDrawer2" title="Drawer without Close Button" placement="right" :closable="false">
     <p>This drawer doesn't have a close button. You can only close it by clicking the overlay.</p>
-  </Drawer>
+  </EuiDrawer>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elivander/elix-ui'
+import { Button as EuiButton, Drawer as EuiDrawer } from '@elivander/elix-ui'
 
 const showDrawer1 = ref(false)
 const showDrawer2 = ref(false)
@@ -114,28 +114,28 @@ const showDrawer2 = ref(false)
 
 const maskClosableCode = `<template>
   <div>
-    <Button @click="showDrawer1 = true">Mask Closable (default)</Button>
-    <Button @click="showDrawer2 = true">Mask Not Closable</Button>
+    <EuiButton @click="showDrawer1 = true">Mask Closable (default)</EuiButton>
+    <EuiButton @click="showDrawer2 = true">Mask Not Closable</EuiButton>
   </div>
-  <Drawer v-model="showDrawer1" title="Mask Closable" placement="right">
+  <EuiDrawer v-model="showDrawer1" title="Mask Closable" placement="right">
     <p>This drawer can be closed by clicking the overlay (default behavior).</p>
-  </Drawer>
-  <Drawer v-model="showDrawer2" title="Mask Not Closable" placement="right" :mask-closable="false">
+  </EuiDrawer>
+  <EuiDrawer v-model="showDrawer2" title="Mask Not Closable" placement="right" :mask-closable="false">
     <p>This drawer cannot be closed by clicking the overlay. You must use the close button.</p>
-  </Drawer>
+  </EuiDrawer>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elivander/elix-ui'
+import { Button as EuiButton, Drawer as EuiDrawer } from '@elivander/elix-ui'
 
 const showDrawer1 = ref(false)
 const showDrawer2 = ref(false)
 <\/script>`
 
 const scrollableCode = `<template>
-  <Button @click="showDrawer = true">Open Scrollable Drawer</Button>
-  <Drawer v-model="showDrawer" title="Scrollable Drawer" placement="right" :scrollable="true">
+  <EuiButton @click="showDrawer = true">Open Scrollable Drawer</EuiButton>
+  <EuiDrawer v-model="showDrawer" title="Scrollable Drawer" placement="right" :scrollable="true">
     <div>
       <h3>Section 1</h3>
       <p>This drawer has scrollable content. When the content is longer than the drawer height, you can scroll.</p>
@@ -153,24 +153,24 @@ const scrollableCode = `<template>
       <h3 style="margin-top: 40px;">Section 5</h3>
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
     </div>
-  </Drawer>
+  </EuiDrawer>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elivander/elix-ui'
+import { Button as EuiButton, Drawer as EuiDrawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 <\/script>`
 
 const sizeCode = `<template>
   <div>
-    <Button @click="openDrawer('narrow')">Narrow (300px)</Button>
-    <Button @click="openDrawer('default')">Default (400px)</Button>
-    <Button @click="openDrawer('wide')">Wide (600px)</Button>
-    <Button @click="openDrawer('custom')">Custom Size</Button>
+    <EuiButton @click="openDrawer('narrow')">Narrow (300px)</EuiButton>
+    <EuiButton @click="openDrawer('default')">Default (400px)</EuiButton>
+    <EuiButton @click="openDrawer('wide')">Wide (600px)</EuiButton>
+    <EuiButton @click="openDrawer('custom')">Custom Size</EuiButton>
   </div>
-  <Drawer 
+  <EuiDrawer 
     v-model="showDrawer" 
     title="Drawer Title" 
     placement="right"
@@ -215,12 +215,12 @@ const openDrawer = (type) => {
 <\/script>`
 
 const slotsCode = `<template>
-  <Button @click="showDrawer = true">Open Drawer with Slots</Button>
-  <Drawer v-model="showDrawer" placement="right">
+  <EuiButton @click="showDrawer = true">Open Drawer with Slots</EuiButton>
+  <EuiDrawer v-model="showDrawer" placement="right">
     <template #header>
       <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
         <h3 style="margin: 0;">Custom Header</h3>
-        <Button size="sm" type="outline">Action</Button>
+        <EuiButton size="sm" type="outline">Action</EuiButton>
       </div>
     </template>
     
@@ -231,16 +231,16 @@ const slotsCode = `<template>
     
     <template #footer>
       <div style="display: flex; gap: 8px; justify-content: flex-end;">
-        <Button type="outline" @click="showDrawer = false">Cancel</Button>
-        <Button type="primary" @click="showDrawer = false">Save</Button>
+        <EuiButton type="outline" @click="showDrawer = false">Cancel</EuiButton>
+        <EuiButton type="primary" @click="showDrawer = false">Save</EuiButton>
       </div>
     </template>
-  </Drawer>
+  </EuiDrawer>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Drawer } from '@elivander/elix-ui'
+import { Button as EuiButton, Drawer as EuiDrawer } from '@elivander/elix-ui'
 
 const showDrawer = ref(false)
 <\/script>`

@@ -3,7 +3,7 @@ import { useNotification } from './useNotification'
 import type { App } from 'vue'
 
 Notification.install = (app: App) => {
-  app.component(Notification.name || 'EuiNotification', Notification)
+  app.component(Notification.name, Notification)
 }
 
 export { Notification, useNotification }

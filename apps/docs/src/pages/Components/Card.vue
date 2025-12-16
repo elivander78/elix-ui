@@ -45,110 +45,110 @@ const cardSlots = [
 ]
 
 const basicCode = `<template>
-  <Card>
-    <CardHeader>Card Title</CardHeader>
-    <CardBody>Card content goes here</CardBody>
-    <CardFooter>Card footer</CardFooter>
-  </Card>
+  <EuiCard>
+    <EuiCardHeader>Card Title</EuiCardHeader>
+    <EuiCardBody>Card content goes here</EuiCardBody>
+    <EuiCardFooter>Card footer</EuiCardFooter>
+  </EuiCard>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody, CardFooter } from '@elivander/elix-ui'
+import { Card as EuiCard, CardHeader as EuiCardHeader, CardBody as EuiCardBody, CardFooter as EuiCardFooter } from '@elivander/elix-ui'
 <\/script>`
 
 const gridCode = `<template>
   <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
-    <Card bordered>
-      <CardHeader>Card 1</CardHeader>
-      <CardBody>Content 1</CardBody>
-    </Card>
-    <Card shadow="md">
-      <CardHeader>Card 2</CardHeader>
-      <CardBody>Content 2</CardBody>
-    </Card>
-    <Card bordered shadow="lg">
-      <CardHeader>Card 3</CardHeader>
-      <CardBody>Content 3</CardBody>
-    </Card>
+    <EuiCard bordered>
+      <EuiCardHeader>Card 1</EuiCardHeader>
+      <EuiCardBody>Content 1</EuiCardBody>
+    </EuiCard>
+    <EuiCard shadow="md">
+      <EuiCardHeader>Card 2</EuiCardHeader>
+      <EuiCardBody>Content 2</EuiCardBody>
+    </EuiCard>
+    <EuiCard bordered shadow="lg">
+      <EuiCardHeader>Card 3</EuiCardHeader>
+      <EuiCardBody>Content 3</EuiCardBody>
+    </EuiCard>
   </div>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
+import { Card as EuiCard, CardHeader as EuiCardHeader, CardBody as EuiCardBody } from '@elivander/elix-ui'
 <\/script>`
 
 const shadowCode = `<template>
   <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
-    <Card shadow="sm">
-      <CardHeader>Small Shadow</CardHeader>
-      <CardBody>Content</CardBody>
-    </Card>
-    <Card shadow="md">
-      <CardHeader>Medium Shadow</CardHeader>
-      <CardBody>Content</CardBody>
-    </Card>
-    <Card shadow="lg">
-      <CardHeader>Large Shadow</CardHeader>
-      <CardBody>Content</CardBody>
-    </Card>
+    <EuiCard shadow="sm">
+      <EuiCardHeader>Small Shadow</EuiCardHeader>
+      <EuiCardBody>Content</EuiCardBody>
+    </EuiCard>
+    <EuiCard shadow="md">
+      <EuiCardHeader>Medium Shadow</EuiCardHeader>
+      <EuiCardBody>Content</EuiCardBody>
+    </EuiCard>
+    <EuiCard shadow="lg">
+      <EuiCardHeader>Large Shadow</EuiCardHeader>
+      <EuiCardBody>Content</EuiCardBody>
+    </EuiCard>
   </div>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
+import { Card as EuiCard, CardHeader as EuiCardHeader, CardBody as EuiCardBody } from '@elivander/elix-ui'
 <\/script>`
 
 const noBorderCode = `<template>
   <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
-    <Card>
-      <CardHeader>No Border</CardHeader>
-      <CardBody>Content</CardBody>
-    </Card>
-    <Card shadow="md">
-      <CardHeader>Shadow Only</CardHeader>
-      <CardBody>Content</CardBody>
-    </Card>
+    <EuiCard>
+      <EuiCardHeader>No Border</EuiCardHeader>
+      <EuiCardBody>Content</EuiCardBody>
+    </EuiCard>
+    <EuiCard shadow="md">
+      <EuiCardHeader>Shadow Only</EuiCardHeader>
+      <EuiCardBody>Content</EuiCardBody>
+    </EuiCard>
   </div>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
+import { Card as EuiCard, CardHeader as EuiCardHeader, CardBody as EuiCardBody } from '@elivander/elix-ui'
 <\/script>`
 
 const imageCode = `<template>
   <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
-    <Card shadow="md">
+    <EuiCard shadow="md">
       <img src="https://picsum.photos/400/200?random=1" style="width: 100%; height: 200px; object-fit: cover;" />
-      <CardHeader>Card with Image</CardHeader>
-      <CardBody>This card has an image at the top</CardBody>
-    </Card>
-    <Card bordered hoverable>
+      <EuiCardHeader>Card with Image</EuiCardHeader>
+      <EuiCardBody>This card has an image at the top</EuiCardBody>
+    </EuiCard>
+    <EuiCard bordered hoverable>
       <img src="https://picsum.photos/400/200?random=2" style="width: 100%; height: 200px; object-fit: cover;" />
-      <CardHeader>Hoverable Card</CardHeader>
-      <CardBody>Hover over this card</CardBody>
-    </Card>
+      <EuiCardHeader>Hoverable Card</EuiCardHeader>
+      <EuiCardBody>Hover over this card</EuiCardBody>
+    </EuiCard>
   </div>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
+import { Card as EuiCard, CardHeader as EuiCardHeader, CardBody as EuiCardBody } from '@elivander/elix-ui'
 <\/script>`
 
 const hoverableCode = `<template>
   <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
-    <Card hoverable>
-      <CardHeader>Hoverable Card</CardHeader>
-      <CardBody>Hover over me</CardBody>
-    </Card>
-    <Card hoverable shadow="md">
-      <CardHeader>Hoverable with Shadow</CardHeader>
-      <CardBody>Hover over me</CardBody>
-    </Card>
+    <EuiCard hoverable>
+      <EuiCardHeader>Hoverable Card</EuiCardHeader>
+      <EuiCardBody>Hover over me</EuiCardBody>
+    </EuiCard>
+    <EuiCard hoverable shadow="md">
+      <EuiCardHeader>Hoverable with Shadow</EuiCardHeader>
+      <EuiCardBody>Hover over me</EuiCardBody>
+    </EuiCard>
   </div>
 </template>
 
 <script setup>
-import { Card, CardHeader, CardBody } from '@elivander/elix-ui'
+import { Card as EuiCard, CardHeader as EuiCardHeader, CardBody as EuiCardBody } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

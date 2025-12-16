@@ -180,6 +180,7 @@ const menuItems: MenuItem[] = [
   { path: '/components/tabs', label: 'Tabs', icon: 'tabs' },
   { path: '/components/breadcrumbs', label: 'Breadcrumbs', icon: 'breadcrumbs' },
   { path: '/components/collapse', label: 'Collapse', icon: 'collapse' },
+  { path: '/components/accordion', label: 'Accordion', icon: 'accordion' },
   { section: 'Feedback' },
   { path: '/components/notification', label: 'Notification', icon: 'notification' },
   { path: '/components/alert', label: 'Alert', icon: 'alert' },
@@ -330,6 +331,8 @@ const getIcon = (name: string): string => {
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 8h14M7 2v4M13 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
     collapse:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    accordion:
+      '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="14" height="3" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="9" width="14" height="3" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="14" height="3" rx="1" stroke="currentColor" stroke-width="2"/><path d="M14 5.5l2 2-2 2M14 10.5l2 2-2 2M14 15.5l2 2-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     header:
       '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="16" height="4" rx="1" stroke="currentColor" stroke-width="2"/><path d="M2 7h16" stroke="currentColor" stroke-width="2"/></svg>',
     sidebar:

@@ -88,6 +88,9 @@ export type { AlertProps, AlertType, AlertVariant, AlertAppearance } from './com
 export { Collapse, CollapseItem } from './components/Collapse'
 export type { CollapseProps, CollapseItemProps, CollapseAppearance } from './components/Collapse'
 
+export { Accordion, AccordionItem } from './components/Accordion'
+export type { AccordionProps, AccordionItemProps, AccordionStyle } from './components/Accordion'
+
 export { Slider } from './components/Slider'
 export type { SliderProps, SliderSize, SliderTooltip } from './components/Slider'
 

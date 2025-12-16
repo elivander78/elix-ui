@@ -2,7 +2,7 @@ import Slider from './Slider.vue'
 import type { App } from 'vue'
 
 Slider.install = (app: App) => {
-  app.component(Slider.name || 'EuiSlider', Slider)
+  app.component(Slider.name, Slider)
 }
 
 export { Slider }

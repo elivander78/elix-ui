@@ -22,57 +22,57 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import DatePickerBasicDemo from '../../components/demos/DatePickerBasicDemo.vue'
-import DatePickerFormatDemo from '../../components/demos/DatePickerFormatDemo.vue'
-import DatePickerClearableDemo from '../../components/demos/DatePickerClearableDemo.vue'
-import DatePickerStatesDemo from '../../components/demos/DatePickerStatesDemo.vue'
-import DatePickerAppearanceDemo from '../../components/demos/DatePickerAppearanceDemo.vue'
+import DatePickerBasicDemo from '../../components/demos/DatePicker/Basic.vue'
+import DatePickerFormatDemo from '../../components/demos/DatePicker/Format.vue'
+import DatePickerClearableDemo from '../../components/demos/DatePicker/Clearable.vue'
+import DatePickerStatesDemo from '../../components/demos/DatePicker/States.vue'
+import DatePickerAppearanceDemo from '../../components/demos/DatePicker/Appearance.vue'
 
 const basicCode = `<template>
-  <DatePicker v-model="date" />
+  <EuiDatePicker v-model="date" />
   <p style="margin-top: 8px;">Selected: {{ date }}</p>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elivander/elix-ui'
+import { DatePicker as EuiDatePicker } from '@elivander/elix-ui'
 
 const date = ref(null)
 <\/script>`
 
 const formatCode = `<template>
-  <DatePicker v-model="date" format="DD.MM.YYYY" />
+  <EuiDatePicker v-model="date" format="DD.MM.YYYY" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elivander/elix-ui'
+import { DatePicker as EuiDatePicker } from '@elivander/elix-ui'
 
 const date = ref(null)
 <\/script>`
 
 const clearableCode = `<template>
-  <DatePicker v-model="date" :clearable="true" />
+  <EuiDatePicker v-model="date" :clearable="true" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elivander/elix-ui'
+import { DatePicker as EuiDatePicker } from '@elivander/elix-ui'
 
 const date = ref(new Date())
 <\/script>`
 
 const statesCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 16px;">
-    <DatePicker v-model="date1" status="error" />
-    <DatePicker v-model="date2" status="success" />
-    <DatePicker v-model="date3" :disabled="true" />
+    <EuiDatePicker v-model="date1" status="error" />
+    <EuiDatePicker v-model="date2" status="success" />
+    <EuiDatePicker v-model="date3" :disabled="true" />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elivander/elix-ui'
+import { DatePicker as EuiDatePicker } from '@elivander/elix-ui'
 
 const date1 = ref(null)
 const date2 = ref(null)
@@ -81,15 +81,15 @@ const date3 = ref(new Date())
 
 const appearanceCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 16px;">
-    <DatePicker v-model="date1" appearance="border" />
-    <DatePicker v-model="date2" appearance="shadow" />
-    <DatePicker v-model="date3" appearance="border-shadow" />
+    <EuiDatePicker v-model="date1" appearance="border" />
+    <EuiDatePicker v-model="date2" appearance="shadow" />
+    <EuiDatePicker v-model="date3" appearance="border-shadow" />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { DatePicker } from '@elivander/elix-ui'
+import { DatePicker as EuiDatePicker } from '@elivander/elix-ui'
 
 const date1 = ref(null)
 const date2 = ref(null)

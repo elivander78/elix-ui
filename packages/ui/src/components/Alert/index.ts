@@ -2,7 +2,7 @@ import Alert from './Alert.vue'
 import type { App } from 'vue'
 
 Alert.install = (app: App) => {
-  app.component(Alert.name || 'EuiAlert', Alert)
+  app.component(Alert.name, Alert)
 }
 
 export { Alert }

@@ -39,14 +39,14 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import ButtonBasicDemo from '../../components/demos/ButtonBasicDemo.vue'
-import ButtonSizesDemo from '../../components/demos/ButtonSizesDemo.vue'
-import ButtonTypesDemo from '../../components/demos/ButtonTypesDemo.vue'
-import ButtonStatesDemo from '../../components/demos/ButtonStatesDemo.vue'
-import ButtonShapesDemo from '../../components/demos/ButtonShapesDemo.vue'
-import ButtonAppearanceDemo from '../../components/demos/ButtonAppearanceDemo.vue'
-import ButtonIconsDemo from '../../components/demos/ButtonIconsDemo.vue'
-import ButtonBlockDemo from '../../components/demos/ButtonBlockDemo.vue'
+import ButtonBasicDemo from '../../components/demos/Button/Basic.vue'
+import ButtonSizesDemo from '../../components/demos/Button/Sizes.vue'
+import ButtonTypesDemo from '../../components/demos/Button/Types.vue'
+import ButtonStatesDemo from '../../components/demos/Button/States.vue'
+import ButtonShapesDemo from '../../components/demos/Button/Shapes.vue'
+import ButtonAppearanceDemo from '../../components/demos/Button/Appearance.vue'
+import ButtonIconsDemo from '../../components/demos/Button/Icons.vue'
+import ButtonBlockDemo from '../../components/demos/Button/Block.vue'
 
 const buttonProps = [
   { name: 'variant', type: "'primary' | 'secondary' | 'outline' | 'ghost' | 'text'", default: "'primary'", description: 'Button variant (use type prop)' },
@@ -71,67 +71,67 @@ const buttonEvents = [
 ]
 
 const basicCode = `<template>
-  <Button>Click me</Button>
+  <EuiButton>Click me</EuiButton>
 </template>
 
 <script setup>
-import { Button } from '@elivander/elix-ui'
+import { Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const sizesCode = `<template>
-  <Button size="xs">Extra Small</Button>
-  <Button size="sm">Small</Button>
-  <Button size="md">Medium</Button>
-  <Button size="lg">Large</Button>
+  <EuiButton size="xs">Extra Small</EuiButton>
+  <EuiButton size="sm">Small</EuiButton>
+  <EuiButton size="md">Medium</EuiButton>
+  <EuiButton size="lg">Large</EuiButton>
 </template>`
 
 const typesCode = `<template>
-  <Button type="primary">Primary</Button>
-  <Button type="secondary">Secondary</Button>
-  <Button type="outline">Outline</Button>
-  <Button type="ghost">Ghost</Button>
-  <Button type="text">Text</Button>
+  <EuiButton type="primary">Primary</EuiButton>
+  <EuiButton type="secondary">Secondary</EuiButton>
+  <EuiButton type="outline">Outline</EuiButton>
+  <EuiButton type="ghost">Ghost</EuiButton>
+  <EuiButton type="text">Text</EuiButton>
 </template>`
 
 const statesCode = `<template>
-  <Button>Normal</Button>
-  <Button disabled>Disabled</Button>
-  <Button loading>Loading</Button>
+  <EuiButton>Normal</EuiButton>
+  <EuiButton disabled>Disabled</EuiButton>
+  <EuiButton loading>Loading</EuiButton>
 </template>`
 
 const shapesCode = `<template>
-  <Button shape="rounded">Rounded</Button>
-  <Button shape="pill">Pill</Button>
-  <Button shape="square">Square</Button>
+  <EuiButton shape="rounded">Rounded</EuiButton>
+  <EuiButton shape="pill">Pill</EuiButton>
+  <EuiButton shape="square">Square</EuiButton>
 </template>`
 
 const appearanceCode = `<template>
-  <Button appearance="border">Border</Button>
-  <Button appearance="shadow">Shadow</Button>
-  <Button appearance="border-shadow">Border + Shadow</Button>
+  <EuiButton appearance="border">Border</EuiButton>
+  <EuiButton appearance="shadow">Shadow</EuiButton>
+  <EuiButton appearance="border-shadow">Border + Shadow</EuiButton>
 </template>`
 
 const iconsCode = `<template>
-  <Button>
+  <EuiButton>
     <template #icon>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </template>
     With Icon Left
-  </Button>
-  <Button>
+  </EuiButton>
+  <EuiButton>
     With Icon Right
     <template #suffix>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </template>
-  </Button>
+  </EuiButton>
 </template>`
 
 const blockCode = `<template>
-  <Button block>Block Button</Button>
+  <EuiButton block>Block Button</EuiButton>
 </template>`
 </script>
 

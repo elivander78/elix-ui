@@ -36,16 +36,16 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import SelectBasicDemo from '../../components/demos/SelectBasicDemo.vue'
-import SelectSizesDemo from '../../components/demos/SelectSizesDemo.vue'
-import SelectStatesDemo from '../../components/demos/SelectStatesDemo.vue'
-import SelectClearableDemo from '../../components/demos/SelectClearableDemo.vue'
-import SelectSearchableDemo from '../../components/demos/SelectSearchableDemo.vue'
-import SelectMultipleDemo from '../../components/demos/SelectMultipleDemo.vue'
-import SelectAppearanceDemo from '../../components/demos/SelectAppearanceDemo.vue'
+import SelectBasicDemo from '../../components/demos/Select/Basic.vue'
+import SelectSizesDemo from '../../components/demos/Select/Sizes.vue'
+import SelectStatesDemo from '../../components/demos/Select/States.vue'
+import SelectClearableDemo from '../../components/demos/Select/Clearable.vue'
+import SelectSearchableDemo from '../../components/demos/Select/Searchable.vue'
+import SelectMultipleDemo from '../../components/demos/Select/Multiple.vue'
+import SelectAppearanceDemo from '../../components/demos/Select/Appearance.vue'
 
 const basicCode = `<template>
-  <Select
+  <EuiSelect
     v-model="selected"
     :options="options"
     placeholder="Select an option"
@@ -54,7 +54,7 @@ const basicCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Select } from '@elivander/elix-ui'
+import { Select as EuiSelect } from '@elivander/elix-ui'
 
 const selected = ref()
 const options = [
@@ -65,14 +65,14 @@ const options = [
 <\/script>`
 
 const sizesCode = `<template>
-  <Select size="xs" :options="options" placeholder="Extra Small" />
-  <Select size="sm" :options="options" placeholder="Small" />
-  <Select size="md" :options="options" placeholder="Medium" />
-  <Select size="lg" :options="options" placeholder="Large" />
+  <EuiSelect size="xs" :options="options" placeholder="Extra Small" />
+  <EuiSelect size="sm" :options="options" placeholder="Small" />
+  <EuiSelect size="md" :options="options" placeholder="Medium" />
+  <EuiSelect size="lg" :options="options" placeholder="Large" />
 </template>
 
 <script setup>
-import { Select } from '@elivander/elix-ui'
+import { Select as EuiSelect } from '@elivander/elix-ui'
 
 const options = [
   { label: 'Option 1', value: '1' },
@@ -82,14 +82,14 @@ const options = [
 <\/script>`
 
 const statesCode = `<template>
-  <Select :options="options" placeholder="Normal" />
-  <Select :options="options" placeholder="Error" state="error" />
-  <Select :options="options" placeholder="Success" state="success" />
-  <Select :options="options" placeholder="Disabled" disabled />
+  <EuiSelect :options="options" placeholder="Normal" />
+  <EuiSelect :options="options" placeholder="Error" state="error" />
+  <EuiSelect :options="options" placeholder="Success" state="success" />
+  <EuiSelect :options="options" placeholder="Disabled" disabled />
 </template>
 
 <script setup>
-import { Select } from '@elivander/elix-ui'
+import { Select as EuiSelect } from '@elivander/elix-ui'
 
 const options = [
   { label: 'Option 1', value: '1' },
@@ -99,7 +99,7 @@ const options = [
 <\/script>`
 
 const clearableCode = `<template>
-  <Select
+  <EuiSelect
     v-model="selected"
     :options="options"
     placeholder="Select an option"
@@ -109,7 +109,7 @@ const clearableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Select } from '@elivander/elix-ui'
+import { Select as EuiSelect } from '@elivander/elix-ui'
 
 const selected = ref('1')
 const options = [
@@ -120,7 +120,7 @@ const options = [
 <\/script>`
 
 const searchableCode = `<template>
-  <Select
+  <EuiSelect
     v-model="selected"
     :options="options"
     placeholder="Type to search..."
@@ -130,7 +130,7 @@ const searchableCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Select } from '@elivander/elix-ui'
+import { Select as EuiSelect } from '@elivander/elix-ui'
 
 const selected = ref()
 const options = [
@@ -143,7 +143,7 @@ const options = [
 <\/script>`
 
 const multipleCode = `<template>
-  <Select
+  <EuiSelect
     v-model="selected"
     :options="options"
     placeholder="Select multiple options"
@@ -153,7 +153,7 @@ const multipleCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Select } from '@elivander/elix-ui'
+import { Select as EuiSelect } from '@elivander/elix-ui'
 
 const selected = ref([])
 const options = [
@@ -166,13 +166,13 @@ const options = [
 <\/script>`
 
 const appearanceCode = `<template>
-  <Select :options="options" appearance="border" placeholder="Border" />
-  <Select :options="options" appearance="shadow" placeholder="Shadow" />
-  <Select :options="options" appearance="border-shadow" placeholder="Border + Shadow" />
+  <EuiSelect :options="options" appearance="border" placeholder="Border" />
+  <EuiSelect :options="options" appearance="shadow" placeholder="Shadow" />
+  <EuiSelect :options="options" appearance="border-shadow" placeholder="Border + Shadow" />
 </template>
 
 <script setup>
-import { Select } from '@elivander/elix-ui'
+import { Select as EuiSelect } from '@elivander/elix-ui'
 
 const options = [
   { label: 'Option 1', value: '1' },

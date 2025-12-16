@@ -40,85 +40,85 @@ const badgeSlots = [
 ]
 
 const basicCode = `<template>
-  <Badge :value="5">
-    <Button>Notifications</Button>
-  </Badge>
+  <EuiBadge :value="5">
+    <EuiButton>Notifications</EuiButton>
+  </EuiBadge>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elivander/elix-ui'
+import { Badge as EuiBadge, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const numbersCode = `<template>
   <div style="display: flex; gap: 20px; align-items: center;">
-    <Badge :value="5">
-      <Button>5</Button>
-    </Badge>
-    <Badge :value="12">
-      <Button>12</Button>
-    </Badge>
-    <Badge :value="99">
-      <Button>99</Button>
-    </Badge>
+    <EuiBadge :value="5">
+      <EuiButton>5</EuiButton>
+    </EuiBadge>
+    <EuiBadge :value="12">
+      <EuiButton>12</EuiButton>
+    </EuiBadge>
+    <EuiBadge :value="99">
+      <EuiButton>99</EuiButton>
+    </EuiBadge>
   </div>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elivander/elix-ui'
+import { Badge as EuiBadge, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const dotCode = `<template>
   <div style="display: flex; gap: 20px; align-items: center;">
-    <Badge dot>
-      <Button>Dot Badge</Button>
-    </Badge>
-    <Badge dot type="success">
-      <Button>Success Dot</Button>
-    </Badge>
-    <Badge dot type="error">
-      <Button>Error Dot</Button>
-    </Badge>
+    <EuiBadge dot>
+      <EuiButton>Dot Badge</EuiButton>
+    </EuiBadge>
+    <EuiBadge dot type="success">
+      <EuiButton>Success Dot</EuiButton>
+    </EuiBadge>
+    <EuiBadge dot type="error">
+      <EuiButton>Error Dot</EuiButton>
+    </EuiBadge>
   </div>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elivander/elix-ui'
+import { Badge as EuiBadge, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const statusesCode = `<template>
   <div style="display: flex; gap: 20px; align-items: center;">
-    <Badge :value="5" type="success">
-      <Button>Success</Button>
-    </Badge>
-    <Badge :value="3" type="error">
-      <Button>Error</Button>
-    </Badge>
-    <Badge :value="2" type="warning">
-      <Button>Warning</Button>
-    </Badge>
-    <Badge :value="10" type="info">
-      <Button>Info</Button>
-    </Badge>
+    <EuiBadge :value="5" type="success">
+      <EuiButton>Success</EuiButton>
+    </EuiBadge>
+    <EuiBadge :value="3" type="error">
+      <EuiButton>Error</EuiButton>
+    </EuiBadge>
+    <EuiBadge :value="2" type="warning">
+      <EuiButton>Warning</EuiButton>
+    </EuiBadge>
+    <EuiBadge :value="10" type="info">
+      <EuiButton>Info</EuiButton>
+    </EuiBadge>
   </div>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elivander/elix-ui'
+import { Badge as EuiBadge, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const maxCode = `<template>
   <div style="display: flex; gap: 20px; align-items: center;">
-    <Badge :value="5" :max="3">
-      <Button>Max 3</Button>
-    </Badge>
-    <Badge :value="100" :max="99">
-      <Button>Max 99</Button>
-    </Badge>
+    <EuiBadge :value="5" :max="3">
+      <EuiButton>Max 3</EuiButton>
+    </EuiBadge>
+    <EuiBadge :value="100" :max="99">
+      <EuiButton>Max 99</EuiButton>
+    </EuiBadge>
   </div>
 </template>
 
 <script setup>
-import { Badge, Button } from '@elivander/elix-ui'
+import { Badge as EuiBadge, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

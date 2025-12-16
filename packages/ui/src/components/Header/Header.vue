@@ -16,6 +16,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiHeader',
+
+})
+
 import { computed } from 'vue'
 
 const props = defineProps<{

@@ -2,7 +2,7 @@ import Container from './Container.vue'
 import type { App } from 'vue'
 
 Container.install = (app: App) => {
-  app.component(Container.name || 'EuiContainer', Container)
+  app.component(Container.name, Container)
 }
 
 export { Container }

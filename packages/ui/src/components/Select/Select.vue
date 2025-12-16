@@ -104,6 +104,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiSelect',
+
+})
+
 import { computed, ref, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import { selectProps, type SelectProps, type SelectOption } from './Select'
 

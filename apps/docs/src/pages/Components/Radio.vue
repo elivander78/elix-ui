@@ -27,62 +27,62 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import RadioBasicDemo from '../../components/demos/RadioBasicDemo.vue'
-import RadioHorizontalDemo from '../../components/demos/RadioHorizontalDemo.vue'
-import RadioVerticalDemo from '../../components/demos/RadioVerticalDemo.vue'
-import RadioDisabledDemo from '../../components/demos/RadioDisabledDemo.vue'
+import RadioBasicDemo from '../../components/demos/Radio/Basic.vue'
+import RadioHorizontalDemo from '../../components/demos/Radio/Horizontal.vue'
+import RadioVerticalDemo from '../../components/demos/Radio/Vertical.vue'
+import RadioDisabledDemo from '../../components/demos/Radio/Disabled.vue'
 
 const basicCode = `<template>
-  <Radio v-model="value" value="option1">Option 1</Radio>
-  <Radio v-model="value" value="option2">Option 2</Radio>
+  <EuiRadio v-model="value" value="option1">Option 1</EuiRadio>
+  <EuiRadio v-model="value" value="option2">Option 2</EuiRadio>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Radio } from '@elivander/elix-ui'
+import { Radio as EuiRadio } from '@elivander/elix-ui'
 
 const value = ref('option1')
 <\/script>`
 
 const horizontalCode = `<template>
   <div style="display: flex; gap: 16px;">
-    <Radio v-model="value" value="option1">Option 1</Radio>
-    <Radio v-model="value" value="option2">Option 2</Radio>
-    <Radio v-model="value" value="option3">Option 3</Radio>
+    <EuiRadio v-model="value" value="option1">Option 1</EuiRadio>
+    <EuiRadio v-model="value" value="option2">Option 2</EuiRadio>
+    <EuiRadio v-model="value" value="option3">Option 3</EuiRadio>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Radio } from '@elivander/elix-ui'
+import { Radio as EuiRadio } from '@elivander/elix-ui'
 
 const value = ref('option1')
 <\/script>`
 
 const verticalCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 12px;">
-    <Radio v-model="value" value="option1">Option 1</Radio>
-    <Radio v-model="value" value="option2">Option 2</Radio>
-    <Radio v-model="value" value="option3">Option 3</Radio>
+    <EuiRadio v-model="value" value="option1">Option 1</EuiRadio>
+    <EuiRadio v-model="value" value="option2">Option 2</EuiRadio>
+    <EuiRadio v-model="value" value="option3">Option 3</EuiRadio>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Radio } from '@elivander/elix-ui'
+import { Radio as EuiRadio } from '@elivander/elix-ui'
 
 const value = ref('option1')
 <\/script>`
 
 const disabledCode = `<template>
-  <Radio v-model="value" value="option1">Enabled</Radio>
-  <Radio v-model="value" value="option2" disabled>Disabled</Radio>
-  <Radio v-model="value" value="option3" disabled>Disabled Selected</Radio>
+  <EuiRadio v-model="value" value="option1">Enabled</EuiRadio>
+  <EuiRadio v-model="value" value="option2" disabled>Disabled</EuiRadio>
+  <EuiRadio v-model="value" value="option3" disabled>Disabled Selected</EuiRadio>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Radio } from '@elivander/elix-ui'
+import { Radio as EuiRadio } from '@elivander/elix-ui'
 
 const value = ref('option3')
 <\/script>`

@@ -4,7 +4,12 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+defineOptions({
+  name: 'EuiCardFooter',
+})
+</script>
 
 <style lang="scss" scoped>
 .eui-card-footer {

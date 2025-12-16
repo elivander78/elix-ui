@@ -7,6 +7,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiSidebar',
+
+})
+
 import { computed } from 'vue'
 
 const props = defineProps<{

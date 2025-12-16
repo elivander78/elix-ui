@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import StatisticBasicDemo from '../../components/demos/StatisticBasicDemo.vue'
+import StatisticBasicDemo from '../../components/demos/Statistic/Basic.vue'
 
 const statisticProps = [
   { name: 'title', type: 'string', default: '', description: 'Заголовок метрики (required)' },
@@ -39,9 +39,9 @@ const statisticSlots = [
 const statisticEvents = []
 
 const basicCode = `<template>
-  <Statistic title="Total Users" :value="1234" />
-  <Statistic title="Revenue" :value="5678" suffix="$" />
-  <Statistic title="Growth" :value="12.5" suffix="%" trend="up" />
+  <EuiStatistic title="Total Users" :value="1234" />
+  <EuiStatistic title="Revenue" :value="5678" suffix="$" />
+  <EuiStatistic title="Growth" :value="12.5" suffix="%" trend="up" />
 </template>`
 </script>
 

@@ -19,78 +19,78 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import DropdownBasicDemo from '../../components/demos/DropdownBasicDemo.vue'
-import DropdownTriggersDemo from '../../components/demos/DropdownTriggersDemo.vue'
-import DropdownPlacementsDemo from '../../components/demos/DropdownPlacementsDemo.vue'
-import DropdownItemsDemo from '../../components/demos/DropdownItemsDemo.vue'
+import DropdownBasicDemo from '../../components/demos/Dropdown/Basic.vue'
+import DropdownTriggersDemo from '../../components/demos/Dropdown/Triggers.vue'
+import DropdownPlacementsDemo from '../../components/demos/Dropdown/Placements.vue'
+import DropdownItemsDemo from '../../components/demos/Dropdown/Items.vue'
 
 const basicCode = `<template>
-  <Dropdown>
+  <EuiDropdown>
     <template #trigger>
-      <Button>Click me</Button>
+      <EuiButton>Click me</EuiButton>
     </template>
     <template #menu>
       <div style="padding: 8px;">Menu content</div>
     </template>
-  </Dropdown>
+  </EuiDropdown>
 </template>
 
 <script setup>
-import { Dropdown, Button } from '@elivander/elix-ui'
+import { Dropdown as EuiDropdown, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const triggersCode = `<template>
   <div style="display: flex; gap: 8px;">
-    <Dropdown trigger="click">
+    <EuiDropdown trigger="click">
       <template #trigger>
-        <Button>Click</Button>
+        <EuiButton>Click</EuiButton>
       </template>
       <template #menu>
         <div style="padding: 8px;">Click trigger</div>
       </template>
-    </Dropdown>
-    <Dropdown trigger="hover">
+    </EuiDropdown>
+    <EuiDropdown trigger="hover">
       <template #trigger>
-        <Button>Hover</Button>
+        <EuiButton>Hover</EuiButton>
       </template>
       <template #menu>
         <div style="padding: 8px;">Hover trigger</div>
       </template>
-    </Dropdown>
+    </EuiDropdown>
   </div>
 </template>
 
 <script setup>
-import { Dropdown, Button } from '@elivander/elix-ui'
+import { Dropdown as EuiDropdown, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const placementsCode = `<template>
   <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-    <Dropdown placement="bottom-start">
-      <template #trigger><Button>Bottom Start</Button></template>
+    <EuiDropdown placement="bottom-start">
+      <template #trigger><EuiButton>Bottom Start</EuiButton></template>
       <template #menu><div style="padding: 8px;">Menu</div></template>
-    </Dropdown>
-    <Dropdown placement="top-start">
-      <template #trigger><Button>Top Start</Button></template>
+    </EuiDropdown>
+    <EuiDropdown placement="top-start">
+      <template #trigger><EuiButton>Top Start</EuiButton></template>
       <template #menu><div style="padding: 8px;">Menu</div></template>
-    </Dropdown>
+    </EuiDropdown>
   </div>
 </template>
 
 <script setup>
-import { Dropdown, Button } from '@elivander/elix-ui'
+import { Dropdown as EuiDropdown, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const itemsCode = `<template>
-  <Dropdown :items="items" @select="handleSelect">
+  <EuiDropdown :items="items" @select="handleSelect">
     <template #trigger>
-      <Button>Select Option</Button>
+      <EuiButton>Select Option</EuiButton>
     </template>
-  </Dropdown>
+  </EuiDropdown>
 </template>
 
 <script setup>
-import { Dropdown, Button } from '@elivander/elix-ui'
+import { Dropdown as EuiDropdown, Button as EuiButton } from '@elivander/elix-ui'
 
 const items = [
   { label: 'Option 1', key: '1' },

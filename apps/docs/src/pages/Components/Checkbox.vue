@@ -30,43 +30,43 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import CheckboxBasicDemo from '../../components/demos/CheckboxBasicDemo.vue'
-import CheckboxSingleDemo from '../../components/demos/CheckboxSingleDemo.vue'
-import CheckboxGroupDemo from '../../components/demos/CheckboxGroupDemo.vue'
-import CheckboxIndeterminateDemo from '../../components/demos/CheckboxIndeterminateDemo.vue'
-import CheckboxDisabledDemo from '../../components/demos/CheckboxDisabledDemo.vue'
+import CheckboxBasicDemo from '../../components/demos/Checkbox/Basic.vue'
+import CheckboxSingleDemo from '../../components/demos/Checkbox/Single.vue'
+import CheckboxGroupDemo from '../../components/demos/Checkbox/Group.vue'
+import CheckboxIndeterminateDemo from '../../components/demos/Checkbox/Indeterminate.vue'
+import CheckboxDisabledDemo from '../../components/demos/Checkbox/Disabled.vue'
 
 const basicCode = `<template>
-  <Checkbox v-model="checked">I agree</Checkbox>
+  <EuiCheckbox v-model="checked">I agree</EuiCheckbox>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elivander/elix-ui'
+import { Checkbox as EuiCheckbox } from '@elivander/elix-ui'
 
 const checked = ref(false)
 <\/script>`
 
 const singleCode = `<template>
-  <Checkbox v-model="checked" label="Accept terms and conditions" />
+  <EuiCheckbox v-model="checked" label="Accept terms and conditions" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elivander/elix-ui'
+import { Checkbox as EuiCheckbox } from '@elivander/elix-ui'
 
 const checked = ref(false)
 <\/script>`
 
 const groupCode = `<template>
-  <Checkbox v-model="checked1">Option 1</Checkbox>
-  <Checkbox v-model="checked2">Option 2</Checkbox>
-  <Checkbox v-model="checked3">Option 3</Checkbox>
+  <EuiCheckbox v-model="checked1">Option 1</EuiCheckbox>
+  <EuiCheckbox v-model="checked2">Option 2</EuiCheckbox>
+  <EuiCheckbox v-model="checked3">Option 3</EuiCheckbox>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elivander/elix-ui'
+import { Checkbox as EuiCheckbox } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(true)
@@ -74,14 +74,14 @@ const checked3 = ref(false)
 <\/script>`
 
 const indeterminateCode = `<template>
-  <Checkbox v-model="checked" :indeterminate="indeterminate" @change="handleChange">
+  <EuiCheckbox v-model="checked" :indeterminate="indeterminate" @change="handleChange">
     Select all
-  </Checkbox>
+  </EuiCheckbox>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elivander/elix-ui'
+import { Checkbox as EuiCheckbox } from '@elivander/elix-ui'
 
 const checked = ref(false)
 const indeterminate = ref(true)
@@ -92,14 +92,14 @@ const handleChange = (value) => {
 <\/script>`
 
 const disabledCode = `<template>
-  <Checkbox v-model="checked1">Enabled</Checkbox>
-  <Checkbox v-model="checked2" disabled>Disabled</Checkbox>
-  <Checkbox v-model="checked3" disabled :checked="true">Disabled Checked</Checkbox>
+  <EuiCheckbox v-model="checked1">Enabled</EuiCheckbox>
+  <EuiCheckbox v-model="checked2" disabled>Disabled</EuiCheckbox>
+  <EuiCheckbox v-model="checked3" disabled :checked="true">Disabled Checked</EuiCheckbox>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Checkbox } from '@elivander/elix-ui'
+import { Checkbox as EuiCheckbox } from '@elivander/elix-ui'
 
 const checked1 = ref(false)
 const checked2 = ref(false)

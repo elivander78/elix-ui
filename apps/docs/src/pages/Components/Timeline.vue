@@ -27,8 +27,8 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import TimelineBasicDemo from '../../components/demos/TimelineBasicDemo.vue'
-import TimelineWithColorsDemo from '../../components/demos/TimelineWithColorsDemo.vue'
+import TimelineBasicDemo from '../../components/demos/Timeline/Basic.vue'
+import TimelineWithColorsDemo from '../../components/demos/Timeline/WithColors.vue'
 
 const timelineProps = [
   { name: 'reverse', type: 'boolean', default: 'false', description: 'Обратный порядок элементов' },
@@ -57,17 +57,17 @@ const timelineItemSlots = [
 const timelineItemEvents = []
 
 const basicCode = `<template>
-  <Timeline>
-    <TimelineItem title="Create account" time="2024-01-01" />
-    <TimelineItem title="Verify email" time="2024-01-02" />
-  </Timeline>
+  <EuiTimeline>
+    <EuiTimelineItem title="Create account" time="2024-01-01" />
+    <EuiTimelineItem title="Verify email" time="2024-01-02" />
+  </EuiTimeline>
 </template>`
 
 const colorsCode = `<template>
-  <Timeline>
-    <TimelineItem title="Order placed" color="success" />
-    <TimelineItem title="Payment confirmed" color="success" />
-  </Timeline>
+  <EuiTimeline>
+    <EuiTimelineItem title="Order placed" color="success" />
+    <EuiTimelineItem title="Payment confirmed" color="success" />
+  </EuiTimeline>
 </template>`
 </script>
 

@@ -28,73 +28,73 @@ import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
 
 const basicCode = `<template>
-  <Tooltip content="This is a tooltip">
-    <Button>Hover me</Button>
-  </Tooltip>
+  <EuiTooltip content="This is a tooltip">
+    <EuiButton>Hover me</EuiButton>
+  </EuiTooltip>
 </template>
 
 <script setup>
-import { Tooltip, Button } from '@elivander/elix-ui'
+import { Tooltip as EuiTooltip, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const triggerCode = `<template>
   <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-    <Tooltip content="Hover tooltip" trigger="hover">
-      <Button>Hover me</Button>
-    </Tooltip>
-    <Tooltip content="Click tooltip" trigger="click">
-      <Button>Click me</Button>
-    </Tooltip>
-    <Tooltip content="Focus tooltip" trigger="focus">
+    <EuiTooltip content="Hover tooltip" trigger="hover">
+      <EuiButton>Hover me</EuiButton>
+    </EuiTooltip>
+    <EuiTooltip content="Click tooltip" trigger="click">
+      <EuiButton>Click me</EuiButton>
+    </EuiTooltip>
+    <EuiTooltip content="Focus tooltip" trigger="focus">
       <input type="text" placeholder="Focus me" />
-    </Tooltip>
+    </EuiTooltip>
   </div>
 </template>
 
 <script setup>
-import { Tooltip, Button } from '@elivander/elix-ui'
+import { Tooltip as EuiTooltip, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const placementCode = `<template>
   <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-    <Tooltip content="Top tooltip" placement="top">
-      <Button>Top</Button>
-    </Tooltip>
-    <Tooltip content="Bottom tooltip" placement="bottom">
-      <Button>Bottom</Button>
-    </Tooltip>
-    <Tooltip content="Left tooltip" placement="left">
-      <Button>Left</Button>
-    </Tooltip>
-    <Tooltip content="Right tooltip" placement="right">
-      <Button>Right</Button>
-    </Tooltip>
+    <EuiTooltip content="Top tooltip" placement="top">
+      <EuiButton>Top</EuiButton>
+    </EuiTooltip>
+    <EuiTooltip content="Bottom tooltip" placement="bottom">
+      <EuiButton>Bottom</EuiButton>
+    </EuiTooltip>
+    <EuiTooltip content="Left tooltip" placement="left">
+      <EuiButton>Left</EuiButton>
+    </EuiTooltip>
+    <EuiTooltip content="Right tooltip" placement="right">
+      <EuiButton>Right</EuiButton>
+    </EuiTooltip>
   </div>
 </template>
 
 <script setup>
-import { Tooltip, Button } from '@elivander/elix-ui'
+import { Tooltip as EuiTooltip, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const examplesCode = `<template>
   <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
-    <Tooltip content="Tooltip on button">
-      <Button>Button</Button>
-    </Tooltip>
-    <Tooltip content="Tooltip on icon">
+    <EuiTooltip content="Tooltip on button">
+      <EuiButton>Button</EuiButton>
+    </EuiTooltip>
+    <EuiTooltip content="Tooltip on icon">
       <span style="font-size: 24px; cursor: help;">ℹ️</span>
-    </Tooltip>
-    <Tooltip content="Tooltip on text">
+    </EuiTooltip>
+    <EuiTooltip content="Tooltip on text">
       <span style="text-decoration: underline; cursor: help;">Hover this text</span>
-    </Tooltip>
-    <Tooltip content="Disabled tooltip" disabled>
-      <Button disabled>Disabled</Button>
-    </Tooltip>
+    </EuiTooltip>
+    <EuiTooltip content="Disabled tooltip" disabled>
+      <EuiButton disabled>Disabled</EuiButton>
+    </EuiTooltip>
   </div>
 </template>
 
 <script setup>
-import { Tooltip, Button } from '@elivander/elix-ui'
+import { Tooltip as EuiTooltip, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const props = [

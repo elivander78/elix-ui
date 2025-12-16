@@ -2,7 +2,7 @@ import Empty from './Empty.vue'
 import type { App } from 'vue'
 
 Empty.install = (app: App) => {
-  app.component(Empty.name || 'EuiEmpty', Empty)
+  app.component(Empty.name, Empty)
 }
 
 export { Empty }

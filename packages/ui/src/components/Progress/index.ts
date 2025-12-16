@@ -2,7 +2,7 @@ import Progress from './Progress.vue'
 import type { App } from 'vue'
 
 Progress.install = (app: App) => {
-  app.component(Progress.name || 'EuiProgress', Progress)
+  app.component(Progress.name, Progress)
 }
 
 export { Progress }

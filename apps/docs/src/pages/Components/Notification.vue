@@ -19,24 +19,24 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import NotificationBasicDemo from '../../components/demos/NotificationBasicDemo.vue'
-import NotificationTypesDemo from '../../components/demos/NotificationTypesDemo.vue'
-import NotificationDurationDemo from '../../components/demos/NotificationDurationDemo.vue'
-import NotificationPositionAppearanceDemo from '../../components/demos/NotificationPositionAppearanceDemo.vue'
+import NotificationBasicDemo from '../../components/demos/Notification/Basic.vue'
+import NotificationTypesDemo from '../../components/demos/Notification/Types.vue'
+import NotificationDurationDemo from '../../components/demos/Notification/Duration.vue'
+import NotificationPositionAppearanceDemo from '../../components/demos/Notification/PositionAppearance.vue'
 
 const basicCode = `<template>
   <div>
-    <Button @click="showSuccess">Success</Button>
-    <Button @click="showError">Error</Button>
-    <Button @click="showWarning">Warning</Button>
-    <Button @click="showInfo">Info</Button>
+    <EuiButton @click="showSuccess">Success</EuiButton>
+    <EuiButton @click="showError">Error</EuiButton>
+    <EuiButton @click="showWarning">Warning</EuiButton>
+    <EuiButton @click="showInfo">Info</EuiButton>
   </div>
-  <Notification :notifications="notifications" @remove="remove" />
+  <EuiNotification :notifications="notifications" @remove="remove" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Notification, useNotification } from '@elivander/elix-ui'
+import { Button as EuiButton, Notification as EuiNotification, useNotification } from '@elivander/elix-ui'
 
 const { notifications, success, error, warning, info, remove } = useNotification()
 
@@ -48,17 +48,17 @@ const showInfo = () => info('Info', 'This is an informational message')
 
 const allTypesCode = `<template>
   <div>
-    <Button @click="showSuccess">Success</Button>
-    <Button @click="showError">Error</Button>
-    <Button @click="showWarning">Warning</Button>
-    <Button @click="showInfo">Info</Button>
+    <EuiButton @click="showSuccess">Success</EuiButton>
+    <EuiButton @click="showError">Error</EuiButton>
+    <EuiButton @click="showWarning">Warning</EuiButton>
+    <EuiButton @click="showInfo">Info</EuiButton>
   </div>
-  <Notification :notifications="notifications" @remove="remove" />
+  <EuiNotification :notifications="notifications" @remove="remove" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Notification, useNotification } from '@elivander/elix-ui'
+import { Button as EuiButton, Notification as EuiNotification, useNotification } from '@elivander/elix-ui'
 
 const { notifications, success, error, warning, info, remove } = useNotification()
 
@@ -70,17 +70,17 @@ const showInfo = () => info('Info', 'This is an informational message')
 
 const durationCode = `<template>
   <div>
-    <Button @click="showShort">Short Duration (2s)</Button>
-    <Button @click="showLong">Long Duration (5s)</Button>
-    <Button @click="showPersistent">Persistent (0s)</Button>
-    <Button @click="showDefault">Default Duration</Button>
+    <EuiButton @click="showShort">Short Duration (2s)</EuiButton>
+    <EuiButton @click="showLong">Long Duration (5s)</EuiButton>
+    <EuiButton @click="showPersistent">Persistent (0s)</EuiButton>
+    <EuiButton @click="showDefault">Default Duration</EuiButton>
   </div>
-  <Notification :notifications="notifications" @remove="remove" />
+  <EuiNotification :notifications="notifications" @remove="remove" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Notification, useNotification } from '@elivander/elix-ui'
+import { Button as EuiButton, Notification as EuiNotification, useNotification } from '@elivander/elix-ui'
 
 const { notifications, success, error, warning, info, remove } = useNotification()
 
@@ -93,26 +93,26 @@ const showDefault = () => info('Info', 'Default duration (4.5s)', undefined)
 const positionAppearanceCode = `<template>
   <div>
     <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-      <Button @click="showNotification('success')">Success</Button>
-      <Button @click="showNotification('error')">Error</Button>
-      <Button @click="showNotification('warning')">Warning</Button>
-      <Button @click="showNotification('info')">Info</Button>
+      <EuiButton @click="showNotification('success')">Success</EuiButton>
+      <EuiButton @click="showNotification('error')">Error</EuiButton>
+      <EuiButton @click="showNotification('warning')">Warning</EuiButton>
+      <EuiButton @click="showNotification('info')">Info</EuiButton>
     </div>
     <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center;">
       <label>Position:</label>
-      <Select v-model="position" :options="positionOptions" style="width: 150px;" />
+      <EuiSelect v-model="position" :options="positionOptions" style="width: 150px;" />
       <label>Duration (ms):</label>
-      <Input v-model.number="duration" type="number" placeholder="0 = no auto-close" style="width: 150px;" />
+      <EuiInput v-model.number="duration" type="number" placeholder="0 = no auto-close" style="width: 150px;" />
       <label>Appearance:</label>
-      <Select v-model="appearance" :options="appearanceOptions" style="width: 150px;" />
+      <EuiSelect v-model="appearance" :options="appearanceOptions" style="width: 150px;" />
     </div>
-    <Notification :notifications="notifications" @remove="remove" />
+    <EuiNotification :notifications="notifications" @remove="remove" />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Button, Notification, Select, Input, useNotification } from '@elivander/elix-ui'
+import { Button as EuiButton, Notification as EuiNotification, Select as EuiSelect, Input as EuiInput, useNotification } from '@elivander/elix-ui'
 
 const { notifications, add, remove } = useNotification()
 

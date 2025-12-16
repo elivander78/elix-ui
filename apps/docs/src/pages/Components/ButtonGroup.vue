@@ -27,10 +27,10 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import ButtonGroupBasicDemo from '../../components/demos/ButtonGroupBasicDemo.vue'
-import ButtonGroupSegmentedDemo from '../../components/demos/ButtonGroupSegmentedDemo.vue'
-import ButtonGroupSizesDemo from '../../components/demos/ButtonGroupSizesDemo.vue'
-import ButtonGroupVariantsDemo from '../../components/demos/ButtonGroupVariantsDemo.vue'
+import ButtonGroupBasicDemo from '../../components/demos/ButtonGroup/Basic.vue'
+import ButtonGroupSegmentedDemo from '../../components/demos/ButtonGroup/Segmented.vue'
+import ButtonGroupSizesDemo from '../../components/demos/ButtonGroup/Sizes.vue'
+import ButtonGroupVariantsDemo from '../../components/demos/ButtonGroup/Variants.vue'
 
 const buttonGroupProps = [
   { name: 'size', type: "'xs' | 'sm' | 'md' | 'lg'", default: "'md'", description: 'Размер кнопок в группе' },
@@ -46,41 +46,41 @@ const buttonGroupSlots = [
 const buttonGroupEvents = []
 
 const basicCode = `<template>
-  <ButtonGroup>
-    <Button>Today</Button>
-    <Button>Week</Button>
-    <Button>Month</Button>
-  </ButtonGroup>
+  <EuiButtonGroup>
+    <EuiButton>Today</EuiButton>
+    <EuiButton>Week</EuiButton>
+    <EuiButton>Month</EuiButton>
+  </EuiButtonGroup>
 </template>`
 
 const segmentedCode = `<template>
-  <ButtonGroup segmented>
-    <Button>Option 1</Button>
-    <Button>Option 2</Button>
-    <Button>Option 3</Button>
-  </ButtonGroup>
+  <EuiButtonGroup segmented>
+    <EuiButton>Option 1</EuiButton>
+    <EuiButton>Option 2</EuiButton>
+    <EuiButton>Option 3</EuiButton>
+  </EuiButtonGroup>
 </template>`
 
 const sizesCode = `<template>
-  <ButtonGroup size="xs">
-    <Button>XS</Button>
-    <Button>XS</Button>
-  </ButtonGroup>
-  <ButtonGroup size="sm">
-    <Button>SM</Button>
-    <Button>SM</Button>
-  </ButtonGroup>
+  <EuiButtonGroup size="xs">
+    <EuiButton>XS</EuiButton>
+    <EuiButton>XS</EuiButton>
+  </EuiButtonGroup>
+  <EuiButtonGroup size="sm">
+    <EuiButton>SM</EuiButton>
+    <EuiButton>SM</EuiButton>
+  </EuiButtonGroup>
 </template>`
 
 const variantsCode = `<template>
-  <ButtonGroup variant="primary">
-    <Button>Primary</Button>
-    <Button>Primary</Button>
-  </ButtonGroup>
-  <ButtonGroup variant="outline">
-    <Button>Outline</Button>
-    <Button>Outline</Button>
-  </ButtonGroup>
+  <EuiButtonGroup variant="primary">
+    <EuiButton>Primary</EuiButton>
+    <EuiButton>Primary</EuiButton>
+  </EuiButtonGroup>
+  <EuiButtonGroup variant="outline">
+    <EuiButton>Outline</EuiButton>
+    <EuiButton>Outline</EuiButton>
+  </EuiButtonGroup>
 </template>`
 </script>
 

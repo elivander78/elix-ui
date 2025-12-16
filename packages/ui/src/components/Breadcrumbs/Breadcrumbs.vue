@@ -29,6 +29,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiBreadcrumbs',
+
+})
+
 import type { BreadcrumbItem } from './types'
 
 const props = defineProps<{

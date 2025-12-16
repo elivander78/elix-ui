@@ -19,63 +19,63 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import ContainerBasicDemo from '../../components/demos/ContainerBasicDemo.vue'
-import ContainerMaxWidthDemo from '../../components/demos/ContainerMaxWidthDemo.vue'
-import ContainerPaddedDemo from '../../components/demos/ContainerPaddedDemo.vue'
-import ContainerFluidDemo from '../../components/demos/ContainerFluidDemo.vue'
+import ContainerBasicDemo from '../../components/demos/Container/Basic.vue'
+import ContainerMaxWidthDemo from '../../components/demos/Container/MaxWidth.vue'
+import ContainerPaddedDemo from '../../components/demos/Container/Padded.vue'
+import ContainerFluidDemo from '../../components/demos/Container/Fluid.vue'
 
 const basicCode = `<template>
-  <Container>
+  <EuiContainer>
     <div style="background: var(--eui-bg-secondary); padding: 20px; border-radius: 8px;">
       Container content
     </div>
-  </Container>
+  </EuiContainer>
 </template>
 
 <script setup>
-import { Container } from '@elivander/elix-ui'
+import { Container as EuiContainer } from '@elivander/elix-ui'
 <\/script>`
 
 const maxWidthCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 16px;">
-    <Container max-width="sm">
+    <EuiContainer max-width="sm">
       <div style="background: var(--eui-bg-secondary); padding: 20px;">Small (640px)</div>
-    </Container>
-    <Container max-width="md">
+    </EuiContainer>
+    <EuiContainer max-width="md">
       <div style="background: var(--eui-bg-secondary); padding: 20px;">Medium (768px)</div>
-    </Container>
-    <Container max-width="lg">
+    </EuiContainer>
+    <EuiContainer max-width="lg">
       <div style="background: var(--eui-bg-secondary); padding: 20px;">Large (1024px)</div>
-    </Container>
+    </EuiContainer>
   </div>
 </template>
 
 <script setup>
-import { Container } from '@elivander/elix-ui'
+import { Container as EuiContainer } from '@elivander/elix-ui'
 <\/script>`
 
 const paddedCode = `<template>
-  <Container :padded="true" max-width="md">
+  <EuiContainer :padded="true" max-width="md">
     <div style="background: var(--eui-bg-secondary); padding: 20px;">
       Container with padding
     </div>
-  </Container>
+  </EuiContainer>
 </template>
 
 <script setup>
-import { Container } from '@elivander/elix-ui'
+import { Container as EuiContainer } from '@elivander/elix-ui'
 <\/script>`
 
 const fluidCode = `<template>
-  <Container :fluid="true">
+  <EuiContainer :fluid="true">
     <div style="background: var(--eui-bg-secondary); padding: 20px; border-radius: 8px;">
       Fluid container - takes full width
     </div>
-  </Container>
+  </EuiContainer>
 </template>
 
 <script setup>
-import { Container } from '@elivander/elix-ui'
+import { Container as EuiContainer } from '@elivander/elix-ui'
 <\/script>`
 </script>
 

@@ -5,6 +5,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiCol',
+
+})
+
 import { computed } from 'vue'
 
 const props = defineProps<{

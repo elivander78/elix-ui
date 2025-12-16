@@ -13,38 +13,38 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import SpinnerBasicDemo from '../../components/demos/SpinnerBasicDemo.vue'
-import SpinnerOverlayDemo from '../../components/demos/SpinnerOverlayDemo.vue'
+import SpinnerBasicDemo from '../../components/demos/Spinner/Basic.vue'
+import SpinnerOverlayDemo from '../../components/demos/Spinner/Overlay.vue'
 
 const basicCode = `<template>
   <div style="display: flex; gap: 20px; align-items: center;">
-    <Spinner />
-    <Spinner size="sm" />
-    <Spinner size="lg" />
-    <Spinner :size="48" :thickness="6" label="Loading..." />
+    <EuiSpinner />
+    <EuiSpinner size="sm" />
+    <EuiSpinner size="lg" />
+    <EuiSpinner :size="48" :thickness="6" label="Loading..." />
   </div>
 </template>
 
 <script setup>
-import { Spinner } from '@elivander/elix-ui'
+import { Spinner as EuiSpinner } from '@elivander/elix-ui'
 <\/script>`
 
 const overlayCode = `<template>
   <div style="position: relative; height: 300px; border: 1px solid var(--eui-border-color); border-radius: var(--eui-radius-md); padding: 20px;">
-    <Card>
-      <CardBody>
+    <EuiCard>
+      <EuiCardBody>
         <h3>Card Content</h3>
         <p>This is some content in a card. Scroll to see the overlay spinner when loading.</p>
-      </CardBody>
-    </Card>
-    <Spinner v-if="loading" overlay label="Loading..." />
-    <Button @click="loading = !loading" style="margin-top: 16px;">Toggle Loading</Button>
+      </EuiCardBody>
+    </EuiCard>
+    <EuiSpinner v-if="loading" overlay label="Loading..." />
+    <EuiButton @click="loading = !loading" style="margin-top: 16px;">Toggle Loading</EuiButton>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Spinner, Card, CardBody, Button } from '@elivander/elix-ui'
+import { Spinner as EuiSpinner, Card as EuiCard, CardBody as EuiCardBody, Button as EuiButton } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`

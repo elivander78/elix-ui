@@ -80,6 +80,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiPagination',
+
+})
+
 import { computed, ref } from 'vue'
 
 const props = defineProps<{

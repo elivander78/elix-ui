@@ -36,77 +36,77 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import TextareaBasicDemo from '../../components/demos/TextareaBasicDemo.vue'
-import TextareaSizesDemo from '../../components/demos/TextareaSizesDemo.vue'
-import TextareaRowsDemo from '../../components/demos/TextareaRowsDemo.vue'
-import TextareaAutosizeDemo from '../../components/demos/TextareaAutosizeDemo.vue'
-import TextareaCountDemo from '../../components/demos/TextareaCountDemo.vue'
-import TextareaStatesDemo from '../../components/demos/TextareaStatesDemo.vue'
-import TextareaAppearanceDemo from '../../components/demos/TextareaAppearanceDemo.vue'
+import TextareaBasicDemo from '../../components/demos/Textarea/Basic.vue'
+import TextareaSizesDemo from '../../components/demos/Textarea/Sizes.vue'
+import TextareaRowsDemo from '../../components/demos/Textarea/Rows.vue'
+import TextareaAutosizeDemo from '../../components/demos/Textarea/Autosize.vue'
+import TextareaCountDemo from '../../components/demos/Textarea/Count.vue'
+import TextareaStatesDemo from '../../components/demos/Textarea/States.vue'
+import TextareaAppearanceDemo from '../../components/demos/Textarea/Appearance.vue'
 
 const basicCode = `<template>
-  <Textarea v-model="value" placeholder="Enter text" />
+  <EuiTextarea v-model="value" placeholder="Enter text" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Textarea } from '@elivander/elix-ui'
+import { Textarea as EuiTextarea } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
 
 const sizesCode = `<template>
-  <Textarea size="xs" placeholder="Extra Small" />
-  <Textarea size="sm" placeholder="Small" />
-  <Textarea size="md" placeholder="Medium" />
-  <Textarea size="lg" placeholder="Large" />
+  <EuiTextarea size="xs" placeholder="Extra Small" />
+  <EuiTextarea size="sm" placeholder="Small" />
+  <EuiTextarea size="md" placeholder="Medium" />
+  <EuiTextarea size="lg" placeholder="Large" />
 </template>`
 
 const rowsCode = `<template>
-  <Textarea v-model="value" :rows="3" placeholder="3 rows" />
-  <Textarea v-model="value" :rows="5" placeholder="5 rows" />
+  <EuiTextarea v-model="value" :rows="3" placeholder="3 rows" />
+  <EuiTextarea v-model="value" :rows="5" placeholder="5 rows" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Textarea } from '@elivander/elix-ui'
+import { Textarea as EuiTextarea } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
 
 const autosizeCode = `<template>
-  <Textarea v-model="value" autosize placeholder="Type to see auto-resize" />
+  <EuiTextarea v-model="value" autosize placeholder="Type to see auto-resize" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Textarea } from '@elivander/elix-ui'
+import { Textarea as EuiTextarea } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
 
 const countCode = `<template>
-  <Textarea v-model="value" :maxlength="100" show-count placeholder="Type to see character count" />
+  <EuiTextarea v-model="value" :maxlength="100" show-count placeholder="Type to see character count" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Textarea } from '@elivander/elix-ui'
+import { Textarea as EuiTextarea } from '@elivander/elix-ui'
 
 const value = ref('')
 <\/script>`
 
 const statesCode = `<template>
-  <Textarea placeholder="Normal" />
-  <Textarea placeholder="Error" state="error" />
-  <Textarea placeholder="Success" state="success" />
-  <Textarea placeholder="Disabled" disabled />
+  <EuiTextarea placeholder="Normal" />
+  <EuiTextarea placeholder="Error" state="error" />
+  <EuiTextarea placeholder="Success" state="success" />
+  <EuiTextarea placeholder="Disabled" disabled />
 </template>`
 
 const appearanceCode = `<template>
-  <Textarea appearance="border" placeholder="Border" />
-  <Textarea appearance="shadow" placeholder="Shadow" />
-  <Textarea appearance="border-shadow" placeholder="Border + Shadow" />
+  <EuiTextarea appearance="border" placeholder="Border" />
+  <EuiTextarea appearance="shadow" placeholder="Shadow" />
+  <EuiTextarea appearance="border-shadow" placeholder="Border + Shadow" />
 </template>`
 
 const textareaProps = [

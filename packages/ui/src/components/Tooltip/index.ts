@@ -2,7 +2,7 @@ import Tooltip from './Tooltip.vue'
 import type { App } from 'vue'
 
 Tooltip.install = (app: App) => {
-  app.component(Tooltip.name || 'EuiTooltip', Tooltip)
+  app.component(Tooltip.name, Tooltip)
 }
 
 export { Tooltip }

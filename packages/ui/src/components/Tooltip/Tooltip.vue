@@ -22,6 +22,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiTooltip',
+
+})
+
 import { ref, computed, nextTick, onMounted, onUnmounted, withDefaults } from 'vue'
 
 const props = withDefaults(defineProps<{

@@ -22,42 +22,42 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import SliderBasicDemo from '../../components/demos/SliderBasicDemo.vue'
-import SliderRangeDemo from '../../components/demos/SliderRangeDemo.vue'
-import SliderMarksDemo from '../../components/demos/SliderMarksDemo.vue'
-import SliderTooltipDemo from '../../components/demos/SliderTooltipDemo.vue'
-import SliderSizesDemo from '../../components/demos/SliderSizesDemo.vue'
+import SliderBasicDemo from '../../components/demos/Slider/Basic.vue'
+import SliderRangeDemo from '../../components/demos/Slider/Range.vue'
+import SliderMarksDemo from '../../components/demos/Slider/Marks.vue'
+import SliderTooltipDemo from '../../components/demos/Slider/Tooltip.vue'
+import SliderSizesDemo from '../../components/demos/Slider/Sizes.vue'
 
 const basicCode = `<template>
   <div>
-    <Slider v-model="value" :min="0" :max="100" />
+    <EuiSlider v-model="value" :min="0" :max="100" />
     <p>Value: {{ value }}</p>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elivander/elix-ui'
+import { Slider as EuiSlider } from '@elivander/elix-ui'
 
 const value = ref(50)
 <\/script>`
 
 const rangeCode = `<template>
   <div>
-    <Slider v-model="range" :min="0" :max="100" :range="true" />
+    <EuiSlider v-model="range" :min="0" :max="100" :range="true" />
     <p>Range: {{ range }}</p>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elivander/elix-ui'
+import { Slider as EuiSlider } from '@elivander/elix-ui'
 
 const range = ref([20, 80])
 <\/script>`
 
 const marksCode = `<template>
-  <Slider 
+  <EuiSlider 
     v-model="value" 
     :min="0" 
     :max="100" 
@@ -67,7 +67,7 @@ const marksCode = `<template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elivander/elix-ui'
+import { Slider as EuiSlider } from '@elivander/elix-ui'
 
 const value = ref(50)
 <\/script>`
@@ -76,22 +76,22 @@ const tooltipCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 16px;">
     <div>
       <p>Always visible:</p>
-      <Slider v-model="value1" tooltip="always" />
+      <EuiSlider v-model="value1" tooltip="always" />
     </div>
     <div>
       <p>On hover:</p>
-      <Slider v-model="value2" tooltip="hover" />
+      <EuiSlider v-model="value2" tooltip="hover" />
     </div>
     <div>
       <p>None:</p>
-      <Slider v-model="value3" tooltip="none" />
+      <EuiSlider v-model="value3" tooltip="none" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elivander/elix-ui'
+import { Slider as EuiSlider } from '@elivander/elix-ui'
 
 const value1 = ref(30)
 const value2 = ref(50)
@@ -102,22 +102,22 @@ const sizesCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 24px;">
     <div>
       <p>Small:</p>
-      <Slider v-model="value1" size="sm" />
+      <EuiSlider v-model="value1" size="sm" />
     </div>
     <div>
       <p>Medium:</p>
-      <Slider v-model="value2" size="md" />
+      <EuiSlider v-model="value2" size="md" />
     </div>
     <div>
       <p>Large:</p>
-      <Slider v-model="value3" size="lg" />
+      <EuiSlider v-model="value3" size="lg" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Slider } from '@elivander/elix-ui'
+import { Slider as EuiSlider } from '@elivander/elix-ui'
 
 const value1 = ref(30)
 const value2 = ref(50)

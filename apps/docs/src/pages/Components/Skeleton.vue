@@ -25,91 +25,91 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import SkeletonBasicDemo from '../../components/demos/SkeletonBasicDemo.vue'
-import SkeletonAvatarDemo from '../../components/demos/SkeletonAvatarDemo.vue'
-import SkeletonRowsDemo from '../../components/demos/SkeletonRowsDemo.vue'
-import SkeletonAnimatedDemo from '../../components/demos/SkeletonAnimatedDemo.vue'
-import SkeletonCardDemo from '../../components/demos/SkeletonCardDemo.vue'
-import SkeletonTableDemo from '../../components/demos/SkeletonTableDemo.vue'
+import SkeletonBasicDemo from '../../components/demos/Skeleton/Basic.vue'
+import SkeletonAvatarDemo from '../../components/demos/Skeleton/Avatar.vue'
+import SkeletonRowsDemo from '../../components/demos/Skeleton/Rows.vue'
+import SkeletonAnimatedDemo from '../../components/demos/Skeleton/Animated.vue'
+import SkeletonCardDemo from '../../components/demos/Skeleton/Card.vue'
+import SkeletonTableDemo from '../../components/demos/Skeleton/Table.vue'
 
 const basicCode = `<template>
-  <Skeleton :loading="loading" :rows="3" type="text">
+  <EuiSkeleton :loading="loading" :rows="3" type="text">
     <div>Content loaded</div>
-  </Skeleton>
+  </EuiSkeleton>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Button } from '@elivander/elix-ui'
+import { Skeleton as EuiSkeleton, Button as EuiButton } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`
 
 const avatarCode = `<template>
   <div>
-    <Skeleton :loading="loading" type="avatar" :rows="3">
+    <EuiSkeleton :loading="loading" type="avatar" :rows="3">
       <div>Content with avatar loaded</div>
-    </Skeleton>
-    <Button @click="loading = !loading" style="margin-top: 20px;">Toggle Loading</Button>
+    </EuiSkeleton>
+    <EuiButton @click="loading = !loading" style="margin-top: 20px;">Toggle Loading</EuiButton>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Button } from '@elivander/elix-ui'
+import { Skeleton as EuiSkeleton, Button as EuiButton } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`
 
 const rowsCode = `<template>
   <div style="display: flex; flex-direction: column; gap: 20px;">
-    <Skeleton :loading="true" :rows="1" type="text" />
-    <Skeleton :loading="true" :rows="3" type="text" />
-    <Skeleton :loading="true" :rows="5" type="text" />
+    <EuiSkeleton :loading="true" :rows="1" type="text" />
+    <EuiSkeleton :loading="true" :rows="3" type="text" />
+    <EuiSkeleton :loading="true" :rows="5" type="text" />
   </div>
 </template>
 
 <script setup>
-import { Skeleton } from '@elivander/elix-ui'
+import { Skeleton as EuiSkeleton } from '@elivander/elix-ui'
 <\/script>`
 
 const animatedCode = `<template>
   <div>
-    <Skeleton :loading="loading" type="avatar" :rows="3" :animated="true">
+    <EuiSkeleton :loading="loading" type="avatar" :rows="3" :animated="true">
       <div>Animated skeleton content</div>
-    </Skeleton>
-    <Button @click="loading = !loading" style="margin-top: 20px;">Toggle Loading</Button>
+    </EuiSkeleton>
+    <EuiButton @click="loading = !loading" style="margin-top: 20px;">Toggle Loading</EuiButton>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Button } from '@elivander/elix-ui'
+import { Skeleton as EuiSkeleton, Button as EuiButton } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`
 
 const cardCode = `<template>
   <div style="max-width: 400px;">
-    <Card>
-      <Skeleton :loading="loading" type="avatar" :rows="3" :animated="true">
+    <EuiCard>
+      <EuiSkeleton :loading="loading" type="avatar" :rows="3" :animated="true">
         <div style="display: flex; gap: 16px;">
-          <Avatar>JD</Avatar>
+          <EuiAvatar>JD</EuiAvatar>
           <div>
             <h3 style="margin: 0 0 8px 0;">John Doe</h3>
             <p style="margin: 0; color: var(--eui-text-secondary);">Software Developer</p>
             <p style="margin: 8px 0 0 0;">This is some content that appears when loading is false.</p>
           </div>
         </div>
-      </Skeleton>
-      <Button @click="loading = !loading" style="margin-top: 16px;">Toggle Loading</Button>
-    </Card>
+      </EuiSkeleton>
+      <EuiButton @click="loading = !loading" style="margin-top: 16px;">Toggle Loading</EuiButton>
+    </EuiCard>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Card, Avatar, Button } from '@elivander/elix-ui'
+import { Skeleton as EuiSkeleton, Card as EuiCard, Avatar as EuiAvatar, Button as EuiButton } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`
@@ -117,10 +117,10 @@ const loading = ref(true)
 const tableCode = `<template>
   <div>
     <div style="display: flex; gap: 10px; margin-bottom: 16px;">
-      <Button @click="loading = !loading">Toggle Loading</Button>
+      <EuiButton @click="loading = !loading">Toggle Loading</EuiButton>
     </div>
     <div style="border: 1px solid var(--eui-border-color); border-radius: var(--eui-radius-md); overflow: hidden;">
-      <Skeleton :loading="loading" :rows="5" :animated="true">
+      <EuiSkeleton :loading="loading" :rows="5" :animated="true">
         <table style="width: 100%; border-collapse: collapse;">
           <thead>
             <tr style="background: var(--eui-bg-secondary);">
@@ -135,14 +135,14 @@ const tableCode = `<template>
             <tr><td style="padding: 12px;">Bob Johnson</td><td style="padding: 12px;">bob@example.com</td><td style="padding: 12px;">User</td></tr>
           </tbody>
         </table>
-      </Skeleton>
+      </EuiSkeleton>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Skeleton, Button } from '@elivander/elix-ui'
+import { Skeleton as EuiSkeleton, Button as EuiButton } from '@elivander/elix-ui'
 
 const loading = ref(true)
 <\/script>`

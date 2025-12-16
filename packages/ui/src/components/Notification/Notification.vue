@@ -34,6 +34,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiNotification',
+
+})
+
 import { computed, h } from 'vue'
 
 export interface NotificationOptions {

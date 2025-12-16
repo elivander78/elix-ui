@@ -19,28 +19,28 @@
 
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
-import FormBasicDemo from '../../components/demos/FormBasicDemo.vue'
-import FormInputsDemo from '../../components/demos/FormInputsDemo.vue'
-import FormEmailPasswordDemo from '../../components/demos/FormEmailPasswordDemo.vue'
-import FormValidationDemo from '../../components/demos/FormValidationDemo.vue'
+import FormBasicDemo from '../../components/demos/Form/Basic.vue'
+import FormInputsDemo from '../../components/demos/Form/Inputs.vue'
+import FormEmailPasswordDemo from '../../components/demos/Form/EmailPassword.vue'
+import FormValidationDemo from '../../components/demos/Form/Validation.vue'
 
 const basicCode = `<template>
-  <Form :model="formData" :rules="rules" @submit="handleSubmit">
-    <FormItem label="Username" prop="username" required>
-      <Input v-model="formData.username" />
-    </FormItem>
-    <FormItem label="Email" prop="email" required>
-      <Input v-model="formData.email" type="email" />
-    </FormItem>
-    <FormItem>
-      <Button type="primary" native-type="submit">Submit</Button>
-    </FormItem>
-  </Form>
+  <EuiForm :model="formData" :rules="rules" @submit="handleSubmit">
+    <EuiFormItem label="Username" prop="username" required>
+      <EuiInput v-model="formData.username" />
+    </EuiFormItem>
+    <EuiFormItem label="Email" prop="email" required>
+      <EuiInput v-model="formData.email" type="email" />
+    </EuiFormItem>
+    <EuiFormItem>
+      <EuiButton type="primary" native-type="submit">Submit</EuiButton>
+    </EuiFormItem>
+  </EuiForm>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Form, FormItem, Input, Button } from '@elivander/elix-ui'
+import { Form as EuiForm, FormItem as EuiFormItem, Input as EuiInput, Button as EuiButton } from '@elivander/elix-ui'
 
 const formData = ref({
   username: '',
@@ -62,36 +62,36 @@ const handleSubmit = (values) => {
 <\/script>`
 
 const allInputsCode = `<template>
-  <Form :model="formData" :rules="rules" @submit="handleSubmit">
-    <FormItem label="Text Input" prop="text">
-      <Input v-model="formData.text" placeholder="Enter text" />
-    </FormItem>
-    <FormItem label="Textarea" prop="textarea">
-      <Textarea v-model="formData.textarea" placeholder="Enter text" />
-    </FormItem>
-    <FormItem label="Select" prop="select">
-      <Select v-model="formData.select" :options="selectOptions" placeholder="Select option" />
-    </FormItem>
-    <FormItem label="Checkbox" prop="checkbox">
-      <Checkbox v-model="formData.checkbox">I agree</Checkbox>
-    </FormItem>
-    <FormItem label="Radio" prop="radio">
-      <Radio v-model="formData.radio" value="option1">Option 1</Radio>
-      <Radio v-model="formData.radio" value="option2">Option 2</Radio>
-    </FormItem>
-    <FormItem label="Switch" prop="switch">
-      <Switch v-model="formData.switch" />
-    </FormItem>
-    <FormItem>
-      <Button type="primary" native-type="submit">Submit</Button>
-      <Button type="outline" @click="handleReset">Reset</Button>
-    </FormItem>
-  </Form>
+  <EuiForm :model="formData" :rules="rules" @submit="handleSubmit">
+    <EuiFormItem label="Text Input" prop="text">
+      <EuiInput v-model="formData.text" placeholder="Enter text" />
+    </EuiFormItem>
+    <EuiFormItem label="Textarea" prop="textarea">
+      <EuiTextarea v-model="formData.textarea" placeholder="Enter text" />
+    </EuiFormItem>
+    <EuiFormItem label="Select" prop="select">
+      <EuiSelect v-model="formData.select" :options="selectOptions" placeholder="Select option" />
+    </EuiFormItem>
+    <EuiFormItem label="Checkbox" prop="checkbox">
+      <EuiCheckbox v-model="formData.checkbox">I agree</EuiCheckbox>
+    </EuiFormItem>
+    <EuiFormItem label="Radio" prop="radio">
+      <EuiRadio v-model="formData.radio" value="option1">Option 1</EuiRadio>
+      <EuiRadio v-model="formData.radio" value="option2">Option 2</EuiRadio>
+    </EuiFormItem>
+    <EuiFormItem label="Switch" prop="switch">
+      <EuiSwitch v-model="formData.switch" />
+    </EuiFormItem>
+    <EuiFormItem>
+      <EuiButton type="primary" native-type="submit">Submit</EuiButton>
+      <EuiButton type="outline" @click="handleReset">Reset</EuiButton>
+    </EuiFormItem>
+  </EuiForm>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Form, FormItem, Input, Textarea, Select, Checkbox, Radio, Switch } from '@elivander/elix-ui'
+import { Form as EuiForm, FormItem as EuiFormItem, Input as EuiInput, Textarea as EuiTextarea, Select as EuiSelect, Checkbox as EuiCheckbox, Radio as EuiRadio, Switch as EuiSwitch } from '@elivander/elix-ui'
 
 const formData = ref({
   text: '',
@@ -128,23 +128,23 @@ const handleReset = () => {
 <\/script>`
 
 const emailPasswordCode = `<template>
-  <Form :model="formData" :rules="rules" @submit="handleSubmit">
-    <FormItem label="Email" prop="email" required>
-      <Input v-model="formData.email" type="email" placeholder="Enter your email" />
-    </FormItem>
-    <FormItem label="Password" prop="password" required>
-      <Input v-model="formData.password" type="password" placeholder="Enter your password" />
-    </FormItem>
-    <FormItem>
-      <Button type="primary" native-type="submit">Submit</Button>
-    </FormItem>
-  </Form>
-  <Notification :notifications="notifications" @remove="remove" />
+  <EuiForm :model="formData" :rules="rules" @submit="handleSubmit">
+    <EuiFormItem label="Email" prop="email" required>
+      <EuiInput v-model="formData.email" type="email" placeholder="Enter your email" />
+    </EuiFormItem>
+    <EuiFormItem label="Password" prop="password" required>
+      <EuiInput v-model="formData.password" type="password" placeholder="Enter your password" />
+    </EuiFormItem>
+    <EuiFormItem>
+      <EuiButton type="primary" native-type="submit">Submit</EuiButton>
+    </EuiFormItem>
+  </EuiForm>
+  <EuiNotification :notifications="notifications" @remove="remove" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Form, FormItem, Input, Button, Notification, useNotification } from '@elivander/elix-ui'
+import { Form as EuiForm, FormItem as EuiFormItem, Input as EuiInput, Button as EuiButton, Notification as EuiNotification, useNotification } from '@elivander/elix-ui'
 
 const formData = ref({
   email: '',
@@ -177,32 +177,32 @@ const handleSubmit = (values) => {
 <\/script>`
 
 const validationCode = `<template>
-  <Form :model="formData" :rules="rules" @submit="handleSubmit">
-    <FormItem label="Required Field" prop="required" required>
-      <Input v-model="formData.required" placeholder="This field is required" />
-    </FormItem>
-    <FormItem label="Email" prop="email" required>
-      <Input v-model="formData.email" type="email" placeholder="Enter email" />
-    </FormItem>
-    <FormItem label="Min Length" prop="minLength" required>
-      <Input v-model="formData.minLength" placeholder="Min 5 characters" />
-    </FormItem>
-    <FormItem label="Max Length" prop="maxLength" required>
-      <Input v-model="formData.maxLength" placeholder="Max 10 characters" />
-    </FormItem>
-    <FormItem label="Custom Validator" prop="custom" required>
-      <Input v-model="formData.custom" placeholder="Must contain 'test'" />
-    </FormItem>
-    <FormItem>
-      <Button type="primary" native-type="submit">Submit</Button>
-      <Button type="outline" @click="handleReset">Reset</Button>
-    </FormItem>
-  </Form>
+  <EuiForm :model="formData" :rules="rules" @submit="handleSubmit">
+    <EuiFormItem label="Required Field" prop="required" required>
+      <EuiInput v-model="formData.required" placeholder="This field is required" />
+    </EuiFormItem>
+    <EuiFormItem label="Email" prop="email" required>
+      <EuiInput v-model="formData.email" type="email" placeholder="Enter email" />
+    </EuiFormItem>
+    <EuiFormItem label="Min Length" prop="minLength" required>
+      <EuiInput v-model="formData.minLength" placeholder="Min 5 characters" />
+    </EuiFormItem>
+    <EuiFormItem label="Max Length" prop="maxLength" required>
+      <EuiInput v-model="formData.maxLength" placeholder="Max 10 characters" />
+    </EuiFormItem>
+    <EuiFormItem label="Custom Validator" prop="custom" required>
+      <EuiInput v-model="formData.custom" placeholder="Must contain 'test'" />
+    </EuiFormItem>
+    <EuiFormItem>
+      <EuiButton type="primary" native-type="submit">Submit</EuiButton>
+      <EuiButton type="outline" @click="handleReset">Reset</EuiButton>
+    </EuiFormItem>
+  </EuiForm>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Form, FormItem, Input, Button } from '@elivander/elix-ui'
+import { Form as EuiForm, FormItem as EuiFormItem, Input as EuiInput, Button as EuiButton } from '@elivander/elix-ui'
 
 const formData = ref({
   required: '',

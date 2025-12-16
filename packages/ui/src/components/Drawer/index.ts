@@ -3,7 +3,7 @@ import { useDrawer } from './useDrawer'
 import type { App } from 'vue'
 
 Drawer.install = (app: App) => {
-  app.component(Drawer.name || 'EuiDrawer', Drawer)
+  app.component(Drawer.name, Drawer)
 }
 
 export { Drawer, useDrawer }

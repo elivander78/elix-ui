@@ -2,7 +2,7 @@ import Statistic from './Statistic.vue'
 import type { App } from 'vue'
 
 Statistic.install = (app: App) => {
-  app.component(Statistic.name || 'EuiStatistic', Statistic)
+  app.component(Statistic.name, Statistic)
 }
 
 export { Statistic }

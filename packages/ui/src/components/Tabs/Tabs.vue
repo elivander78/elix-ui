@@ -18,6 +18,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiTabs',
+
+})
+
 import { computed, provide, ref, useSlots, watch, type ComputedRef } from 'vue'
 
 export interface TabOption {

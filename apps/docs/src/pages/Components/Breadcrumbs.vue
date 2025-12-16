@@ -30,11 +30,11 @@ const breadcrumbsSlots = [
 ]
 
 const basicCode = `<template>
-  <Breadcrumbs :items="items" />
+  <EuiBreadcrumbs :items="items" />
 </template>
 
 <script setup>
-import { Breadcrumbs } from '@elivander/elix-ui'
+import { Breadcrumbs as EuiBreadcrumbs } from '@elivander/elix-ui'
 
 const items = [
   { label: 'Home', to: '/' },
@@ -45,13 +45,13 @@ const items = [
 
 const maxItemsCode = `<template>
   <div>
-    <Breadcrumbs :items="shortItems" />
-    <Breadcrumbs :items="longItems" style="margin-top: 20px;" />
+    <EuiBreadcrumbs :items="shortItems" />
+    <EuiBreadcrumbs :items="longItems" style="margin-top: 20px;" />
   </div>
 </template>
 
 <script setup>
-import { Breadcrumbs } from '@elivander/elix-ui'
+import { Breadcrumbs as EuiBreadcrumbs } from '@elivander/elix-ui'
 
 const shortItems = [
   { label: 'Home', to: '/' },
@@ -70,15 +70,15 @@ const longItems = [
 <\/script>`
 
 const separatorCode = `<template>
-  <Breadcrumbs :items="items">
+  <EuiBreadcrumbs :items="items">
     <template #separator>
       <span style="margin: 0 8px;">/</span>
     </template>
-  </Breadcrumbs>
+  </EuiBreadcrumbs>
 </template>
 
 <script setup>
-import { Breadcrumbs } from '@elivander/elix-ui'
+import { Breadcrumbs as EuiBreadcrumbs } from '@elivander/elix-ui'
 
 const items = [
   { label: 'Home', to: '/' },

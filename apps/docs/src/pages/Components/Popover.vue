@@ -24,76 +24,76 @@ import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
 
 const basicCode = `<template>
-  <Popover title="Popover Title" trigger="click">
+  <EuiPopover title="Popover Title" trigger="click">
     <template #trigger>
-      <Button>Click me</Button>
+      <EuiButton>Click me</EuiButton>
     </template>
     <p>Popover content goes here</p>
-  </Popover>
+  </EuiPopover>
 </template>
 
 <script setup>
-import { Popover, Button } from '@elivander/elix-ui'
+import { Popover as EuiPopover, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const triggerCode = `<template>
   <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-    <Popover title="Click Popover" trigger="click">
+    <EuiPopover title="Click Popover" trigger="click">
       <template #trigger>
-        <Button>Click me</Button>
+        <EuiButton>Click me</EuiButton>
       </template>
       <p>This popover appears on click</p>
-    </Popover>
-    <Popover title="Hover Popover" trigger="hover">
+    </EuiPopover>
+    <EuiPopover title="Hover Popover" trigger="hover">
       <template #trigger>
-        <Button>Hover me</Button>
+        <EuiButton>Hover me</EuiButton>
       </template>
       <p>This popover appears on hover</p>
-    </Popover>
-    <Popover title="Focus Popover" trigger="focus">
+    </EuiPopover>
+    <EuiPopover title="Focus Popover" trigger="focus">
       <template #trigger>
         <input type="text" placeholder="Focus me" />
       </template>
       <p>This popover appears on focus</p>
-    </Popover>
+    </EuiPopover>
   </div>
 </template>
 
 <script setup>
-import { Popover, Button } from '@elivander/elix-ui'
+import { Popover as EuiPopover, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const placementCode = `<template>
   <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-    <Popover placement="top" :showArrow="true">
+    <EuiPopover placement="top" :showArrow="true">
       <template #trigger>
-        <Button>Top</Button>
+        <EuiButton>Top</EuiButton>
       </template>
       <p>Top placement</p>
-    </Popover>
-    <Popover placement="bottom" :showArrow="true">
+    </EuiPopover>
+    <EuiPopover placement="bottom" :showArrow="true">
       <template #trigger>
-        <Button>Bottom</Button>
+        <EuiButton>Bottom</EuiButton>
       </template>
       <p>Bottom placement</p>
-    </Popover>
-    <Popover placement="left" :showArrow="false">
+    </EuiPopover>
+    <EuiPopover placement="left" :showArrow="false">
       <template #trigger>
-        <Button>Left (no arrow)</Button>
+        <EuiButton>Left (no arrow)</EuiButton>
       </template>
       <p>Left placement without arrow</p>
-    </Popover>
-    <Popover placement="right" :showArrow="true">
+    </EuiPopover>
+    <EuiPopover placement="right" :showArrow="true">
       <template #trigger>
-        <Button>Right</Button>
+        <EuiButton>Right</EuiButton>
       </template>
       <p>Right placement</p>
-    </Popover>
+    </EuiPopover>
   </div>
 </template>
 
 <script setup>
-import { Popover, Button } from '@elivander/elix-ui'
+import { Popover as EuiPopover, Button as EuiButton } from '@elivander/elix-ui'
 <\/script>`
 
 const props = [

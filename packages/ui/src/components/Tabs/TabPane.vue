@@ -5,6 +5,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiTabPane',
+
+})
+
 import { computed, inject, ref } from 'vue'
 
 const props = defineProps<{

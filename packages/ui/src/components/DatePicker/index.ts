@@ -3,11 +3,11 @@ import DatePicker from './DatePicker.vue'
 import type { App } from 'vue'
 
 BaseDatePicker.install = (app: App) => {
-  app.component(BaseDatePicker.name || 'EuiBaseDatePicker', BaseDatePicker)
+  app.component(BaseDatePicker.name, BaseDatePicker)
 }
 
 DatePicker.install = (app: App) => {
-  app.component(DatePicker.name || 'EuiDatePicker', DatePicker)
+  app.component(DatePicker.name, DatePicker)
 }
 
 export { BaseDatePicker, DatePicker }

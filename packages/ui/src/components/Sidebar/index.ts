@@ -2,7 +2,7 @@ import Sidebar from './Sidebar.vue'
 import type { App } from 'vue'
 
 Sidebar.install = (app: App) => {
-  app.component(Sidebar.name || 'EuiSidebar', Sidebar)
+  app.component(Sidebar.name, Sidebar)
 }
 
 export { Sidebar }

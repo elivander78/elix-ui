@@ -25,6 +25,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiPopover',
+
+})
+
 import { ref, computed, nextTick, onMounted, onUnmounted, withDefaults } from 'vue'
 
 const props = withDefaults(defineProps<{

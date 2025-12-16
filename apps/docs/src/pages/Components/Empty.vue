@@ -21,8 +21,8 @@
 <script setup lang="ts">
 import Playground from '../../components/Playground.vue'
 import ApiTable from '../../components/ApiTable.vue'
-import EmptyBasicDemo from '../../components/demos/EmptyBasicDemo.vue'
-import EmptyWithTableDemo from '../../components/demos/EmptyWithTableDemo.vue'
+import EmptyBasicDemo from '../../components/demos/Empty/Basic.vue'
+import EmptyWithTableDemo from '../../components/demos/Empty/WithTable.vue'
 
 const emptyProps = [
   { name: 'description', type: 'string', default: "'No data'", description: 'Текст описания' },
@@ -39,15 +39,15 @@ const emptySlots = [
 const emptyEvents = []
 
 const basicCode = `<template>
-  <Empty description="No data available" />
+  <EuiEmpty description="No data available" />
 </template>`
 
 const tableCode = `<template>
-  <Table :columns="columns" :data="[]">
+  <EuiTable :columns="columns" :data="[]">
     <template #empty>
-      <Empty description="No data in table" />
+      <EuiEmpty description="No data in table" />
     </template>
-  </Table>
+  </EuiTable>
 </template>`
 </script>
 

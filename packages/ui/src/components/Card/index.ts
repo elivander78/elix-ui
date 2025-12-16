@@ -8,9 +8,8 @@ const components = [Card, CardHeader, CardBody, CardFooter]
 
 const install = (app: App) => {
   components.forEach((component) => {
-    const name = component.name || component.__name
-    if (name) {
-      app.component(name, component)
+    if (component.name) {
+      app.component(component.name, component)
     }
   })
 }

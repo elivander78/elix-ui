@@ -15,6 +15,13 @@
 </template>
 
 <script setup lang="ts">
+
+defineOptions({
+
+  name: 'EuiSwitch',
+
+})
+
 import { computed, useSlots } from 'vue'
 
 const props = defineProps<{

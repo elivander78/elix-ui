@@ -2,7 +2,7 @@ import Dropdown from './Dropdown.vue'
 import type { App } from 'vue'
 
 Dropdown.install = (app: App) => {
-  app.component(Dropdown.name || 'EuiDropdown', Dropdown)
+  app.component(Dropdown.name, Dropdown)
 }
 
 export { Dropdown }
