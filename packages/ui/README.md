@@ -19,6 +19,8 @@ yarn add @elivander/elix-ui
 ```typescript
 import { createApp } from 'vue'
 import { createUi, Button, Input } from '@elivander/elix-ui'
+// Import styles
+import '@elivander/elix-ui/styles'
 
 const app = createApp(App)
 app.use(createUi({ theme: 'light' }))
